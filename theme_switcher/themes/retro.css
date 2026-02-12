@@ -1,15 +1,22 @@
-/* Retro Gaming Theme */
+/* theme Gaming Theme */
 
 :root {
-    --retro-bg: #1a1a2e;
-    --retro-purple: #a64dff;
-    --retro-pink: #ff4da6;
-    --retro-cyan: #4dffff;
-    --retro-yellow: #ffff4d;
+    --theme-bg: #1a1a2e;
+
+    --theme-app-bg:
+        linear-gradient(45deg, var(--theme-bg) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--theme-bg) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--theme-bg) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--theme-bg) 75%),
+        linear-gradient(135deg, var(--theme-bg-alt), var(--theme-bg));
+    --theme-purple: #a64dff;
+    --theme-pink: #ff4da6;
+    --theme-cyan: #4dffff;
+    --theme-yellow: #ffff4d;
 }
 
 .stApp {
-    background: 
+    background:
         linear-gradient(45deg, #1a1a2e 25%, transparent 25%),
         linear-gradient(-45deg, #1a1a2e 25%, transparent 25%),
         linear-gradient(45deg, transparent 75%, #1a1a2e 75%),
@@ -18,34 +25,61 @@
     background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100%;
     background-position: 0 0, 10px 0, 10px -10px, 0px 10px, 0 0;
     font-family: 'VT323', monospace;
-    color: var(--retro-cyan);
+    color: var(--theme-cyan);
     image-rendering: pixelated;
 }
+
+/* Sidebar background to match main app */
+section[data-testid="stSidebar"]>div {
+    background: var(--theme-app-bg) !important;
+    background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100% !important;
+    background-position: 0 0, 10px 0, 10px -10px, 0px 10px, 0 0 !important;
+    color: var(--theme-cyan) !important;
+}
+
+/* Optional: ensure sidebar text inherits your theme */
+section[data-testid="stSidebar"] * {
+    color: inherit;
+    font-family: 'VT323', monospace;
+}
+
+/* Fallback for some Streamlit versions */
+[data-testid="stSidebar"] {
+    background: transparent !important;
+}
+
 
 h1 {
     font-family: 'Press Start 2P', cursive !important;
     font-weight: 400 !important;
     font-size: 2.0rem !important;
-    color: var(--retro-yellow) !important;
+    color: var(--theme-yellow) !important;
     text-transform: uppercase !important;
-    text-shadow: 
-        4px 4px 0 var(--retro-purple),
-        8px 8px 0 var(--retro-pink);
+    text-shadow:
+        4px 4px 0 var(--theme-purple),
+        8px 8px 0 var(--theme-pink);
     line-height: 1.4 !important;
     animation: arcadeFlash 2s infinite;
 }
 
 @keyframes arcadeFlash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 h2 {
     font-family: 'Press Start 2P', cursive !important;
     font-weight: 400 !important;
     font-size: 1.5rem !important;
-    color: var(--retro-pink) !important;
-    text-shadow: 3px 3px 0 var(--retro-purple);
+    color: var(--theme-pink) !important;
+    text-shadow: 3px 3px 0 var(--theme-purple);
     line-height: 1.6 !important;
 }
 
@@ -53,88 +87,96 @@ h3 {
     font-family: 'VT323', monospace !important;
     font-weight: 400 !important;
     font-size: 1.25rem !important;
-    color: var(--retro-cyan) !important;
+    color: var(--theme-cyan) !important;
     text-transform: uppercase;
 }
 
-p, label {
-    color: var(--retro-cyan);
+p,
+label {
+    color: var(--theme-cyan);
     font-size: 1.4rem;
     line-height: 1.5;
 }
 
-.stButton > button {
-    background: var(--retro-purple) !important;
+.stButton>button {
+    background: var(--theme-purple) !important;
     color: white !important;
-    border: 4px solid var(--retro-pink) !important;
+    border: 4px solid var(--theme-pink) !important;
     border-radius: 0 !important;
     padding: 16px 32px !important;
     font-family: 'Press Start 2P', cursive !important;
     font-weight: 400 !important;
     font-size: 0.8rem !important;
     text-transform: uppercase !important;
-    box-shadow: 
-        6px 6px 0 var(--retro-pink),
-        6px 6px 0 0 rgba(0,0,0,0.3) !important;
+    box-shadow:
+        6px 6px 0 var(--theme-pink),
+        6px 6px 0 0 rgba(0, 0, 0, 0.3) !important;
     transition: all 0.1s ease !important;
 }
 
-.stButton > button:hover {
+.stButton>button:hover {
     transform: translate(2px, 2px);
-    box-shadow: 
-        4px 4px 0 var(--retro-pink),
-        4px 4px 0 0 rgba(0,0,0,0.3) !important;
+    box-shadow:
+        4px 4px 0 var(--theme-pink),
+        4px 4px 0 0 rgba(0, 0, 0, 0.3) !important;
 }
 
-.stButton > button:active {
+.stButton>button:active {
     transform: translate(6px, 6px);
     box-shadow: none !important;
 }
 
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
+.stTextInput>div>div>input,
+.stTextArea>div>div>textarea,
+.stSelectbox>div>div>select {
     background: #2d2d44 !important;
-    border: 4px solid var(--retro-cyan) !important;
+    border: 4px solid var(--theme-cyan) !important;
     border-radius: 0 !important;
-    color: var(--retro-yellow) !important;
+    color: var(--theme-yellow) !important;
     padding: 12px !important;
     font-family: 'VT323', monospace !important;
     font-size: 1.4rem !important;
-    box-shadow: 4px 4px 0 rgba(0,0,0,0.3) !important;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3) !important;
 }
 
-.stTextInput > div > div > input:focus,
-.stTextArea > div > div > textarea:focus {
+.stTextInput>div>div>input:focus,
+.stTextArea>div>div>textarea:focus {
     outline: none !important;
-    border-color: var(--retro-pink) !important;
+    border-color: var(--theme-pink) !important;
     animation: pixelPulse 0.3s ease;
 }
 
 @keyframes pixelPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
 }
 
 [data-testid="metric-container"] {
     background: #2d2d44 !important;
-    border: 4px solid var(--retro-purple) !important;
+    border: 4px solid var(--theme-purple) !important;
     padding: 1.5rem !important;
-    box-shadow: 
-        6px 6px 0 var(--retro-pink),
-        6px 6px 0 0 rgba(0,0,0,0.5) !important;
+    box-shadow:
+        6px 6px 0 var(--theme-pink),
+        6px 6px 0 0 rgba(0, 0, 0, 0.5) !important;
 }
 
 div[data-testid="stMetricValue"] {
     font-family: 'Press Start 2P', cursive !important;
     font-size: 2rem !important;
     font-weight: 400 !important;
-    color: var(--retro-yellow) !important;
-    text-shadow: 3px 3px 0 var(--retro-purple);
+    color: var(--theme-yellow) !important;
+    text-shadow: 3px 3px 0 var(--theme-purple);
 }
 
 div[data-testid="stMetricLabel"] {
-    color: var(--retro-cyan) !important;
+    color: var(--theme-cyan) !important;
     font-size: 1rem !important;
     font-weight: 400 !important;
     font-family: 'VT323', monospace !important;
@@ -143,14 +185,14 @@ div[data-testid="stMetricLabel"] {
 
 .stTabs [data-baseweb="tab-list"] {
     background: #2d2d44;
-    border: 4px solid var(--retro-cyan);
+    border: 4px solid var(--theme-cyan);
     padding: 8px;
 }
 
 .stTabs [data-baseweb="tab"] {
     background: transparent;
     border: none;
-    color: var(--retro-cyan);
+    color: var(--theme-cyan);
     font-family: 'VT323', monospace;
     font-size: 1.3rem;
     text-transform: uppercase;
@@ -158,23 +200,21 @@ div[data-testid="stMetricLabel"] {
 }
 
 .stTabs [aria-selected="true"] {
-    background: var(--retro-purple) !important;
+    background: var(--theme-purple) !important;
     color: white !important;
-    border: 3px solid var(--retro-pink) !important;
+    border: 3px solid var(--theme-pink) !important;
 }
 
 hr {
     border: none;
     height: 4px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--retro-cyan) 0px,
-        var(--retro-cyan) 10px,
-        var(--retro-pink) 10px,
-        var(--retro-pink) 20px,
-        var(--retro-yellow) 20px,
-        var(--retro-yellow) 30px
-    );
+    background: repeating-linear-gradient(90deg,
+            var(--theme-cyan) 0px,
+            var(--theme-cyan) 10px,
+            var(--theme-pink) 10px,
+            var(--theme-pink) 20px,
+            var(--theme-yellow) 20px,
+            var(--theme-yellow) 30px);
     margin: 2rem 0;
 }
 
@@ -185,10 +225,10 @@ hr {
 
 ::-webkit-scrollbar-track {
     background: #2d2d44;
-    border: 2px solid var(--retro-cyan);
+    border: 2px solid var(--theme-cyan);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--retro-purple);
-    border: 2px solid var(--retro-pink);
+    background: var(--theme-purple);
+    border: 2px solid var(--theme-pink);
 }
