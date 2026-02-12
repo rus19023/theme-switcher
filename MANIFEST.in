@@ -1,0 +1,1 @@
+recursive-include theme_switcher/themes *.css
