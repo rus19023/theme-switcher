@@ -33,7 +33,7 @@
     image-rendering: var(--theme-image-rendering);
 }
 
-//* SIDEBAR STYLING */
+/* SIDEBAR STYLING */
 section[data-testid="stSidebar"] > div {
     background: var(--theme-bg) !important;
     color: #4dffff !important;
