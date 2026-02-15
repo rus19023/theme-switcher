@@ -6,40 +6,7 @@
    1. Color variables
    2. Font choices
    3. Unique decorative elements
-   
-   Gets variables from the theme .css file.
 */
-
-
-
-.stApp {
-    background: var(--theme-app-bg);
-    background-size: var(--theme-bg-size);
-    background-position: var(--theme-bg-position);
-    font-family: 'VT323', monospace;
-    color: var(--theme-font-primary);
-    image-rendering: pixelated;
-}
-
-/* Sidebar background to match main app */
-section[data-testid="stSidebar"]>div {
-    background: var(--theme-app-bg) !important;
-    background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100% !important;
-    background-position: 0 0, 10px 0, 10px -10px, 0px 10px, 0 0 !important;
-    color: var(--theme-cyan) !important;
-}
-
-/* Optional: ensure sidebar text inherits your theme */
-section[data-testid="stSidebar"] * {
-    color: inherit;
-    font-family: 'VT323', monospace;
-}
-
-/* Fallback for some Streamlit versions */
-[data-testid="stSidebar"] {
-    background: transparent !important;
-}
-
 
 /* ======================
    COMMON LAYOUT PATTERNS
