@@ -81,7 +81,7 @@ h1 {
 
 h2 {
     font-family: 'Press Start 2P', cursive !important;
-    font-weight: 400 !important;
+    font-weight: 200 !important;
     font-size: 1.5rem !important;
     color: var(--theme-pink) !important;
     text-shadow: 3px 3px 0 var(--theme-purple);
@@ -90,7 +90,7 @@ h2 {
 
 h3 {
     font-family: 'VT323', monospace !important;
-    font-weight: 400 !important;
+    font-weight: 175 !important;
     font-size: 1.25rem !important;
     color: var(--theme-cyan) !important;
     text-transform: uppercase;
