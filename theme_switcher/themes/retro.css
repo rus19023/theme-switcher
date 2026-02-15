@@ -33,23 +33,28 @@
     image-rendering: var(--theme-image-rendering);
 }
 
-/* Sidebar background to match main app */
-section[data-testid="stSidebar"]>div {
-    background: var(--theme-app-bg) !important;
-    background-size: var(--theme-bg-size);
-    background-position: var(--theme-bg-position);
-    color: var(--theme-theme-primary) !important;
+//* SIDEBAR STYLING */
+section[data-testid="stSidebar"] > div {
+    background: var(--theme-bg) !important;
+    color: #4dffff !important;
 }
 
-/* Optional: ensure sidebar text inherits your theme */
-section[data-testid="stSidebar"] * {
-    color: var(--theme-theme-primary) !important;
-    font-family: var(--theme-font-family);
+/* Force all sidebar text to be visible */
+section[data-testid="stSidebar"],
+section[data-testid="stSidebar"] *,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] div,
+section[data-testid="stSidebar"] span {
+    color: #4dffff !important;
+    font-family: var(--theme-font-family) !important;
 }
 
-/* Fallback for some Streamlit versions */
-[data-testid="stSidebar"] {
-    background: transparent !important;
+/* Sidebar headings */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: #ffff4d !important;
 }
 
 
