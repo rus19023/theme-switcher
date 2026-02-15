@@ -43,7 +43,7 @@ section[data-testid="stSidebar"]>div {
 
 /* Optional: ensure sidebar text inherits your theme */
 section[data-testid="stSidebar"] * {
-    color: inherit;
+    color: var(--theme-theme-primary) !important;
     font-family: var(--theme-font-family);
 }
 
