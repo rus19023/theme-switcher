@@ -256,4 +256,39 @@ button[kind="header"] {
     visibility: visible !important;
     display: block !important;
     opacity: 1 !important;
+}/* Fix dropdown/selectbox styling in sidebar and main */
+.stSelectbox > div > div > div {
+    background: #2d2d44 !important;
+    color: #ffff4d !important;  /* Yellow text */
+}
+
+/* Dropdown menu options */
+.stSelectbox [data-baseweb="select"] > div {
+    background: #2d2d44 !important;
+    border: 4px solid var(--theme-cyan) !important;
+    color: #ffff4d !important;
+}
+
+/* Dropdown list items */
+ul[role="listbox"] {
+    background: #2d2d44 !important;
+    border: 4px solid var(--theme-pink) !important;
+}
+
+ul[role="listbox"] li {
+    background: #2d2d44 !important;
+    color: #ffff4d !important;
+    font-family: 'VT323', monospace !important;
+    font-size: 1.4rem !important;
+    padding: 12px !important;
+}
+
+ul[role="listbox"] li:hover {
+    background: var(--theme-purple) !important;
+    color: white !important;
+}
+
+/* Selected option in dropdown */
+.stSelectbox [data-baseweb="select"] span {
+    color: #ffff4d !important;
 }
