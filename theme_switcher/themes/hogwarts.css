@@ -1,5 +1,7 @@
 /* Hogwarts Theme - Magical castle vibes with house colors */
 
+
+@import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:wght@400;600;700&display=swap');
 
 :root {

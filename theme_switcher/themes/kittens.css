@@ -1,5 +1,7 @@
 /* Kittens Theme - Soft and playful */
 
+
+@import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Comfortaa:wght@300;400;700&display=swap');
 
 :root {

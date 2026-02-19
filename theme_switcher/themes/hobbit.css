@@ -1,5 +1,7 @@
 /* Hobbit (The Shire) Theme - Cozy hobbit hole vibes */
 
+
+@import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Crimson+Text:wght@400;600;700&display=swap');
 
 :root {

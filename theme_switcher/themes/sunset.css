@@ -1,5 +1,7 @@
 /* Sunset Theme - Warm golden hour vibes */
 
+
+@import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Karla:wght@300;400;600&display=swap');
 
 :root {

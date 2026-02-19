@@ -1,5 +1,7 @@
 /* Wombats Theme - Australian outback vibes */
 
+
+@import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Questrial&family=Nixie+One&display=swap');
 
 :root {

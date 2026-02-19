@@ -1,4 +1,10 @@
 /* Terminal Theme */
+
+
+@import url('theme_base.css');
+
+@import url('');
+
 :root {
     --terminal-bg: #0c0c0c;
     --terminal-green: #00ff41;

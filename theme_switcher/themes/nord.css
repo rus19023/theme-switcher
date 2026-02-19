@@ -1,5 +1,7 @@
 /* Nord Arctic Theme */
 
+
+@import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
 
 :root {

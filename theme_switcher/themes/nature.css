@@ -1,5 +1,8 @@
 /* Nature Organic Theme */
 
+@import url('theme_base.css');
+
+
 :root {
     --nature-cream: #faf8f3;
     --nature-green: #5a7d5f;

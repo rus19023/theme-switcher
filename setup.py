@@ -15,7 +15,7 @@ setup(
     install_requires=[
         "streamlit>=1.20.0",
     ],
-    author="Your Name",
+    author="drushlopez.dev",
     author_email="drushlopez.dev@gmail.com",
     description="Streamlit theme switcher utility",
     long_description=readme,

@@ -1,5 +1,6 @@
 /* Mexico Theme - Vibrant fiesta colors */
 
+@import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ruda:wght@400;600;700&display=swap');
 
 :root {

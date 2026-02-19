@@ -1,5 +1,9 @@
 /* Synthwave - Minimal Test */
 
+
+
+@import url('theme_base.css');
+
 :root {
     --synth-bg: #2b0e3f;
     --synth-pink: #ff6ec7;
