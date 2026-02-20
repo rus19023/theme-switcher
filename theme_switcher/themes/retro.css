@@ -399,3 +399,14 @@ hr {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.02); }
 }
+
+/* Multiple choice buttons - fixed height */
+button[key^="mc_option_"] {
+    min-height: 80px !important;
+    height: auto !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
