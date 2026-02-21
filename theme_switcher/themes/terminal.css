@@ -3,7 +3,7 @@
 
 @import url('theme_base.css');
 
-@import url('');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
 
 :root {
     --terminal-bg: #0c0c0c;
