@@ -1,4 +1,10 @@
 /* Brutalist Theme - See main theme files */
+
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Space+Grotesk:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+
 :root {
     --black: #0A0A0A;
     --white: #FAFAFA;

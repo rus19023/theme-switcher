@@ -7,7 +7,7 @@
     --mexico-night: #1a0a2e;
     --mexico-deep: #2d1b3d;
     --mexico-pink: #ff006e;
-    --mexico-magenta: #fb5607;
+    --mexico-orange: #fb5607;
     --mexico-yellow: #ffbe0b;
     --mexico-turquoise: #3a86ff;
     --mexico-lime: #8ac926;
@@ -39,7 +39,7 @@ h1 {
     font-family: 'Bebas Neue', sans-serif !important;
     font-weight: 400 !important;
     font-size: 5rem !important;
-    background: linear-gradient(135deg, var(--mexico-pink), var(--mexico-magenta), var(--mexico-yellow), var(--mexico-turquoise));
+    background: linear-gradient(135deg, var(--mexico-pink), var(--mexico-orange), var(--mexico-yellow), var(--mexico-turquoise));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -53,7 +53,7 @@ h2 {
     font-family: 'Bebas Neue', sans-serif !important;
     font-weight: 400 !important;
     font-size: 2.8rem !important;
-    color: var(--mexico-magenta) !important;
+    color: var(--mexico-orange) !important;
     text-shadow: 0 0 30px rgba(251, 86, 7, 0.5);
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -75,7 +75,7 @@ p, label {
 }
 
 .stButton > button {
-    background: linear-gradient(135deg, var(--mexico-pink), var(--mexico-magenta)) !important;
+    background: linear-gradient(135deg, var(--mexico-pink), var(--mexico-orange)) !important;
     color: white !important;
     border: 4px solid var(--mexico-yellow) !important;
     border-radius: 0 !important;
@@ -183,7 +183,7 @@ div[data-testid="stMetricLabel"] {
 .stTabs [data-baseweb="tab-list"] {
     background: rgba(45, 27, 61, 0.6);
     backdrop-filter: blur(15px);
-    border: 4px solid var(--mexico-magenta);
+    border: 4px solid var(--mexico-orange);
     border-radius: 0;
     padding: 8px;
 }
@@ -207,7 +207,7 @@ div[data-testid="stMetricLabel"] {
 }
 
 .stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, var(--mexico-pink), var(--mexico-magenta)) !important;
+    background: linear-gradient(135deg, var(--mexico-pink), var(--mexico-orange)) !important;
     color: white !important;
     box-shadow: 0 0 30px rgba(255, 0, 110, 0.6) !important;
 }
@@ -219,7 +219,7 @@ hr {
         90deg,
         transparent,
         var(--mexico-pink),
-        var(--mexico-magenta),
+        var(--mexico-orange),
         var(--mexico-yellow),
         var(--mexico-turquoise),
         var(--mexico-lime),
@@ -239,7 +239,7 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--mexico-pink), var(--mexico-magenta), var(--mexico-turquoise));
+    background: linear-gradient(180deg, var(--mexico-pink), var(--mexico-orange), var(--mexico-turquoise));
     box-shadow: 0 0 15px rgba(255, 0, 110, 0.5);
 }
 

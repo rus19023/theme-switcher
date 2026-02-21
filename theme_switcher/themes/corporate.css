@@ -1,5 +1,9 @@
 /* Corporate Professional Theme */
 
+
+@import url('theme_base.css');
+@import url('theme_base.css');
+
 :root {
     --corp-blue: #0066cc;
     --corp-dark-blue: #003d7a;

@@ -1,4 +1,10 @@
 /* Academic Theme */
+
+
+@import url('theme_base.css');
+@import url('theme_base.css');
+
+
 :root {
     --paper: #f5f1e8;
     --ink: #2b2b2b;

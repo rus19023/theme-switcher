@@ -1,5 +1,9 @@
 /* Cyberpunk Theme */
 
+
+@import url('theme_base.css');
+@import url('theme_base.css');
+
 :root {
     --cyber-bg: #0a0e27;
     --cyber-dark: #0d1117;
