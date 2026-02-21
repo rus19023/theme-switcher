@@ -6,10 +6,12 @@
 */
 
 @import url('theme_base.css');
+/* @import_url('');  To use Google Fonts, uncomment this line and paste in your google fonts link URL between the '' */
 
 /* ================================
    STEP 1: Define Your Color Palette
    ================================ */
+   
 :root {
     /* Backgrounds */
     --theme-bg-primary: #ffffff;

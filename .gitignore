@@ -2,8 +2,10 @@
 __pycache__/
 *.py[codz]
 *$py.class
-
+jesus*
+MANIFEST.in
 *.zip
+tis.css
 
 # C extensions
 *.so

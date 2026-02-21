@@ -19,10 +19,12 @@
     font-family: 'Source Sans 3', sans-serif !important;
 }
 
-/* ── Top Navigation Bar ── */
+/* ── Top Header Band ── */
 [data-testid="stHeader"] {
     background: var(--temple-teal-dark) !important;
     border-bottom: none !important;
+    height: 4rem !important;
+    min-height: 4rem !important;
 }
 
 [data-testid="stHeader"]::after {
@@ -36,6 +38,21 @@
     top: 50%;
     transform: translateY(-50%);
     letter-spacing: 0.2px;
+}
+
+/* ── Page Title Band ── */
+.stApp > header + div > div:first-child h1:first-child,
+[data-testid="stAppViewContainer"] > section > div > div > div > div h1:first-of-type {
+    background: var(--temple-teal-dark) !important;
+    color: white !important;
+    margin: -1rem -1rem 1rem -1rem !important;
+    padding: 0.75rem 1rem !important;
+    font-weight: 600 !important;
+    width: calc(100% + 2rem) !important;
+    display: block !important;
+    height: 4rem !important;
+    line-height: 2.5rem !important;
+    box-sizing: border-box !important;
 }
 
 /* ── Headings ── */
@@ -60,12 +77,13 @@ h3 {
     border-radius: 4px !important;
     font-family: 'Source Sans 3', sans-serif !important;
     font-weight: 600 !important;
-    transition: background 0.15s, color 0.15s !important;
+    transition: border-width 0.1s !important;
 }
 
 .stButton > button:hover {
-    background: var(--temple-teal-dark) !important;
-    color: white !important;
+    background: white !important;
+    color: var(--temple-teal-dark) !important;
+    border: 2.5px solid var(--temple-teal-dark) !important;
 }
 
 /* ── Inputs ── */
@@ -81,29 +99,204 @@ h3 {
 }
 
 /* ── Selectbox & Multiselect ── */
-.stSelectbox > div,
-.stMultiSelect > div {
-    border-color: var(--temple-border) !important;
+.stSelectbox > div > div,
+.stMultiSelect > div > div {
+    background: white !important;
+    border: 1px solid black !important;
     border-radius: 4px !important;
+    color: black !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+
+.stSelectbox > div > div > div,
+.stMultiSelect > div > div > div {
+    color: black !important;
+}
+
+/* Dropdown option list */
+[data-baseweb="select"] ul,
+[data-baseweb="popover"] ul {
+    background: white !important;
+    border: 1px solid black !important;
+}
+
+[data-baseweb="select"] li,
+[data-baseweb="popover"] li {
+    background: white !important;
+    color: black !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+
+[data-baseweb="select"] li:hover,
+[data-baseweb="popover"] li:hover,
+[data-baseweb="select"] li[aria-selected="true"],
+[data-baseweb="popover"] li[aria-selected="true"] {
+    background: #4169e1 !important;
+    color: white !important;
+}
+
+/* ── Checkboxes & Radio Buttons ── */
+.stCheckbox label,
+.stCheckbox span,
+.stRadio label,
+.stRadio span {
+    color: var(--temple-teal-dark) !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+
+.stCheckbox > label > div,
+.stRadio > label > div {
+    color: var(--temple-teal-dark) !important;
+}
+
+/* ── Information / Alert Messages ── */
+/* Override all alert icon and border styles */
+[data-testid="stAlert"],
+.stAlert {
+    border: none !important;
+    background: white !important;
+    border-radius: 4px !important;
+    color: black !important;
+}
+
+[data-testid="stAlert"] p,
+.stAlert p,
+[data-testid="stAlert"] div,
+.stAlert div {
+    color: black !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+
+/* Custom info icon: solid circle in medium teal with white "i" */
+[data-testid="stAlert"][data-type="info"] svg,
+.stAlert.stInfo svg,
+div[data-baseweb="notification"] svg {
+    display: none !important;
+}
+
+[data-testid="stAlert"][data-type="info"]::before,
+.element-container .stAlert::before {
+    content: 'i';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    min-width: 1.25rem;
+    background: var(--temple-teal-mid) !important;
+    color: white !important;
+    border-radius: 50%;
+    font-family: 'Source Sans 3', sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    float: left;
+}
+
+/* Remove left-border color stripe from all alerts */
+[data-testid="stAlert"] {
+    border-left: none !important;
+}
+
+/* Suppress warning/success icon color so no red appears */
+[data-testid="stAlert"] svg {
+    display: none !important;
+}
+
+/* ── Expanders ── */
+details,
+[data-testid="stExpander"] {
+    border: 1px solid var(--temple-teal-dark) !important;
+    border-radius: 4px !important;
+    background: white !important;
+}
+
+[data-testid="stExpander"] summary,
+details summary {
+    color: var(--temple-teal-dark) !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+    font-weight: 600 !important;
+    background: white !important;
+}
+
+[data-testid="stExpander"] summary svg,
+details summary svg {
+    display: none !important;
+}
+
+[data-testid="stExpander"] > div,
+details > div {
+    background: white !important;
+    color: #2c3e50 !important;
 }
 
 /* ── Sidebar ── */
 [data-testid="stSidebar"] {
-    background: var(--temple-teal-dark) !important;
-    color: white !important;
+    background: white !important;
+    color: black !important;
 }
 
 [data-testid="stSidebar"] * {
-    color: white !important;
+    color: black !important;
+}
+
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] p {
+    color: black !important;
+    font-weight: 700 !important;
 }
 
 [data-testid="stSidebar"] .stButton > button {
-    background: transparent !important;
-    color: white !important;
-    border-color: white !important;
+    background: white !important;
+    color: var(--temple-teal-dark) !important;
+    border: 1px solid var(--temple-teal-dark) !important;
+    font-weight: 700 !important;
 }
 
 [data-testid="stSidebar"] .stButton > button:hover {
     background: white !important;
     color: var(--temple-teal-dark) !important;
+    border: 2.5px solid var(--temple-teal-dark) !important;
+}
+
+/* ── Remove icons globally (except favicon, password eye, and info icon) ── */
+
+/* Hide decorative icons in buttons/menus (but not password visibility toggle) */
+.stButton > button svg:not([data-testid="stPasswordEye"]) {
+    display: none !important;
+}
+
+/* Hide Streamlit toolbar icons, deploy button, main menu, footer */
+[data-testid="stToolbar"],
+[data-testid="stDecoration"],
+footer,
+#MainMenu {
+    display: none !important;
+}
+
+/* Hide warning/error/success icons in alerts (not info) */
+[data-testid="stAlert"]:not([data-type="info"]) svg {
+    display: none !important;
+}
+
+/* ── No red except for errors ── */
+/* Ensure warning uses orange, not red */
+[data-testid="stAlert"][data-type="warning"] {
+    border-left: 4px solid var(--temple-orange) !important;
+    background: white !important;
+}
+
+/* Error retains a red indicator */
+[data-testid="stAlert"][data-type="error"] {
+    border-left: 4px solid #c0392b !important;
+    background: white !important;
+}
+
+/* Success uses teal */
+[data-testid="stAlert"][data-type="success"] {
+    border-left: 4px solid var(--temple-teal-mid) !important;
+    background: white !important;
 }

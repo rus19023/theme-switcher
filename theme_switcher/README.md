@@ -1,6 +1,6 @@
 # 🎨 Streamlit Modular Theme System
 
-A drop-in theme system for Streamlit apps with 10 professional themes. No configuration needed - just import and use!
+A drop-in theme system for Streamlit apps with many professional themes included, plus support for custom themes. No configuration needed — just import and use!
 
 ## 🚀 Quick Start
 
@@ -23,8 +23,8 @@ That's it! Your app now has a theme selector in the sidebar.
    ```
    your_project/
    ├── app.py
-   ├── theme_switcher.py  ← Copy this
-   └── themes/            ← Copy this folder
+   ├── theme_switcher.py  
+   └── themes/            
        ├── glassmorphism.css
        ├── cyberpunk.css
        ├── brutalist.css
@@ -35,6 +35,7 @@ That's it! Your app now has a theme selector in the sidebar.
        ├── corporate.css
        ├── nature.css
        └── neon.css
+    
    ```
 
 2. **Run your app:**
@@ -42,29 +43,11 @@ That's it! Your app now has a theme selector in the sidebar.
    streamlit run app.py
    ```
 
-## 🎭 Available Themes
 
-### Modern
-- **✨ Glassmorphism** - Frosted glass with vibrant gradients
-- **⚡ Cyberpunk** - Neon-lit dystopian future
-- **🌃 Neon Nights** - Vibrant nightlife energy
+---
 
-### Bold
-- **▪ Brutalist** - Raw, honest, no-nonsense design
-- **🕹️ Retro Gaming** - 8-bit nostalgia
 
-### Elegant
-- **◇ Luxury Minimal** - Refined elegance and sophistication
-
-### Professional
-- **💼 Corporate** - Professional business aesthetic
-- **📚 Academic** - Scholarly and refined
-
-### Tech
-- **💻 Terminal** - Classic green-screen aesthetic
-
-### Organic
-- **🌿 Nature** - Organic and calming
+---
 
 ## 💡 Usage Examples
 
@@ -72,10 +55,8 @@ That's it! Your app now has a theme selector in the sidebar.
 ```python
 from theme_switcher import quick_theme_setup
 
-# Initialize with default theme
 quick_theme_setup()
 
-# Your app code
 st.title("My App")
 ```
 
@@ -83,19 +64,15 @@ st.title("My App")
 ```python
 from theme_switcher import ThemeSwitcher
 
-# Create theme switcher instance
-ts = ThemeSwitcher(default_theme='cyberpunk')
+ts = ThemeSwitcher(default_theme='retro')
 
-# Render sidebar with custom title
 ts.render_sidebar(
     title="🎨 Choose Your Style",
     show_description=True
 )
 
-# Apply the selected theme
 ts.apply_theme()
 
-# Get current theme info
 info = ts.get_theme_info()
 st.write(f"Current theme: {info['name']}")
 ```
@@ -104,9 +81,10 @@ st.write(f"Current theme: {info['name']}")
 ```python
 from theme_switcher import quick_theme_setup
 
-# Start with a specific theme
-quick_theme_setup(default_theme='terminal')
+quick_theme_setup(default_theme='retro')
 ```
+
+---
 
 ## 🎨 Creating Custom Themes
 
@@ -138,51 +116,36 @@ h1 {
     border-radius: 8px !important;
     padding: 12px 24px !important;
 }
-
-/* Style all your components... */
 ```
 
 ### 2. Register Theme
 
-Add your theme to `theme_switcher.py`:
+Add your theme's css file to the themes folder.
 
-```python
-class ThemeSwitcher:
-    THEMES = {
-        # ... existing themes ...
-        'mytheme': {
-            'name': '🎨 My Theme',
-            'description': 'My awesome custom theme',
-            'fonts': 'https://fonts.googleapis.com/css2?family=Your+Font&display=swap',
-            'category': 'Custom'
-        }
-    }
-```
+Your theme will appear in the sidebar automatically.
 
-That's it! Your theme will appear in the sidebar automatically.
+---
 
 ## 🛠️ Customization
 
 ### Hide Streamlit Branding
 
-All themes automatically hide:
-- Main menu
-- Footer
-- Header
-- Deploy button
+All themes automatically hide the main menu, footer, header, and deploy button.
 
 ### Theme Persistence
 
-Themes are stored in `st.session_state` and persist during the session. To add cross-session persistence, modify `theme_switcher.py` to use browser localStorage or a database.
+Themes are stored in `st.session_state` and persist for the duration of the session. To add cross-session persistence, modify `theme_switcher.py` to use a database or server-side storage.
 
 ### Sidebar Customization
 
 ```python
 ts.render_sidebar(
-    title="Pick a Vibe",           # Custom title
-    show_description=False         # Hide descriptions
+    title="Pick a Vibe",
+    show_description=False
 )
 ```
+
+---
 
 ## 🎯 Use Cases
 
@@ -192,6 +155,8 @@ ts.render_sidebar(
 - **Accessibility** - Offer high-contrast or dyslexia-friendly options
 - **Branding** - Match your company's style guide
 
+---
+
 ## 📝 Component Styling
 
 Each theme styles these Streamlit components:
@@ -199,29 +164,37 @@ Each theme styles these Streamlit components:
 - Buttons
 - Text inputs
 - Text areas
-- Select boxes
+- Select boxes and multiselects
+- Checkboxes and radio buttons
+- Alerts and info messages
+- Expanders
 - Metrics
 - Tabs
 - Sliders
-- Checkboxes
-- Radio buttons
 - Dividers (hr)
 - Scrollbars
 
+---
+
 ## 🐛 Troubleshooting
 
-### Themes not appearing
-- Make sure `themes/` folder is in the same directory as `theme_switcher.py`
-- Check that CSS files have the correct names
-- Verify fonts are loading (check browser console)
+**Themes not appearing**
+- Make sure the `themes/` folder is in the same directory as `theme_switcher.py`.
+- Check that CSS files have the correct names and are saved as UTF-8.
+- Verify Google Fonts are loading (check browser console).
 
-### Theme not applying
-- Ensure `apply_theme()` is called after `render_sidebar()`
-- Check for CSS conflicts with custom CSS in your app
-- Try `st.rerun()` after changing themes
+**Theme not applying**
+- Ensure `apply_theme()` is called after `render_sidebar()`.
+- Check for CSS conflicts with any custom CSS in your app.
+- Try `st.rerun()` after changing themes.
 
-### Cyberpunk theme issues
-The improved cyberpunk theme has better contrast and more pronounced neon effects. If you experience performance issues, the animations can be disabled in the CSS file.
+**Info icon not showing**
+- The info icon uses a CSS `::before` pseudo-element. If your Streamlit version uses a different alert `data-testid`, update the selector in `tis.css` accordingly.
+
+**Cyberpunk theme performance**
+- The cyberpunk theme includes animations. If you experience performance issues, disable them by commenting out the `@keyframes` blocks in `cyberpunk.css`.
+
+---
 
 ## 📄 License
 
@@ -229,15 +202,11 @@ Feel free to use, modify, and distribute. No attribution required.
 
 ## 🤝 Contributing
 
-Want to add a theme? 
-1. Create the CSS file
-2. Add it to the THEMES dict
-3. Submit a PR or share it!
-
-## ⭐ Credits
-
-Built for the Streamlit community. Themes inspired by various design systems and aesthetics.
+Want to add a theme?
+1. Create the CSS file in `themes/`.
+2. Add it to the `THEMES` dict in `theme_switcher.py`.
+3. Submit a PR or share it with the community!
 
 ---
 
-**Pro tip:** Mix and match CSS from different themes to create your own unique style!
+**Pro tip:** Mix and match CSS variables from different themes to create your own unique style!

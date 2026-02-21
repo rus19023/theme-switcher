@@ -21,6 +21,12 @@
     image-rendering: pixelated;
 }
 
+/* === HIDE STREAMLIT BRANDING === */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+.stDeployButton {display: none;}
+
 /* Sidebar background to match main app */
 section[data-testid="stSidebar"]>div {
     background: var(--theme-app-bg) !important;
