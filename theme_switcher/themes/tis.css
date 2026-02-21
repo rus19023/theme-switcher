@@ -1,0 +1,109 @@
+/* Temple Scheduling Theme */
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+:root {
+    --temple-teal-dark: #1a5f7a;
+    --temple-teal-mid: #2a7fa0;
+    --temple-teal-accent: #0e9aba;
+    --temple-orange: #e07b2a;
+    --temple-bg: #f0f4f7;
+    --temple-border: #d8e4ec;
+}
+
+/* ── App Background ── */
+.stApp {
+    background: var(--temple-bg) !important;
+    color: #2c3e50 !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+
+/* ── Top Navigation Bar ── */
+[data-testid="stHeader"] {
+    background: var(--temple-teal-dark) !important;
+    border-bottom: none !important;
+}
+
+[data-testid="stHeader"]::after {
+    content: 'Temple Scheduling';
+    color: white;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: 0.2px;
+}
+
+/* ── Headings ── */
+h1 {
+    color: #2c3e50 !important;
+    font-weight: 700 !important;
+}
+
+h2 {
+    color: var(--temple-teal-dark) !important;
+}
+
+h3 {
+    color: var(--temple-teal-mid) !important;
+}
+
+/* ── Buttons ── */
+.stButton > button {
+    background: white !important;
+    color: var(--temple-teal-dark) !important;
+    border: 1px solid var(--temple-teal-dark) !important;
+    border-radius: 4px !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+    font-weight: 600 !important;
+    transition: background 0.15s, color 0.15s !important;
+}
+
+.stButton > button:hover {
+    background: var(--temple-teal-dark) !important;
+    color: white !important;
+}
+
+/* ── Inputs ── */
+.stTextInput > div > input {
+    border-color: var(--temple-border) !important;
+    border-radius: 4px !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+
+.stTextInput > div > input:focus {
+    border-color: var(--temple-teal-accent) !important;
+    box-shadow: 0 0 0 2px rgba(14, 154, 186, 0.2) !important;
+}
+
+/* ── Selectbox & Multiselect ── */
+.stSelectbox > div,
+.stMultiSelect > div {
+    border-color: var(--temple-border) !important;
+    border-radius: 4px !important;
+}
+
+/* ── Sidebar ── */
+[data-testid="stSidebar"] {
+    background: var(--temple-teal-dark) !important;
+    color: white !important;
+}
+
+[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+[data-testid="stSidebar"] .stButton > button {
+    background: transparent !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+    background: white !important;
+    color: var(--temple-teal-dark) !important;
+}
