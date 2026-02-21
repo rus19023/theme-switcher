@@ -8,13 +8,13 @@
     --temple-teal-mid: #2a7fa0;
     --temple-teal-accent: #0e9aba;
     --temple-orange: #e07b2a;
-    --temple-bg: #f0f4f7;
+    --temple-bg: #ffffff;
     --temple-border: #d8e4ec;
 }
 
-/* ── App Background ── */
+/* ── App Background — white ── */
 .stApp {
-    background: var(--temple-bg) !important;
+    background: white !important;
     color: #2c3e50 !important;
     font-family: 'Source Sans 3', sans-serif !important;
 }
@@ -69,10 +69,10 @@ h3 {
     color: var(--temple-teal-mid) !important;
 }
 
-/* ── Buttons ── */
+/* ── Buttons — dark teal background, white font ── */
 .stButton > button {
-    background: white !important;
-    color: var(--temple-teal-dark) !important;
+    background: var(--temple-teal-dark) !important;
+    color: white !important;
     border: 1px solid var(--temple-teal-dark) !important;
     border-radius: 4px !important;
     font-family: 'Source Sans 3', sans-serif !important;
@@ -81,8 +81,8 @@ h3 {
 }
 
 .stButton > button:hover {
-    background: white !important;
-    color: var(--temple-teal-dark) !important;
+    background: var(--temple-teal-dark) !important;
+    color: white !important;
     border: 2.5px solid var(--temple-teal-dark) !important;
 }
 
@@ -135,47 +135,105 @@ h3 {
     color: white !important;
 }
 
-/* ── Checkboxes & Radio Buttons ── */
+/* ── Radio Buttons — black label, white circle with dark teal dot ── */
+.stRadio label,
+.stRadio span,
+.stRadio > label > div {
+    color: black !important;
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+
+/* Radio circle: white fill, dark teal border */
+.stRadio [role="radio"] {
+    background: white !important;
+    border-color: var(--temple-teal-dark) !important;
+}
+
+/* Selected state: white fill, dark teal border, dark teal inner dot */
+.stRadio [role="radio"][aria-checked="true"] {
+    background: white !important;
+    border-color: var(--temple-teal-dark) !important;
+}
+
+.stRadio [role="radio"][aria-checked="true"]::before {
+    background: var(--temple-teal-dark) !important;
+}
+
+/* ── Checkboxes ── */
+/* Label text: dark teal */
 .stCheckbox label,
 .stCheckbox span,
-.stRadio label,
-.stRadio span {
+.stCheckbox > label > div {
     color: var(--temple-teal-dark) !important;
     font-family: 'Source Sans 3', sans-serif !important;
 }
 
-.stCheckbox > label > div,
-.stRadio > label > div {
-    color: var(--temple-teal-dark) !important;
+/* Unchecked box: dark teal background, dark teal border */
+.stCheckbox [role="checkbox"] {
+    background: var(--temple-teal-dark) !important;
+    border-color: var(--temple-teal-dark) !important;
+    border-radius: 3px !important;
 }
 
-/* ── Information / Alert Messages ── */
-/* Override all alert icon and border styles */
+/* Checked box: white background, dark teal border */
+.stCheckbox [role="checkbox"][aria-checked="true"] {
+    background: white !important;
+    border-color: var(--temple-teal-dark) !important;
+}
+
+/* Checkmark SVG inside the checked box — re-show it and color it dark teal */
+.stCheckbox [role="checkbox"][aria-checked="true"] svg {
+    display: block !important;
+    color: var(--temple-teal-dark) !important;
+    fill: var(--temple-teal-dark) !important;
+    stroke: var(--temple-teal-dark) !important;
+}
+
+/* ── Alert / Notification Messages ── */
+/* Base: white background, dark teal font, no border by default */
 [data-testid="stAlert"],
 .stAlert {
     border: none !important;
     background: white !important;
     border-radius: 4px !important;
-    color: black !important;
+    color: var(--temple-teal-dark) !important;
 }
 
 [data-testid="stAlert"] p,
-.stAlert p,
 [data-testid="stAlert"] div,
+.stAlert p,
 .stAlert div {
-    color: black !important;
+    color: var(--temple-teal-dark) !important;
     font-family: 'Source Sans 3', sans-serif !important;
 }
 
-/* Custom info icon: solid circle in medium teal with white "i" */
-[data-testid="stAlert"][data-type="info"] svg,
-.stAlert.stInfo svg,
-div[data-baseweb="notification"] svg {
+/* Suppress all alert SVG icons */
+[data-testid="stAlert"] svg {
     display: none !important;
 }
 
+/* Remove left-border stripe from base rule (per-type rules add it back) */
+[data-testid="stAlert"] {
+    border-left: none !important;
+}
+
+/* Info — white background, dark teal font, custom circle "i" icon */
+[data-testid="stAlert"][data-type="info"],
+.stAlert.stInfo {
+    background: white !important;
+    color: var(--temple-teal-dark) !important;
+}
+
+[data-testid="stAlert"][data-type="info"] p,
+[data-testid="stAlert"][data-type="info"] div,
+.stAlert.stInfo p,
+.stAlert.stInfo div {
+    color: var(--temple-teal-dark) !important;
+}
+
+/* Custom info circle icon */
 [data-testid="stAlert"][data-type="info"]::before,
-.element-container .stAlert::before {
+.element-container .stAlert.stInfo::before {
     content: 'i';
     display: inline-flex;
     align-items: center;
@@ -195,14 +253,43 @@ div[data-baseweb="notification"] svg {
     float: left;
 }
 
-/* Remove left-border color stripe from all alerts */
-[data-testid="stAlert"] {
-    border-left: none !important;
+/* Success — white background, dark teal font, teal left stripe */
+[data-testid="stAlert"][data-type="success"],
+.stAlert.stSuccess {
+    border-left: 4px solid var(--temple-teal-mid) !important;
+    background: white !important;
+    color: var(--temple-teal-dark) !important;
 }
 
-/* Suppress warning/success icon color so no red appears */
-[data-testid="stAlert"] svg {
-    display: none !important;
+[data-testid="stAlert"][data-type="success"] p,
+[data-testid="stAlert"][data-type="success"] div,
+.stAlert.stSuccess p,
+.stAlert.stSuccess div {
+    color: var(--temple-teal-dark) !important;
+}
+
+/* Warning — white background, dark teal font, orange left stripe */
+[data-testid="stAlert"][data-type="warning"] {
+    border-left: 4px solid var(--temple-orange) !important;
+    background: white !important;
+    color: var(--temple-teal-dark) !important;
+}
+
+[data-testid="stAlert"][data-type="warning"] p,
+[data-testid="stAlert"][data-type="warning"] div {
+    color: var(--temple-teal-dark) !important;
+}
+
+/* Error — white background, dark teal font, red left stripe */
+[data-testid="stAlert"][data-type="error"] {
+    border-left: 4px solid #c0392b !important;
+    background: white !important;
+    color: var(--temple-teal-dark) !important;
+}
+
+[data-testid="stAlert"][data-type="error"] p,
+[data-testid="stAlert"][data-type="error"] div {
+    color: var(--temple-teal-dark) !important;
 }
 
 /* ── Expanders ── */
@@ -232,7 +319,7 @@ details > div {
     color: #2c3e50 !important;
 }
 
-/* ── Sidebar ── */
+/* ── Sidebar — white background, black bold font ── */
 [data-testid="stSidebar"] {
     background: white !important;
     color: black !important;
@@ -249,54 +336,31 @@ details > div {
     font-weight: 700 !important;
 }
 
+/* Sidebar buttons: same dark teal style as main content */
 [data-testid="stSidebar"] .stButton > button {
-    background: white !important;
-    color: var(--temple-teal-dark) !important;
+    background: var(--temple-teal-dark) !important;
+    color: white !important;
     border: 1px solid var(--temple-teal-dark) !important;
     font-weight: 700 !important;
 }
 
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: white !important;
-    color: var(--temple-teal-dark) !important;
+    background: var(--temple-teal-dark) !important;
+    color: white !important;
     border: 2.5px solid var(--temple-teal-dark) !important;
 }
 
-/* ── Remove icons globally (except favicon, password eye, and info icon) ── */
+/* ── Remove icons globally (except favicon, password eye, checkbox mark) ── */
 
-/* Hide decorative icons in buttons/menus (but not password visibility toggle) */
+/* Hide decorative button icons but not the password visibility toggle */
 .stButton > button svg:not([data-testid="stPasswordEye"]) {
     display: none !important;
 }
 
-/* Hide Streamlit toolbar icons, deploy button, main menu, footer */
+/* Hide Streamlit chrome: toolbar, decoration, footer, main menu */
 [data-testid="stToolbar"],
 [data-testid="stDecoration"],
 footer,
 #MainMenu {
     display: none !important;
-}
-
-/* Hide warning/error/success icons in alerts (not info) */
-[data-testid="stAlert"]:not([data-type="info"]) svg {
-    display: none !important;
-}
-
-/* ── No red except for errors ── */
-/* Ensure warning uses orange, not red */
-[data-testid="stAlert"][data-type="warning"] {
-    border-left: 4px solid var(--temple-orange) !important;
-    background: white !important;
-}
-
-/* Error retains a red indicator */
-[data-testid="stAlert"][data-type="error"] {
-    border-left: 4px solid #c0392b !important;
-    background: white !important;
-}
-
-/* Success uses teal */
-[data-testid="stAlert"][data-type="success"] {
-    border-left: 4px solid var(--temple-teal-mid) !important;
-    background: white !important;
 }
