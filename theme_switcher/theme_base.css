@@ -35,6 +35,10 @@ section[data-testid="stSidebar"]>div {
     color: var(--theme-cyan) !important;
 }
 
+section[data-testid="stSidebar"] h1 {
+    font-size: 1.8rem !important;  /* adjust to taste */
+}
+
 /* Optional: ensure sidebar text inherits your theme */
 section[data-testid="stSidebar"] * {
     color: inherit;
