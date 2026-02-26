@@ -21,12 +21,6 @@
     image-rendering: pixelated;
 }
 
-/* === HIDE STREAMLIT BRANDING === */
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
-.stDeployButton {display: none;}
-
 /* Sidebar background to match main app */
 section[data-testid="stSidebar"]>div {
     background: var(--theme-app-bg) !important;
@@ -36,7 +30,8 @@ section[data-testid="stSidebar"]>div {
 }
 
 section[data-testid="stSidebar"] h1 {
-    font-size: 1.8rem !important;  /* adjust to taste */
+    font-size: 1.5rem !important;
+    /* adjust to taste */
 }
 
 /* Optional: ensure sidebar text inherits your theme */
@@ -58,7 +53,7 @@ section[data-testid="stSidebar"] * {
 /* Typography base */
 h1 {
     font-weight: 700 !important;
-    font-size: 3.5rem !important;
+    font-size: 3.0rem !important;
     margin-bottom: 0.5rem !important;
 }
 
@@ -69,10 +64,11 @@ h2 {
 
 h3 {
     font-weight: 600 !important;
-    font-size: 1.3rem !important;
+    font-size: 1.75rem !important;
 }
 
-p, label {
+p,
+label {
     font-size: 1rem;
     line-height: 1.7;
     font-weight: 400;
@@ -82,14 +78,14 @@ p, label {
    BUTTON BASE STYLES
    ====================== */
 
-.stButton > button {
+.stButton>button {
     padding: 12px 32px !important;
     font-weight: 600 !important;
     transition: all 0.3s ease !important;
     cursor: pointer;
 }
 
-.stButton > button:hover {
+.stButton>button:hover {
     transform: translateY(-2px);
 }
 
@@ -97,21 +93,21 @@ p, label {
    INPUT BASE STYLES
    ====================== */
 
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
+.stTextInput>div>div>input,
+.stTextArea>div>div>textarea,
+.stSelectbox>div>div>select {
     padding: 12px 16px !important;
     transition: all 0.3s ease !important;
 }
 
-.stTextInput > div > div > input:focus,
-.stTextArea > div > div > textarea:focus {
+.stTextInput>div>div>input:focus,
+.stTextArea>div>div>textarea:focus {
     outline: none !important;
 }
 
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
+.stTextInput>label,
+.stTextArea>label,
+.stSelectbox>label {
     font-weight: 600 !important;
     font-size: 0.9rem !important;
 }

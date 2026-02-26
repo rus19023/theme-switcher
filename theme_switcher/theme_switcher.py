@@ -79,16 +79,16 @@ class ThemeSwitcher:
             'description': 'Organic and calming',
             'css_file': 'nature.css',
             'fonts': 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Abril+Fatface&display=swap'
-        },
-        'neon': {
-            'name': '🌃 Neon Nights',
-            'description': 'Vibrant nightlife energy',
-            'css_file': 'neon.css',
-            'fonts': 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bebas+Neue&display=swap'
+        # },
+        # 'neon': {
+        #     'name': '🌃 Neon Nights',
+        #     'description': 'Vibrant nightlife energy',
+        #     'css_file': 'neon.css',
+        #     'fonts': 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bebas+Neue&display=swap'
         }
     }
     
-    def __init__(self, default_theme='glassmorphism', themes_dir='themes', key_prefix='theme_switcher'):
+    def __init__(self, default_theme='rosegold', themes_dir='themes', key_prefix='theme_switcher'):
         """
         Initialize the theme switcher.
         
@@ -237,27 +237,22 @@ class ThemeSwitcher:
         
         # Step 4: Combine and inject all CSS
         combined_css = f"""
-<style>
-/* === HIDE STREAMLIT BRANDING === */
-#MainMenu {{visibility: hidden;}}
-footer {{visibility: hidden;}}
-header {{visibility: hidden;}}
-.stDeployButton {{display: none;}}
+            <style>
 
-/* === RESET === */
-* {{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}}
+            /* === RESET === */
+            * {{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }}
 
-/* === BASE CSS === */
-{base_css_content}
+            /* === BASE CSS === */
+            {base_css_content}
 
-/* === THEME CSS === */
-{theme_css_content}
-</style>
-"""
+            /* === THEME CSS === */
+            {theme_css_content}
+            </style>
+            """
         st.markdown(combined_css, unsafe_allow_html=True)
     
     def _load_base_css(self):
@@ -329,7 +324,7 @@ header {{visibility: hidden;}}
 
 
 # Quick setup function (most common use case)
-def quick_theme_setup(default_theme='glassmorphism', themes_dir='themes', key_prefix='theme_switcher'):
+def quick_theme_setup(default_theme='rosegold', themes_dir='themes', key_prefix='theme_switcher'):
     """
     Quickest way to add themes to your app - just one line!
     
@@ -360,7 +355,7 @@ def quick_theme_setup(default_theme='glassmorphism', themes_dir='themes', key_pr
 
 
 # Standalone function for simple usage
-def apply_theme(default_theme='glassmorphism', themes_dir='themes', 
+def apply_theme(default_theme='rosegold', themes_dir='themes', 
                 show_selector=True, allow_customization=False,
                 selector_location='sidebar', key_prefix='theme_switcher'):
     """
