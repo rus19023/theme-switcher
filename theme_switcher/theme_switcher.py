@@ -79,13 +79,13 @@ class ThemeSwitcher:
             'description': 'Organic and calming',
             'css_file': 'nature.css',
             'fonts': 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Abril+Fatface&display=swap'
-        # },
+        },
         # 'neon': {
         #     'name': '🌃 Neon Nights',
         #     'description': 'Vibrant nightlife energy',
         #     'css_file': 'neon.css',
         #     'fonts': 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bebas+Neue&display=swap'
-        }
+        #}
     }
     
     def __init__(self, default_theme='rosegold', themes_dir='themes', key_prefix='theme_switcher'):
