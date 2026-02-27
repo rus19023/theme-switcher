@@ -1,43 +1,51 @@
 /* 
+   theme_base.css
+   ============================================================================
    BASE THEME FOUNDATION
-   
+
    This file contains common CSS patterns that ALL themes can import.
    Individual theme files only need to define:
-   1. Color variables
+   1. Color variables in :root
    2. Font choices
    3. Unique decorative elements
-   
-   Gets variables from the theme .css file.
+
+   All values come from variables defined in each theme's :root block.
+   ============================================================================
 */
 
+/* ======================
+   APP & SIDEBAR
+   ====================== */
 
-
-.stApp {
+   .stApp {
     background: var(--theme-app-bg);
-    background-size: var(--theme-bg-size);
-    background-position: var(--theme-bg-position);
-    font-family: 'VT323', monospace;
-    color: var(--theme-font-primary);
-    image-rendering: pixelated;
+    background-size: var(--theme-bg-size, cover);
+    background-position: var(--theme-bg-position, center);
+    font-family: var(--theme-font-primary);
+    color: var(--theme-text-primary);
+    image-rendering: var(--theme-image-rendering, auto);
 }
 
-/* Sidebar background to match main app */
-section[data-testid="stSidebar"]>div {
+section[data-testid="stSidebar"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+section[data-testid="stSidebar"] > div {
     background: var(--theme-app-bg) !important;
-    background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100% !important;
-    background-position: 0 0, 10px 0, 10px -10px, 0px 10px, 0 0 !important;
-    color: var(--theme-cyan) !important;
+    background-size: var(--theme-bg-size, cover) !important;
+    background-position: var(--theme-bg-position, center) !important;
+    color: var(--theme-sidebar-text) !important;
+}
+
+section[data-testid="stSidebar"] * {
+    color: var(--theme-sidebar-text) !important;
+    font-family: var(--theme-font-primary);
 }
 
 section[data-testid="stSidebar"] h1 {
     font-size: 1.5rem !important;
-    /* adjust to taste */
-}
-
-/* Optional: ensure sidebar text inherits your theme */
-section[data-testid="stSidebar"] * {
-    color: inherit;
-    font-family: 'VT323', monospace;
 }
 
 /* Fallback for some Streamlit versions */
@@ -45,71 +53,119 @@ section[data-testid="stSidebar"] * {
     background: transparent !important;
 }
 
+button[kind="header"],
+[data-testid="collapsedControl"] {
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+}
 
 /* ======================
-   COMMON LAYOUT PATTERNS
+   TYPOGRAPHY BASE
    ====================== */
 
-/* Typography base */
 h1 {
-    font-weight: 700 !important;
-    font-size: 3.0rem !important;
+    font-family: var(--theme-font-h1) !important;
+    font-weight: var(--theme-weight-h1) !important;
+    font-size: var(--theme-size-h1) !important;
+    color: var(--theme-text-h1) !important;
+    text-transform: var(--theme-text-transform-h1, none) !important;
+    letter-spacing: var(--theme-letter-spacing-h1, normal) !important;
+    text-shadow: var(--theme-shadow-text-h1, none);
+    animation: var(--theme-animation-h1, none);
+    line-height: 1.4 !important;
     margin-bottom: 0.5rem !important;
 }
 
 h2 {
-    font-weight: 600 !important;
-    font-size: 2rem !important;
+    font-family: var(--theme-font-h2) !important;
+    font-weight: var(--theme-weight-h2) !important;
+    font-size: var(--theme-size-h2) !important;
+    color: var(--theme-text-h2) !important;
+    text-transform: var(--theme-text-transform-h2, none) !important;
+    letter-spacing: var(--theme-letter-spacing-h2, normal) !important;
+    text-shadow: var(--theme-shadow-text-h2, none);
+    animation: var(--theme-animation-h2, none);
+    line-height: 1.6 !important;
 }
 
 h3 {
-    font-weight: 600 !important;
-    font-size: 1.75rem !important;
+    font-family: var(--theme-font-h3) !important;
+    font-weight: var(--theme-weight-h3) !important;
+    font-size: var(--theme-size-h3) !important;
+    color: var(--theme-text-h3) !important;
+    text-transform: var(--theme-text-transform-h3, none) !important;
+    letter-spacing: var(--theme-letter-spacing-h3, normal) !important;
+    text-shadow: var(--theme-shadow-text-h3, none);
 }
 
-p,
-label {
-    font-size: 1rem;
+p, label {
+    color: var(--theme-text-secondary);
+    font-size: var(--theme-size-body);
     line-height: 1.7;
-    font-weight: 400;
+    font-weight: var(--theme-weight-body);
 }
 
 /* ======================
-   BUTTON BASE STYLES
+   BUTTON BASE
    ====================== */
 
-.stButton>button {
-    padding: 12px 32px !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease !important;
+.stButton > button {
+    background: var(--theme-button-bg) !important;
+    color: var(--theme-button-text) !important;
+    border: var(--theme-button-border-width) var(--theme-border-style, solid) var(--theme-button-border) !important;
+    border-radius: var(--theme-radius-button) !important;
+    padding: var(--theme-padding-button) !important;
+    font-family: var(--theme-font-h1) !important;
+    font-weight: var(--theme-weight-bold) !important;
+    text-transform: var(--theme-text-transform-button, none) !important;
+    letter-spacing: var(--theme-letter-spacing-button, normal) !important;
+    box-shadow: var(--theme-shadow-button, none) !important;
+    transition: all var(--theme-transition-speed, 0.3s) ease !important;
     cursor: pointer;
 }
 
-.stButton>button:hover {
+.stButton > button:hover {
     transform: translateY(-2px);
+    box-shadow: var(--theme-shadow-button-hover, none) !important;
 }
 
 /* ======================
-   INPUT BASE STYLES
+   INPUT BASE
    ====================== */
 
-.stTextInput>div>div>input,
-.stTextArea>div>div>textarea,
-.stSelectbox>div>div>select {
-    padding: 12px 16px !important;
-    transition: all 0.3s ease !important;
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+.stSelectbox > div > div > select {
+    background: var(--theme-input-bg) !important;
+    border: var(--theme-border-width, 1px) var(--theme-border-style, solid) var(--theme-input-border) !important;
+    border-radius: var(--theme-radius-input) !important;
+    color: var(--theme-input-text) !important;
+    padding: var(--theme-padding-input) !important;
+    font-family: var(--theme-font-primary) !important;
+    font-size: var(--theme-size-body) !important;
+    transition: all var(--theme-transition-speed, 0.3s) ease !important;
 }
 
-.stTextInput>div>div>input:focus,
-.stTextArea>div>div>textarea:focus {
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
     outline: none !important;
+    border-color: var(--theme-input-border-focus) !important;
+    box-shadow: var(--theme-shadow-input-focus, none) !important;
 }
 
-.stTextInput>label,
-.stTextArea>label,
-.stSelectbox>label {
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
+.stTextInput > div > div > input::placeholder,
+.stTextArea > div > div > textarea::placeholder {
+    color: var(--theme-input-placeholder) !important;
+}
+
+.stTextInput > label,
+.stTextArea > label,
+.stSelectbox > label {
+    color: var(--theme-text-h2) !important;
+    font-weight: var(--theme-weight-bold) !important;
+    font-size: var(--theme-size-label) !important;
+    text-transform: var(--theme-text-transform-label, none);
 }
 
 /* ======================
@@ -117,34 +173,68 @@ label {
    ====================== */
 
 [data-testid="metric-container"] {
-    padding: 1.5rem !important;
-    transition: all 0.3s ease;
+    background: var(--theme-bg-card) !important;
+    border: var(--theme-border-width, 1px) var(--theme-border-style, solid) var(--theme-color-primary) !important;
+    border-radius: var(--theme-radius-card) !important;
+    padding: var(--theme-padding-card) !important;
+    box-shadow: var(--theme-shadow-card, none) !important;
+    transition: all var(--theme-transition-speed, 0.3s) ease;
 }
 
 [data-testid="metric-container"]:hover {
+    border-color: var(--theme-border-hover) !important;
+    box-shadow: var(--theme-shadow-card-hover, none) !important;
     transform: translateY(-2px);
 }
 
 div[data-testid="stMetricValue"] {
-    font-size: 2.5rem !important;
-    font-weight: 700 !important;
+    font-family: var(--theme-font-h1) !important;
+    font-size: var(--theme-size-metric-value) !important;
+    font-weight: var(--theme-weight-h1) !important;
+    color: var(--theme-text-h1) !important;
 }
 
 div[data-testid="stMetricLabel"] {
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
+    color: var(--theme-text-secondary) !important;
+    font-size: var(--theme-size-metric-label) !important;
+    font-weight: var(--theme-weight-bold) !important;
+    text-transform: var(--theme-text-transform-metric-label, uppercase);
     letter-spacing: 1px;
+    font-family: var(--theme-font-primary) !important;
 }
 
 /* ======================
    TABS BASE
    ====================== */
 
+.stTabs [data-baseweb="tab-list"] {
+    background: var(--theme-bg-secondary);
+    border: var(--theme-border-width, 1px) var(--theme-border-style, solid) var(--theme-tab-border);
+    border-radius: var(--theme-radius-md, 0);
+    padding: 6px;
+}
+
 .stTabs [data-baseweb="tab"] {
+    background: var(--theme-tab-bg);
+    border: none;
+    border-radius: var(--theme-radius-sm, 0);
+    color: var(--theme-tab-text);
+    font-family: var(--theme-font-primary);
+    font-weight: var(--theme-weight-bold);
+    font-size: var(--theme-size-body);
+    text-transform: uppercase;
     padding: 12px 24px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all var(--theme-transition-speed-fast, 0.3s) ease;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: var(--theme-tab-text-hover);
+    background: var(--theme-tab-bg-hover);
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--theme-tab-bg-active) !important;
+    color: var(--theme-tab-text-active) !important;
 }
 
 /* ======================
@@ -153,6 +243,8 @@ div[data-testid="stMetricLabel"] {
 
 hr {
     border: none;
+    height: var(--theme-hr-height, 2px);
+    background: var(--theme-hr-bg, var(--theme-color-primary));
     margin: 2rem 0;
 }
 
@@ -164,6 +256,19 @@ hr {
     width: 10px;
 }
 
+::-webkit-scrollbar-track {
+    background: var(--theme-bg-secondary);
+}
+
 ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
+    background: var(--theme-color-primary);
+    border-radius: var(--theme-radius-sm, 5px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-color-secondary);
+
+}/* Remove Streamlit's default top padding */
+.block-container {
+    padding-top: 1rem !important;
 }

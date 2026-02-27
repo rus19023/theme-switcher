@@ -1,211 +1,213 @@
-/* Rose Gold Theme - Elegant luxury */
+/* 
+    rose_gold.css
+   ============================================================================
+   ROSE GOLD THEME - Elegant Luxury
+   ============================================================================
+*/
+
+/* 
+    .css
+   ============================================================================
+    THEME
+   ============================================================================
+   @theme-name: ROSE GOLD 
+   @theme-icon: 
+   @theme-description: Elegant Luxury
+*/
+
 @import url('theme_base.css');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+/* ============================================================================
+   THEME VARIABLES
+   ============================================================================ */
 
 :root {
-    --rose-dark: #1a1215;
-    --rose-deep: #3d2832;
-    --rose-mauve: #7d5a5a;
-    --rose-pink: #d4a5a5;
-    --rose-blush: #f4c2c2;
-    --rose-gold: #d4af37;
-    --rose-champagne: #dfcaaf;
-    /* Darker from #f7e7ce */
-    --rose-text: #d4c2a8;
-    /* New darker text color */
-}
-
-.stApp {
-    background:
+    /* Backgrounds */
+    --theme-app-bg:
         radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
         radial-gradient(circle at 70% 80%, rgba(212, 165, 165, 0.15) 0%, transparent 40%),
-        linear-gradient(135deg, #221518 0%, var(--rose-dark) 50%, #2a1820 100%);
-    font-family: 'Raleway', sans-serif;
-    color: var(--rose-champagne);
+        linear-gradient(135deg, #221518 0%, #1a1215 50%, #2a1820 100%);
+    --theme-bg-size: cover;
+    --theme-bg-position: center;
+    --theme-bg-primary: #1a1215;
+    --theme-bg-secondary: rgba(61, 40, 50, 0.5);
+    --theme-bg-card: rgba(61, 40, 50, 0.3);
+    --theme-sidebar-bg: #1a1215;
+
+    /* Colors */
+    --theme-color-primary: #d4af37;
+    --theme-color-secondary: #d4a5a5;
+    --theme-color-accent-1: #d4af37;
+    --theme-color-accent-2: #d4a5a5;
+    --theme-color-accent-3: #f4c2c2;
+    --theme-color-accent-4: #dfcaaf;
+
+    /* Text Colors */
+    --theme-text-primary: #dfcaaf;
+    --theme-text-secondary: #d4c2a8;
+    --theme-text-muted: #7d5a5a;
+    --theme-text-h1: #d4af37;
+    --theme-text-h2: #d4af37;
+    --theme-text-h3: #f4c2c2;
+    --theme-sidebar-text: #dfcaaf;
+
+    /* Fonts */
+    --theme-font-primary: 'Raleway', sans-serif;
+    --theme-font-h1: 'Cinzel', serif;
+    --theme-font-h2: 'Cinzel', serif;
+    --theme-font-h3: 'Raleway', sans-serif;
+    --theme-font-mono: 'Raleway', monospace;
+
+    /* Font Sizes */
+    --theme-size-h1: 3.8rem;
+    --theme-size-h2: 2rem;
+    --theme-size-h3: 1.3rem;
+    --theme-size-body: 1rem;
+    --theme-size-label: 0.9rem;
+    --theme-size-metric-value: 3rem;
+    --theme-size-metric-label: 0.85rem;
+
+    /* Font Weights */
+    --theme-weight-h1: 700;
+    --theme-weight-h2: 600;
+    --theme-weight-h3: 600;
+    --theme-weight-body: 500;
+    --theme-weight-bold: 600;
+
+    /* Borders */
+    --theme-border-color: #7d5a5a;
+    --theme-border-hover: #d4af37;
+    --theme-border-width: 2px;
+    --theme-border-style: solid;
+
+    /* Border Radius */
+    --theme-radius-sm: 8px;
+    --theme-radius-md: 12px;
+    --theme-radius-lg: 16px;
+    --theme-radius-full: 30px;
+    --theme-radius-button: 30px;
+    --theme-radius-input: 12px;
+    --theme-radius-card: 16px;
+
+    /* Shadows */
+    --theme-shadow-sm: 0 2px 8px rgba(212, 175, 55, 0.15);
+    --theme-shadow-md: 0 4px 20px rgba(212, 175, 55, 0.2);
+    --theme-shadow-lg: 0 8px 30px rgba(212, 175, 55, 0.3);
+    --theme-shadow-button: 0 4px 20px rgba(212, 175, 55, 0.3);
+    --theme-shadow-button-hover: 0 6px 25px rgba(212, 175, 55, 0.5);
+    --theme-shadow-card: 0 4px 20px rgba(212, 165, 165, 0.2);
+    --theme-shadow-card-hover: 0 8px 30px rgba(212, 175, 55, 0.3);
+    --theme-shadow-input-focus: 0 0 20px rgba(212, 175, 55, 0.3);
+    --theme-shadow-text-h1: 0 0 30px rgba(212, 175, 55, 0.3);
+    --theme-shadow-text-h2: none;
+    --theme-shadow-text-h3: none;
+
+    /* Effects */
+    --theme-text-transform-h1: none;
+    --theme-text-transform-h2: none;
+    --theme-text-transform-h3: none;
+    --theme-text-transform-button: uppercase;
+    --theme-text-transform-label: none;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1: 3px;
+    --theme-letter-spacing-h2: 2px;
+    --theme-letter-spacing-h3: 1px;
+    --theme-letter-spacing-button: 2px;
+    --theme-image-rendering: auto;
+
+    /* Animations */
+    --theme-animation-h1: none;
+    --theme-animation-h2: none;
+    --theme-transition-speed: 0.3s;
+    --theme-transition-speed-fast: 0.2s;
+
+    /* Spacing */
+    --theme-padding-button: 14px 40px;
+    --theme-padding-input: 12px 18px;
+    --theme-padding-card: 1.5rem;
+
+    /* Buttons */
+    --theme-button-bg: linear-gradient(135deg, #d4af37, #d4a5a5);
+    --theme-button-bg-hover: linear-gradient(135deg, #d4a5a5, #d4af37);
+    --theme-button-text: white;
+    --theme-button-border: #d4af37;
+    --theme-button-border-width: 2px;
+
+    /* Inputs */
+    --theme-input-bg: rgba(61, 40, 50, 0.4);
+    --theme-input-border: #7d5a5a;
+    --theme-input-border-focus: #d4af37;
+    --theme-input-text: #dfcaaf;
+    --theme-input-placeholder: rgba(247, 231, 206, 0.3);
+
+    /* Tabs */
+    --theme-tab-bg: transparent;
+    --theme-tab-bg-hover: rgba(212, 165, 165, 0.1);
+    --theme-tab-bg-active: linear-gradient(135deg, #d4af37, #d4a5a5);
+    --theme-tab-text: rgba(247, 231, 206, 0.5);
+    --theme-tab-text-hover: #dfcaaf;
+    --theme-tab-text-active: white;
+    --theme-tab-border: #7d5a5a;
+
+    /* HR */
+    --theme-hr-height: 2px;
+    --theme-hr-bg: linear-gradient(90deg,
+        transparent,
+        #7d5a5a,
+        #d4af37,
+        #d4a5a5,
+        transparent);
 }
 
+/* ============================================================================
+   THEME-SPECIFIC OVERRIDES
+   ============================================================================ */
+
+/* h1 uses gradient text clip - can't be done via a single color variable */
 h1 {
-    font-family: 'Cinzel', serif !important;
-    font-weight: 700 !important;
-    font-size: 3.8rem !important;
-    background: linear-gradient(135deg, var(--rose-gold), var(--rose-blush), var(--rose-pink));
+    background: linear-gradient(135deg, var(--theme-color-primary), var(--theme-color-accent-3), var(--theme-color-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 0.5rem !important;
-    letter-spacing: 3px;
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
-h2 {
-    font-family: 'Cinzel', serif !important;
-    font-weight: 600 !important;
-    font-size: 2rem !important;
-    color: var(--rose-gold) !important;
-    letter-spacing: 2px;
-}
-
-h3 {
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1.3rem !important;
-    color: var(--rose-blush) !important;
-    letter-spacing: 1px;
-}
-
-p,
-label {
-    color: var(--rose-text);
-    /* Using new darker variable */
-    font-size: 1rem;
-    line-height: 1.8;
-    font-weight: 500;
-    /* Changed from 300 to 500 for better readability */
-}
-
-.stButton>button {
-    background: linear-gradient(135deg, var(--rose-gold), var(--rose-pink)) !important;
-    color: white !important;
-    border: 2px solid var(--rose-gold) !important;
-    border-radius: 30px !important;
-    padding: 14px 40px !important;
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 600 !important;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3) !important;
-}
-
-.stButton>button:hover {
-    background: linear-gradient(135deg, var(--rose-pink), var(--rose-gold)) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5) !important;
-}
-
-.stTextInput>div>div>input,
-.stTextArea>div>div>textarea,
-.stSelectbox>div>div>select {
-    background: rgba(61, 40, 50, 0.4) !important;
+/* Backdrop blur on inputs */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+.stSelectbox > div > div > select {
     backdrop-filter: blur(15px);
-    border: 2px solid var(--rose-mauve) !important;
-    border-radius: 12px !important;
-    color: var(--rose-champagne) !important;
-    padding: 12px 18px !important;
-    font-family: 'Raleway', sans-serif !important;
-    transition: all 0.3s ease !important;
 }
 
-.stTextInput>div>div>input:focus,
-.stTextArea>div>div>textarea:focus {
-    outline: none !important;
-    border-color: var(--rose-gold) !important;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3) !important;
-}
-
-.stTextInput>div>div>input::placeholder {
-    color: rgba(247, 231, 206, 0.3) !important;
-}
-
-.stTextInput>label,
-.stTextArea>label,
-.stSelectbox>label {
-    color: var(--rose-gold) !important;
-    font-weight: 600 !important;
-    letter-spacing: 1px;
-}
-
-[data-testid="metric-container"] {
-    background: rgba(61, 40, 50, 0.3) !important;
-    backdrop-filter: blur(15px);
-    border: 2px solid var(--rose-mauve) !important;
-    border-radius: 16px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 4px 20px rgba(212, 165, 165, 0.2) !important;
-    transition: all 0.3s ease;
-}
-
-[data-testid="metric-container"]:hover {
-    border-color: var(--rose-gold) !important;
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3) !important;
-    transform: translateY(-4px) scale(1.02);
-}
-
+/* Metric value gradient text */
 div[data-testid="stMetricValue"] {
-    font-family: 'Cinzel', serif !important;
-    font-size: 3rem !important;
-    font-weight: 700 !important;
-    background: linear-gradient(135deg, var(--rose-gold), var(--rose-blush));
+    background: linear-gradient(135deg, var(--theme-color-primary), var(--theme-color-accent-3));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-div[data-testid="stMetricLabel"] {
-    color: var(--rose-pink) !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: rgba(61, 40, 50, 0.3);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--rose-mauve);
-    border-radius: 14px;
-    padding: 6px;
-}
-
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    color: rgba(247, 231, 206, 0.5);
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-    padding: 12px 24px;
-    transition: all 0.3s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: var(--rose-champagne);
-    background: rgba(212, 165, 165, 0.1);
-}
-
-.stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, var(--rose-gold), var(--rose-pink)) !important;
-    color: white !important;
-}
-
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg,
-            transparent,
-            var(--rose-mauve),
-            var(--rose-gold),
-            var(--rose-pink),
-            transparent);
-    margin: 2.5rem 0;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-}
-
-::-webkit-scrollbar {
-    width: 12px;
-}
-
+/* Scrollbar */
 ::-webkit-scrollbar-track {
-    background: var(--rose-dark);
+    background: var(--theme-bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--rose-gold), var(--rose-pink));
+    background: linear-gradient(180deg, var(--theme-color-primary), var(--theme-color-secondary));
     border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--rose-pink), var(--rose-blush));
+    background: linear-gradient(180deg, var(--theme-color-secondary), var(--theme-color-accent-3));
+}
+
+/* Multiple choice buttons */
+button[key^="mc_option_"] {
+    min-height: 80px !important;
+    height: auto !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }

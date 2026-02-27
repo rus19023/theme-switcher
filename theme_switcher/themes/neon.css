@@ -1,30 +1,265 @@
-/* Synthwave - Minimal Test */
-
-
+/* 
+    neon.css
+   ============================================================================
+   NEON THEME
+   ============================================================================
+   @theme-name: Neon Nights
+   @theme-icon: 🌃
+   @theme-description: Vibrant nightlife energy
+*/
 
 @import url('theme_base.css');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Orbitron:wght@400;700;900&display=swap');
+
+/* ============================================================================
+   THEME VARIABLES
+   ============================================================================ */
 
 :root {
-    --synth-bg: #2b0e3f;
-    --synth-pink: #ff6ec7;
-    --synth-blue: #05d9e8;
+    /* Backgrounds */
+    --theme-app-bg:
+        radial-gradient(ellipse at top, #1a0533 0%, transparent 60%),
+        radial-gradient(ellipse at bottom, #0d0221 0%, transparent 60%),
+        linear-gradient(180deg, #0d0221 0%, #1a0533 50%, #0d0221 100%);
+    --theme-bg-size: cover;
+    --theme-bg-position: center;
+    --theme-bg-primary: #0d0221;
+    --theme-bg-secondary: #1a0533;
+    --theme-bg-card: rgba(26, 5, 51, 0.7);
+    --theme-sidebar-bg: #0d0221;
+
+    /* Colors */
+    --theme-color-primary: #ff2d95;
+    --theme-color-secondary: #05d9e8;
+    --theme-color-accent-1: #ff2d95;
+    --theme-color-accent-2: #bf00ff;
+    --theme-color-accent-3: #05d9e8;
+    --theme-color-accent-4: #fffb00;
+
+    /* Text Colors */
+    --theme-text-primary: #e0e0ff;
+    --theme-text-secondary: #c0b8e8;
+    --theme-text-muted: #7060a0;
+    --theme-text-h1: #ff2d95;
+    --theme-text-h2: #05d9e8;
+    --theme-text-h3: #bf00ff;
+    --theme-sidebar-text: #05d9e8;
+
+    /* Fonts */
+    --theme-font-primary: 'Orbitron', sans-serif;
+    --theme-font-h1: 'Tilt Neon', monospace;
+    --theme-font-h2: 'Tilt Neon', monospace;
+    --theme-font-h3: 'Tilt Neon', cursive;
+    --theme-font-mono: 'Orbitron', monospace;
+
+    /* Font Sizes */
+    --theme-size-h1: 3.2rem;
+    --theme-size-h2: 1.8rem;
+    --theme-size-h3: 1.6rem;
+    --theme-size-body: 1.1rem;
+    --theme-size-label: 0.9rem;
+    --theme-size-metric-value: 2.5rem;
+    --theme-size-metric-label: 0.85rem;
+
+    /* Font Weights */
+    --theme-weight-h1: 900;
+    --theme-weight-h2: 700;
+    --theme-weight-h3: 400;
+    --theme-weight-body: 400;
+    --theme-weight-bold: 600;
+
+    /* Borders */
+    --theme-border-color: #ff2d95;
+    --theme-border-hover: #05d9e8;
+    --theme-border-width: 1px;
+    --theme-border-style: solid;
+
+    /* Border Radius */
+    --theme-radius-sm: 4px;
+    --theme-radius-md: 8px;
+    --theme-radius-lg: 12px;
+    --theme-radius-full: 50px;
+    --theme-radius-button: 4px;
+    --theme-radius-input: 4px;
+    --theme-radius-card: 8px;
+
+    /* Shadows - the key to the neon glow look */
+    --theme-shadow-sm: 0 0 8px rgba(255, 45, 149, 0.4);
+    --theme-shadow-md: 0 0 16px rgba(255, 45, 149, 0.5);
+    --theme-shadow-lg: 0 0 30px rgba(255, 45, 149, 0.6);
+    --theme-shadow-button: 0 0 12px rgba(255, 45, 149, 0.6), 0 0 24px rgba(255, 45, 149, 0.3), inset 0 0 12px rgba(255, 45, 149, 0.1);
+    --theme-shadow-button-hover: 0 0 20px rgba(255, 45, 149, 0.9), 0 0 40px rgba(255, 45, 149, 0.5), 0 0 60px rgba(255, 45, 149, 0.2), inset 0 0 20px rgba(255, 45, 149, 0.2);
+    --theme-shadow-card: 0 0 15px rgba(5, 217, 232, 0.2), 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 45, 149, 0.03);
+    --theme-shadow-card-hover: 0 0 25px rgba(5, 217, 232, 0.4), 0 0 50px rgba(255, 45, 149, 0.2);
+    --theme-shadow-input-focus: 0 0 15px rgba(5, 217, 232, 0.5), 0 0 30px rgba(5, 217, 232, 0.2);
+    --theme-shadow-text-h1:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #ff2d95,
+        0 0 82px #ff2d95,
+        0 0 92px #ff2d95,
+        0 0 102px #ff2d95,
+        0 0 151px #ff2d95;
+    --theme-shadow-text-h2:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #05d9e8,
+        0 0 42px #05d9e8,
+        0 0 82px #05d9e8;
+    --theme-shadow-text-h3: 0 0 10px #bf00ff, 0 0 20px #bf00ff;
+
+    /* Effects */
+    --theme-text-transform-h1: uppercase;
+    --theme-text-transform-h2: uppercase;
+    --theme-text-transform-h3: uppercase;
+    --theme-text-transform-button: uppercase;
+    --theme-text-transform-label: uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1: 4px;
+    --theme-letter-spacing-h2: 3px;
+    --theme-letter-spacing-h3: 2px;
+    --theme-letter-spacing-button: 3px;
+    --theme-image-rendering: auto;
+
+    /* Animations */
+    --theme-animation-h1: neonFlicker 3s infinite alternate;
+    --theme-animation-h2: none;
+    --theme-transition-speed: 0.3s;
+    --theme-transition-speed-fast: 0.15s;
+
+    /* Spacing */
+    --theme-padding-button: 14px 36px;
+    --theme-padding-input: 12px 16px;
+    --theme-padding-card: 1.5rem;
+
+    /* Buttons */
+    --theme-button-bg: transparent;
+    --theme-button-bg-hover: rgba(255, 45, 149, 0.1);
+    --theme-button-text: #ff2d95;
+    --theme-button-border: #ff2d95;
+    --theme-button-border-width: 2px;
+
+    /* Inputs */
+    --theme-input-bg: rgba(13, 2, 33, 0.8);
+    --theme-input-border: #bf00ff;
+    --theme-input-border-focus: #05d9e8;
+    --theme-input-text: #e0e0ff;
+    --theme-input-placeholder: rgba(192, 184, 232, 0.4);
+
+    /* Tabs */
+    --theme-tab-bg: transparent;
+    --theme-tab-bg-hover: rgba(255, 45, 149, 0.1);
+    --theme-tab-bg-active: rgba(255, 45, 149, 0.15);
+    --theme-tab-text: rgba(224, 224, 255, 0.5);
+    --theme-tab-text-hover: #e0e0ff;
+    --theme-tab-text-active: #ff2d95;
+    --theme-tab-border: #bf00ff;
+
+    /* HR */
+    --theme-hr-height: 2px;
+    --theme-hr-bg: linear-gradient(90deg,
+        transparent,
+        #bf00ff,
+        #ff2d95,
+        #05d9e8,
+        transparent);
 }
 
-.stApp {
-    background: var(--synth-bg) !important;
-    color: white !important;
+/* ============================================================================
+   CSS RULES
+   ============================================================================ */
+
+/* Scanline overlay for CRT feel */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.05) 2px,
+        rgba(0, 0, 0, 0.05) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
 }
 
-h1 {
-    color: var(--synth-pink) !important;
+/* Horizon glow line */
+.stApp::after {
+    content: '';
+    position: fixed;
+    bottom: 35%;
+    left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #bf00ff 20%,
+        #ff2d95 50%,
+        #bf00ff 80%,
+        transparent 100%);
+    box-shadow: 0 0 20px #ff2d95, 0 0 40px #bf00ff;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
 }
 
-h2 {
-    color: var(--synth-blue) !important;
+/* Button glow override */
+.stButton > button:hover {
+    background: var(--theme-button-bg-hover) !important;
+    color: #fff !important;
+    border-color: #05d9e8 !important;
+    text-shadow: 0 0 8px #05d9e8;
+    transform: translateY(-2px);
 }
 
-.stButton > button {
-    background: var(--synth-pink) !important;
-    color: white !important;
+/* Active tab glow */
+.stTabs [aria-selected="true"] {
+    border: 1px solid #ff2d95 !important;
+    box-shadow: 0 0 10px rgba(255, 45, 149, 0.5), inset 0 0 10px rgba(255, 45, 149, 0.1) !important;
+    text-shadow: 0 0 8px #ff2d95;
+}
+
+/* Metric value glow */
+div[data-testid="stMetricValue"] {
+    text-shadow: 0 0 10px var(--theme-text-h1), 0 0 20px var(--theme-text-h1);
+}
+
+/* Scrollbar glow */
+::-webkit-scrollbar-thumb {
+    box-shadow: 0 0 6px rgba(255, 45, 149, 0.8);
+}
+
+/* Multiple choice buttons */
+button[key^="mc_option_"] {
+    min-height: 80px !important;
+    height: auto !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #ff2d95,
+            0 0 82px #ff2d95,
+            0 0 92px #ff2d95,
+            0 0 102px #ff2d95,
+            0 0 151px #ff2d95;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+        opacity: 0.8;
+    }
 }
