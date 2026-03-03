@@ -9,7 +9,7 @@ if os.path.exists("README.md"):
 
 setup(
     name="theme_switcher",
-    version="2.2.0",
+    version="2.3.0",
     packages=find_packages(),
     package_data={"theme_switcher": ["themes/*.css"]},
     install_requires=[

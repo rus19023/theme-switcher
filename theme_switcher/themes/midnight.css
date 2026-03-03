@@ -1,185 +1,179 @@
-/* Midnight Dark Theme */
-
+/* 
+    midnight.css
+   @theme-name: midnight
+   @theme-icon: 🌙
+   @theme-description: Darkest before dawn
 
 @import url('theme_base.css');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Josefin+Sans:wght@300;400;600;700&display=swap');
+*/
 
 :root {
-    --midnight-bg: #0f0f0f;
-    --midnight-card: #1a1a1a;
-    --midnight-border: #2a2a2a;
-    --midnight-text: #e0e0e0;
-    --midnight-accent: #3b82f6;
-    --midnight-accent-hover: #60a5fa;
-    --midnight-success: #10b981;
-    --midnight-warning: #f59e0b;
+    /* App & Sidebar */
+    --theme-app-bg:             linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #1a1a1a;
+    --theme-bg-card:            #1a1a1a;
+    --theme-sidebar-text:       #e0e0e0;
+
+    /* Colors */
+    --theme-color-primary:      #3b82f6;
+    --theme-color-secondary:    #60a5fa;
+
+    /* Text Colors */
+    --theme-text-primary:       #e0e0e0;
+    --theme-text-secondary:     #e0e0e0;
+    --theme-text-h1:            #ffffff;
+    --theme-text-h2:            #ffffff;
+    --theme-text-h3:            #e0e0e0;
+
+    /* Fonts */
+    --theme-font-primary:       'Josefin Sans', sans-serif;
+    --theme-font-h1:            'Libre Baskerville', serif;
+    --theme-font-h2:            'Libre Baskerville', serif;
+    --theme-font-h3:            'Josefin Sans', sans-serif;
+
+    /* Font Sizes */
+    --theme-size-h1:            3.5rem;
+    --theme-size-h2:            2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.5rem;
+    --theme-size-metric-label:  0.85rem;
+
+    /* Font Weights */
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+
+    /* Borders */
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #3b82f6;
+
+    /* Border Radius */
+    --theme-radius-sm:          6px;
+    --theme-radius-md:          8px;
+    --theme-radius-button:      8px;
+    --theme-radius-input:       8px;
+    --theme-radius-card:        12px;
+
+    /* Shadows */
+    --theme-shadow-button:      0 4px 12px rgba(59, 130, 246, 0.3);
+    --theme-shadow-button-hover: 0 6px 16px rgba(59, 130, 246, 0.4);
+    --theme-shadow-card:        0 2px 8px rgba(0, 0, 0, 0.4);
+    --theme-shadow-card-hover:  0 4px 16px rgba(0, 0, 0, 0.5);
+    --theme-shadow-input-focus: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    --theme-shadow-text-h1:     none;
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+
+    /* Text Transforms & Letter Spacing */
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        none;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           -2px;
+    --theme-letter-spacing-h2:           -1px;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       normal;
+
+    /* Animations */
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.2s;
+    --theme-transition-speed-fast: 0.15s;
+
+    /* Spacing */
+    --theme-padding-button:     12px 32px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+
+    /* Buttons */
+    --theme-button-bg:          #3b82f6;
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      #3b82f6;
+    --theme-button-border-width: 1px;
+
+    /* Inputs */
+    --theme-input-bg:           #1a1a1a;
+    --theme-input-border:       #2a2a2a;
+    --theme-input-border-focus: #3b82f6;
+    --theme-input-text:         #e0e0e0;
+    --theme-input-placeholder:  rgba(224, 224, 224, 0.4);
+
+    /* Tabs */
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(255, 255, 255, 0.05);
+    --theme-tab-bg-active:      #3b82f6;
+    --theme-tab-text:           rgba(224, 224, 224, 0.6);
+    --theme-tab-text-hover:     #ffffff;
+    --theme-tab-text-active:    #ffffff;
+    --theme-tab-border:         #2a2a2a;
+
+    /* HR */
+    --theme-hr-height:          1px;
+    --theme-hr-bg:              #2a2a2a;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
 
-.stApp {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
-    font-family: 'Inter', sans-serif;
-    color: var(--midnight-text);
-}
+/* ============================================================================
+   MIDNIGHT-UNIQUE RULES
+   ============================================================================ */
 
-h1 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 3.5rem !important;
-    color: white !important;
-    letter-spacing: -2px !important;
-    margin-bottom: 0.5rem !important;
-}
-
-h2 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 2rem !important;
-    color: white !important;
-    letter-spacing: -1px !important;
-}
-
-h3 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1.3rem !important;
-    color: var(--midnight-text) !important;
-}
-
-p, label {
-    color: var(--midnight-text);
-    font-size: 1rem;
-    line-height: 1.7;
-    font-weight: 400;
-}
-
-.stButton > button {
-    background: var(--midnight-accent) !important;
-    color: white !important;
-    border: 1px solid var(--midnight-accent) !important;
-    border-radius: 8px !important;
-    padding: 12px 32px !important;
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 600 !important;
-    transition: all 0.2s ease !important;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
-}
-
+/* Button hover color shift */
 .stButton > button:hover {
-    background: var(--midnight-accent-hover) !important;
+    background: #60a5fa !important;
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4) !important;
 }
 
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: var(--midnight-card) !important;
-    border: 1px solid var(--midnight-border) !important;
-    border-radius: 8px !important;
-    color: var(--midnight-text) !important;
-    padding: 12px 16px !important;
-    font-family: 'Inter', sans-serif !important;
-    transition: all 0.2s ease !important;
-}
-
+/* Input focus background shift */
 .stTextInput > div > div > input:focus,
 .stTextArea > div > div > textarea:focus {
-    outline: none !important;
-    border-color: var(--midnight-accent) !important;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
-    background: var(--midnight-bg) !important;
+    background: #0f0f0f !important;
 }
 
-.stTextInput > div > div > input::placeholder {
-    color: rgba(224, 224, 224, 0.4) !important;
-}
-
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
-    color: var(--midnight-text) !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-}
-
-[data-testid="metric-container"] {
-    background: var(--midnight-card) !important;
-    border: 1px solid var(--midnight-border) !important;
-    border-radius: 12px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
-    transition: all 0.3s ease;
-}
-
-[data-testid="metric-container"]:hover {
-    border-color: var(--midnight-accent) !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
-    transform: translateY(-2px);
-}
-
-div[data-testid="stMetricValue"] {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 2.5rem !important;
-    font-weight: 700 !important;
-    color: white !important;
-}
-
+/* Metric label muted tone */
 div[data-testid="stMetricLabel"] {
     color: rgba(224, 224, 224, 0.7) !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.stTabs [data-baseweb="tab-list"] {
-    background: var(--midnight-card);
-    border: 1px solid var(--midnight-border);
-    border-radius: 8px;
-    padding: 4px;
+/* Noir vignette overlay */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center,
+        transparent 40%,
+        rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+    z-index: 0;
 }
 
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: none;
-    border-radius: 6px;
-    color: rgba(224, 224, 224, 0.6);
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    padding: 10px 20px;
-    transition: all 0.2s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: white;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.stTabs [aria-selected="true"] {
-    background: var(--midnight-accent) !important;
-    color: white !important;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background: var(--midnight-border);
-    margin: 2rem 0;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--midnight-bg);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--midnight-border);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--midnight-accent);
+/* Noir rain streak — subtle atmospheric line */
+.stApp::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        105deg,
+        transparent,
+        transparent 40px,
+        rgba(255, 255, 255, 0.008) 40px,
+        rgba(255, 255, 255, 0.008) 41px
+    );
+    pointer-events: none;
+    z-index: 0;
 }

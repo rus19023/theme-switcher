@@ -1,27 +1,106 @@
-/* Temple Scheduling Theme */
+/* 
+   tis.css
+   ============================================================================
+   TIS THEME
+   ============================================================================
+   @theme-name: TIS
+   @theme-icon: 🏛️
+   @theme-description: Theme to match TIS
+*/
 
 @import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap');
 
 :root {
-    --temple-teal-dark: #1a5f7a;
-    --temple-teal-mid: #2a7fa0;
-    --temple-teal-accent: #0e9aba;
-    --temple-orange: #e07b2a;
-    --temple-bg: #ffffff;
-    --temple-border: #d8e4ec;
+    --theme-app-bg:             #ffffff;
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #ffffff;
+    --theme-bg-card:            #ffffff;
+    --theme-sidebar-text:       #000000;
+    --theme-color-primary:      #1a5f7a;
+    --theme-color-secondary:    #2a7fa0;
+    --theme-text-primary:       #2c3e50;
+    --theme-text-secondary:     #2c3e50;
+    --theme-text-h1:            #2c3e50;
+    --theme-text-h2:            #1a5f7a;
+    --theme-text-h3:            #2a7fa0;
+    --theme-font-primary:       'Source Sans 3', sans-serif;
+    --theme-font-h1:            'Source Sans 3', sans-serif;
+    --theme-font-h2:            'Source Sans 3', sans-serif;
+    --theme-font-h3:            'Source Sans 3', sans-serif;
+    --theme-size-h1:            2rem;
+    --theme-size-h2:            1.6rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.5rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #0e9aba;
+    --theme-radius-sm:          4px;
+    --theme-radius-md:          4px;
+    --theme-radius-button:      4px;
+    --theme-radius-input:       4px;
+    --theme-radius-card:        4px;
+    --theme-shadow-button:      none;
+    --theme-shadow-button-hover: none;
+    --theme-shadow-card:        0 1px 4px rgba(0, 0, 0, 0.08);
+    --theme-shadow-card-hover:  0 2px 8px rgba(26, 95, 122, 0.15);
+    --theme-shadow-input-focus: 0 0 0 2px rgba(14, 154, 186, 0.2);
+    --theme-shadow-text-h1:     none;
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        none;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       0.2px;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.1s;
+    --theme-transition-speed-fast: 0.1s;
+    --theme-padding-button:     10px 20px;
+    --theme-padding-input:      10px 14px;
+    --theme-padding-card:       1.25rem;
+    --theme-button-bg:          #1a5f7a;
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      #1a5f7a;
+    --theme-button-border-width: 1px;
+    --theme-input-bg:           #ffffff;
+    --theme-input-border:       #d8e4ec;
+    --theme-input-border-focus: #0e9aba;
+    --theme-input-text:         #2c3e50;
+    --theme-input-placeholder:  #a0aab4;
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(26, 95, 122, 0.06);
+    --theme-tab-bg-active:      #1a5f7a;
+    --theme-tab-text:           #2a7fa0;
+    --theme-tab-text-hover:     #1a5f7a;
+    --theme-tab-text-active:    #ffffff;
+    --theme-tab-border:         #d8e4ec;
+    --theme-hr-height:          1px;
+    --theme-hr-bg:              #d8e4ec;
 }
 
-/* ── App Background — white ── */
-.stApp {
-    background: white !important;
-    color: #2c3e50 !important;
-    font-family: 'Source Sans 3', sans-serif !important;
-}
+/* ============================================================================
+   TIS-UNIQUE RULES
+   ============================================================================ */
 
-/* ── Top Header Band ── */
+/* Top header band — teal */
 [data-testid="stHeader"] {
-    background: var(--temple-teal-dark) !important;
+    background: #1a5f7a !important;
     border-bottom: none !important;
     height: 4rem !important;
     min-height: 4rem !important;
@@ -40,72 +119,20 @@
     letter-spacing: 0.2px;
 }
 
-/* ── Page Title Band ── */
-.stApp > header + div > div:first-child h1:first-child,
-[data-testid="stAppViewContainer"] > section > div > div > div > div h1:first-of-type {
-    background: var(--temple-teal-dark) !important;
-    color: white !important;
-    margin: -1rem -1rem 1rem -1rem !important;
-    padding: 0.75rem 1rem !important;
-    font-weight: 600 !important;
-    width: calc(100% + 2rem) !important;
-    display: block !important;
-    height: 4rem !important;
-    line-height: 2.5rem !important;
-    box-sizing: border-box !important;
-}
-
-/* ── Headings ── */
-h1 {
-    color: #2c3e50 !important;
-    font-weight: 700 !important;
-}
-
-h2 {
-    color: var(--temple-teal-dark) !important;
-}
-
-h3 {
-    color: var(--temple-teal-mid) !important;
-}
-
-/* ── Buttons — dark teal background, white font ── */
-.stButton > button {
-    background: var(--temple-teal-dark) !important;
-    color: white !important;
-    border: 1px solid var(--temple-teal-dark) !important;
-    border-radius: 4px !important;
-    font-family: 'Source Sans 3', sans-serif !important;
-    font-weight: 600 !important;
-    transition: border-width 0.1s !important;
-}
-
+/* Button hover — thicker border instead of color change */
 .stButton > button:hover {
-    background: var(--temple-teal-dark) !important;
+    background: #1a5f7a !important;
     color: white !important;
-    border: 2.5px solid var(--temple-teal-dark) !important;
+    border-width: 2.5px !important;
 }
 
-/* ── Inputs ── */
-.stTextInput > div > input {
-    border-color: var(--temple-border) !important;
-    border-radius: 4px !important;
-    font-family: 'Source Sans 3', sans-serif !important;
-}
-
-.stTextInput > div > input:focus {
-    border-color: var(--temple-teal-accent) !important;
-    box-shadow: 0 0 0 2px rgba(14, 154, 186, 0.2) !important;
-}
-
-/* ── Selectbox & Multiselect ── */
+/* Selectbox & Multiselect */
 .stSelectbox > div > div,
 .stMultiSelect > div > div {
     background: white !important;
     border: 1px solid black !important;
     border-radius: 4px !important;
     color: black !important;
-    font-family: 'Source Sans 3', sans-serif !important;
 }
 
 .stSelectbox > div > div > div,
@@ -113,7 +140,6 @@ h3 {
     color: black !important;
 }
 
-/* Dropdown option list */
 [data-baseweb="select"] ul,
 [data-baseweb="popover"] ul {
     background: white !important;
@@ -135,103 +161,78 @@ h3 {
     color: white !important;
 }
 
-/* ── Radio Buttons — black label, white circle with dark teal dot ── */
+/* Radio buttons */
 .stRadio label,
 .stRadio span,
 .stRadio > label > div {
     color: black !important;
-    font-family: 'Source Sans 3', sans-serif !important;
 }
 
-/* Radio circle: white fill, dark teal border */
 .stRadio [role="radio"] {
     background: white !important;
-    border-color: var(--temple-teal-dark) !important;
+    border-color: #1a5f7a !important;
 }
 
-/* Selected state: white fill, dark teal border, dark teal inner dot */
 .stRadio [role="radio"][aria-checked="true"] {
     background: white !important;
-    border-color: var(--temple-teal-dark) !important;
+    border-color: #1a5f7a !important;
 }
 
 .stRadio [role="radio"][aria-checked="true"]::before {
-    background: var(--temple-teal-dark) !important;
+    background: #1a5f7a !important;
 }
 
-/* ── Checkboxes ── */
-/* Label text: dark teal */
+/* Checkboxes */
 .stCheckbox label,
 .stCheckbox span,
 .stCheckbox > label > div {
-    color: var(--temple-teal-dark) !important;
-    font-family: 'Source Sans 3', sans-serif !important;
+    color: #1a5f7a !important;
 }
 
-/* Unchecked box: dark teal background, dark teal border */
 .stCheckbox [role="checkbox"] {
-    background: var(--temple-teal-dark) !important;
-    border-color: var(--temple-teal-dark) !important;
+    background: #1a5f7a !important;
+    border-color: #1a5f7a !important;
     border-radius: 3px !important;
 }
 
-/* Checked box: white background, dark teal border */
 .stCheckbox [role="checkbox"][aria-checked="true"] {
     background: white !important;
-    border-color: var(--temple-teal-dark) !important;
+    border-color: #1a5f7a !important;
 }
 
-/* Checkmark SVG inside the checked box — re-show it and color it dark teal */
 .stCheckbox [role="checkbox"][aria-checked="true"] svg {
     display: block !important;
-    color: var(--temple-teal-dark) !important;
-    fill: var(--temple-teal-dark) !important;
-    stroke: var(--temple-teal-dark) !important;
+    color: #1a5f7a !important;
+    fill: #1a5f7a !important;
+    stroke: #1a5f7a !important;
 }
 
-/* ── Alert / Notification Messages ── */
-/* Base: white background, dark teal font, no border by default */
+/* Alerts */
 [data-testid="stAlert"],
 .stAlert {
     border: none !important;
     background: white !important;
     border-radius: 4px !important;
-    color: var(--temple-teal-dark) !important;
+    color: #1a5f7a !important;
 }
 
 [data-testid="stAlert"] p,
 [data-testid="stAlert"] div,
 .stAlert p,
 .stAlert div {
-    color: var(--temple-teal-dark) !important;
+    color: #1a5f7a !important;
     font-family: 'Source Sans 3', sans-serif !important;
 }
 
-/* Suppress all alert SVG icons */
-[data-testid="stAlert"] svg {
-    display: none !important;
-}
+[data-testid="stAlert"] svg { display: none !important; }
+[data-testid="stAlert"] { border-left: none !important; }
 
-/* Remove left-border stripe from base rule (per-type rules add it back) */
-[data-testid="stAlert"] {
-    border-left: none !important;
-}
-
-/* Info — white background, dark teal font, custom circle "i" icon */
 [data-testid="stAlert"][data-type="info"],
 .stAlert.stInfo {
     background: white !important;
-    color: var(--temple-teal-dark) !important;
+    color: #1a5f7a !important;
 }
 
-[data-testid="stAlert"][data-type="info"] p,
-[data-testid="stAlert"][data-type="info"] div,
-.stAlert.stInfo p,
-.stAlert.stInfo div {
-    color: var(--temple-teal-dark) !important;
-}
-
-/* Custom info circle icon */
 [data-testid="stAlert"][data-type="info"]::before,
 .element-container .stAlert.stInfo::before {
     content: 'i';
@@ -241,10 +242,9 @@ h3 {
     width: 1.25rem;
     height: 1.25rem;
     min-width: 1.25rem;
-    background: var(--temple-teal-mid) !important;
+    background: #2a7fa0 !important;
     color: white !important;
     border-radius: 50%;
-    font-family: 'Source Sans 3', sans-serif;
     font-style: italic;
     font-size: 0.8rem;
     font-weight: 700;
@@ -253,65 +253,39 @@ h3 {
     float: left;
 }
 
-/* Success — white background, dark teal font, teal left stripe */
 [data-testid="stAlert"][data-type="success"],
 .stAlert.stSuccess {
-    border-left: 4px solid var(--temple-teal-mid) !important;
+    border-left: 4px solid #2a7fa0 !important;
     background: white !important;
-    color: var(--temple-teal-dark) !important;
 }
 
-[data-testid="stAlert"][data-type="success"] p,
-[data-testid="stAlert"][data-type="success"] div,
-.stAlert.stSuccess p,
-.stAlert.stSuccess div {
-    color: var(--temple-teal-dark) !important;
-}
-
-/* Warning — white background, dark teal font, orange left stripe */
 [data-testid="stAlert"][data-type="warning"] {
-    border-left: 4px solid var(--temple-orange) !important;
+    border-left: 4px solid #e07b2a !important;
     background: white !important;
-    color: var(--temple-teal-dark) !important;
 }
 
-[data-testid="stAlert"][data-type="warning"] p,
-[data-testid="stAlert"][data-type="warning"] div {
-    color: var(--temple-teal-dark) !important;
-}
-
-/* Error — white background, dark teal font, red left stripe */
 [data-testid="stAlert"][data-type="error"] {
     border-left: 4px solid #c0392b !important;
     background: white !important;
-    color: var(--temple-teal-dark) !important;
 }
 
-[data-testid="stAlert"][data-type="error"] p,
-[data-testid="stAlert"][data-type="error"] div {
-    color: var(--temple-teal-dark) !important;
-}
-
-/* ── Expanders ── */
+/* Expanders */
 details,
 [data-testid="stExpander"] {
-    border: 1px solid var(--temple-teal-dark) !important;
+    border: 1px solid #1a5f7a !important;
     border-radius: 4px !important;
     background: white !important;
 }
 
 [data-testid="stExpander"] summary,
 details summary {
-    color: var(--temple-teal-dark) !important;
-    font-family: 'Source Sans 3', sans-serif !important;
+    color: #1a5f7a !important;
     font-weight: 600 !important;
     background: white !important;
 }
 
 [data-testid="stExpander"] summary svg,
-details summary svg {
-    display: none !important;
-}
+details summary svg { display: none !important; }
 
 [data-testid="stExpander"] > div,
 details > div {
@@ -319,15 +293,12 @@ details > div {
     color: #2c3e50 !important;
 }
 
-/* ── Sidebar — white background, black bold font ── */
-[data-testid="stSidebar"] {
+/* Sidebar */
+section[data-testid="stSidebar"] > div {
     background: white !important;
-    color: black !important;
 }
 
-[data-testid="stSidebar"] * {
-    color: black !important;
-}
+[data-testid="stSidebar"] * { color: black !important; }
 
 [data-testid="stSidebar"] label,
 [data-testid="stSidebar"] span,
@@ -336,31 +307,31 @@ details > div {
     font-weight: 700 !important;
 }
 
-/* Sidebar buttons: same dark teal style as main content */
 [data-testid="stSidebar"] .stButton > button {
-    background: var(--temple-teal-dark) !important;
+    background: #1a5f7a !important;
     color: white !important;
-    border: 1px solid var(--temple-teal-dark) !important;
+    border: 1px solid #1a5f7a !important;
     font-weight: 700 !important;
 }
 
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: var(--temple-teal-dark) !important;
-    color: white !important;
-    border: 2.5px solid var(--temple-teal-dark) !important;
+    border-width: 2.5px !important;
 }
 
-/* ── Remove icons globally (except favicon, password eye, checkbox mark) ── */
-
-/* Hide decorative button icons but not the password visibility toggle */
+/* Hide decorative chrome */
 .stButton > button svg:not([data-testid="stPasswordEye"]) {
     display: none !important;
 }
 
-/* Hide Streamlit chrome: toolbar, decoration, footer, main menu */
 [data-testid="stToolbar"],
 [data-testid="stDecoration"],
 footer,
 #MainMenu {
     display: none !important;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }

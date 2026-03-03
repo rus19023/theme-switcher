@@ -1,17 +1,7 @@
 /* 
-    rose_gold.css
-   ============================================================================
-   ROSE GOLD THEME - Elegant Luxury
-   ============================================================================
-*/
-
-/* 
-    .css
-   ============================================================================
-    THEME
-   ============================================================================
-   @theme-name: ROSE GOLD 
-   @theme-icon: 
+    rosegold.css
+   @theme-name: Rosegold
+   @theme-icon: 💛
    @theme-description: Elegant Luxury
 */
 
@@ -158,6 +148,13 @@
         #d4af37,
         #d4a5a5,
         transparent);
+    
+        --theme-control-fg: var(--theme-text-primary);
+        --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+        --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+      
+        --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+        --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
 
 /* ============================================================================

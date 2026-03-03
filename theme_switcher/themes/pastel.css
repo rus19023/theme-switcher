@@ -1,199 +1,214 @@
-/* Pastel Dreams Theme */
-
+/* Pastel Dreams Theme 
+   pastel.css
+  @theme-name: pastel
+  @theme-icon: 💗
+  @theme-description: Soft pastel colors
+*/
 
 @import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
 
 :root {
-    --pastel-bg: #fef5ff;
-    --pastel-lavender: #e0b0ff;
-    --pastel-pink: #ffc8dd;
-    --pastel-blue: #a8dadc;
-    --pastel-peach: #ffd6a5;
-    --pastel-mint: #caffbf;
-    --pastel-text: #5a5a6a;
+    /* App & Sidebar */
+    --theme-app-bg:
+        radial-gradient(circle at 10% 20%, rgba(194, 136, 255, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 160, 200, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(130, 200, 210, 0.12) 0%, transparent 70%),
+        linear-gradient(135deg, #ede0f5, #f5e8f0);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #e8d8f0;
+    --theme-bg-card:            #f5eefb;
+    --theme-sidebar-text:       #6a4a7a;
+
+    /* Colors */
+    --theme-color-primary:      #c288ff;
+    --theme-color-secondary:    #ff9ec4;
+
+    /* Text Colors */
+    --theme-text-primary:       #4a3a5a;
+    --theme-text-secondary:     #5a4a6a;
+    --theme-text-h1:            #9b6bc5;
+    --theme-text-h2:            #8a5aaa;
+    --theme-text-h3:            #a07ab8;
+
+    /* Fonts */
+    --theme-font-primary:       'DM Sans', sans-serif;
+    --theme-font-h1:            'Playfair Display', serif;
+    --theme-font-h2:            'Playfair Display', serif;
+    --theme-font-h3:            'DM Sans', sans-serif;
+
+    /* Font Sizes */
+    --theme-size-h1:            3.5rem;
+    --theme-size-h2:            2.2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.8rem;
+    --theme-size-metric-label:  0.85rem;
+
+    /* Font Weights */
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          700;
+    --theme-weight-h3:          700;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+
+    /* Borders */
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #ff9ec4;
+
+    /* Border Radius */
+    --theme-radius-sm:          15px;
+    --theme-radius-md:          20px;
+    --theme-radius-button:      25px;
+    --theme-radius-input:       16px;
+    --theme-radius-card:        20px;
+
+    /* Shadows */
+    --theme-shadow-button:      0 4px 15px rgba(194, 136, 255, 0.35);
+    --theme-shadow-button-hover: 0 6px 20px rgba(194, 136, 255, 0.5);
+    --theme-shadow-card:        0 4px 15px rgba(194, 136, 255, 0.2);
+    --theme-shadow-card-hover:  0 8px 25px rgba(255, 158, 196, 0.3);
+    --theme-shadow-input-focus: 0 0 0 4px rgba(255, 158, 196, 0.25);
+    --theme-shadow-text-h1:     none;
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+
+    /* Text Transforms & Letter Spacing */
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        none;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       normal;
+
+    /* Animations */
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+
+    /* Spacing */
+    --theme-padding-button:     14px 36px;
+    --theme-padding-input:      12px 18px;
+    --theme-padding-card:       1.5rem;
+
+    /* Buttons */
+    --theme-button-bg:          #c288ff;
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      transparent;
+    --theme-button-border-width: 0;
+
+    /* Inputs */
+    --theme-input-bg:           #f5eefb;
+    --theme-input-border:       #c288ff;
+    --theme-input-border-focus: #ff9ec4;
+    --theme-input-text:         #4a3a5a;
+    --theme-input-placeholder:  rgba(90, 74, 106, 0.4);
+
+    /* Tabs */
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(194, 136, 255, 0.12);
+    --theme-tab-bg-active:      #c288ff;
+    --theme-tab-text:           rgba(74, 58, 90, 0.6);
+    --theme-tab-text-hover:     #8a5aaa;
+    --theme-tab-text-active:    #ffffff;
+    --theme-tab-border:         #c288ff;
+
+    /* HR */
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #c288ff;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
 
-.stApp {
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(224, 176, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(255, 200, 221, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(168, 218, 220, 0.1) 0%, transparent 70%),
-        linear-gradient(135deg, #fef5ff, #fff8f0);
-    font-family: 'DM Sans', sans-serif;
-    color: var(--pastel-text);
+/* ============================================================================
+   PASTEL-UNIQUE RULES
+   ============================================================================ */
+
+/* Gradient HR */
+hr {
+    background: linear-gradient(90deg,
+        transparent,
+        #c288ff,
+        #ff9ec4,
+        #8adce0,
+        transparent) !important;
+    margin: 2.5rem 0 !important;
 }
 
+/* H1 gradient text — can't be done via variable */
 h1 {
-    font-family: 'Playfair Display', serif !important;
-    font-weight: 700 !important;
-    font-size: 3.5rem !important;
-    background: linear-gradient(135deg, var(--pastel-lavender), var(--pastel-pink), var(--pastel-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem !important;
+    background: linear-gradient(135deg, #c288ff, #ff9ec4, #8adce0) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
 }
 
-h2 {
-    font-family: 'Playfair Display', serif !important;
-    font-weight: 700 !important;
-    font-size: 2.2rem !important;
-    color: #9b7bb9 !important;
-}
-
-h3 {
-    font-family: 'DM Sans', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 1.3rem !important;
-    color: #ba9bc5 !important;
-}
-
-p, label {
-    color: var(--pastel-text);
-    font-size: 1rem;
-    line-height: 1.8;
-    font-weight: 400;
-}
-
+/* Button gradient */
 .stButton > button {
-    background: linear-gradient(135deg, var(--pastel-lavender), var(--pastel-pink)) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 25px !important;
-    padding: 14px 36px !important;
-    font-family: 'DM Sans', sans-serif !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 15px rgba(224, 176, 255, 0.3) !important;
+    background: linear-gradient(135deg, #c288ff, #ff9ec4) !important;
 }
 
 .stButton > button:hover {
+    background: linear-gradient(135deg, #b070ee, #ff80b4) !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(224, 176, 255, 0.4) !important;
 }
 
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: white !important;
-    border: 2px solid var(--pastel-lavender) !important;
-    border-radius: 16px !important;
-    color: var(--pastel-text) !important;
-    padding: 12px 18px !important;
-    font-family: 'DM Sans', sans-serif !important;
-    transition: all 0.3s ease !important;
-}
-
+/* Input focus background */
 .stTextInput > div > div > input:focus,
 .stTextArea > div > div > textarea:focus {
-    outline: none !important;
-    border-color: var(--pastel-pink) !important;
-    box-shadow: 0 0 0 4px rgba(255, 200, 221, 0.2) !important;
-    background: #fffbfe !important;
+    background: #fdf5ff !important;
 }
 
-.stTextInput > div > div > input::placeholder {
-    color: rgba(90, 90, 106, 0.4) !important;
-}
-
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
-    color: #9b7bb9 !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-}
-
-[data-testid="metric-container"] {
-    background: white !important;
-    border: 2px solid var(--pastel-lavender) !important;
-    border-radius: 20px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 4px 15px rgba(224, 176, 255, 0.15) !important;
-    transition: all 0.3s ease;
-}
-
-[data-testid="metric-container"]:hover {
-    border-color: var(--pastel-pink) !important;
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(255, 200, 221, 0.25) !important;
-}
-
+/* Metric value gradient text */
 div[data-testid="stMetricValue"] {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 2.8rem !important;
-    font-weight: 700 !important;
-    background: linear-gradient(135deg, var(--pastel-lavender), var(--pastel-pink));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, #c288ff, #ff9ec4) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
 }
 
+/* Metric label color */
 div[data-testid="stMetricLabel"] {
-    color: #9b7bb9 !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #8a5aaa !important;
 }
 
-.stTabs [data-baseweb="tab-list"] {
-    background: white;
-    border: 2px solid var(--pastel-lavender);
-    border-radius: 20px;
-    padding: 6px;
+/* Metric card hover scale */
+[data-testid="metric-container"]:hover {
+    transform: translateY(-4px) scale(1.02) !important;
 }
 
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: none;
-    border-radius: 15px;
-    color: rgba(90, 90, 106, 0.6);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: #9b7bb9;
-    background: rgba(224, 176, 255, 0.1);
-}
-
+/* Active tab gradient */
 .stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, var(--pastel-lavender), var(--pastel-pink)) !important;
-    color: white !important;
+    background: linear-gradient(135deg, #c288ff, #ff9ec4) !important;
 }
 
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--pastel-lavender),
-        var(--pastel-pink),
-        var(--pastel-blue),
-        transparent
-    );
-    margin: 2.5rem 0;
-}
-
+/* Gradient scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #fef5ff;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--pastel-lavender), var(--pastel-pink));
+    background: linear-gradient(180deg, #c288ff, #ff9ec4) !important;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--pastel-pink), var(--pastel-blue));
+    background: linear-gradient(180deg, #ff9ec4, #8adce0) !important;
 }

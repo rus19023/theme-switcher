@@ -164,6 +164,13 @@
         #ff2d95,
         #05d9e8,
         transparent);
+    
+        --theme-control-fg: var(--theme-text-primary);
+        --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+        --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+      
+        --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+        --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
 
 /* ============================================================================

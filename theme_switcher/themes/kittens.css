@@ -1,5 +1,218 @@
 /* Kittens Theme - Soft and playful */
 
+/* 
+   kittens.css
+   @theme-name: Kittens
+   @theme-icon: 😽
+   @theme-description: Soft, dreamy and playful
+*/
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Gochi+Hand&display=swap');
+
+:root {
+    /* App & Sidebar */
+    --theme-app-bg:
+        radial-gradient(circle at 80% 20%, rgba(255, 192, 203, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(184, 184, 184, 0.12) 0%, transparent 40%),
+        linear-gradient(135deg, #fafafa 0%, #fefefe 50%, #f5f5f5 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #fefefe;
+    --theme-bg-card:            #fefefe;
+    --theme-sidebar-text:       #6b7280;
+
+    /* Colors */
+    --theme-color-primary:      #ffc0cb;
+    --theme-color-secondary:    #ffb3d9;
+
+    /* Text Colors */
+    --theme-text-primary:       #6b7280;
+    --theme-text-secondary:     #6b7280;
+    --theme-text-h1:            #ffc0cb;
+    --theme-text-h2:            #ffb3d9;
+    --theme-text-h3:            #6b7280;
+
+    /* Fonts */
+    --theme-font-primary:       'Gochi Hand', cursive;
+    --theme-font-h1:            'Dancing Script', cursive;
+    --theme-font-h2:            'Dancing Script', cursive;
+    --theme-font-h3:            'Dancing Script', cursive;
+
+    /* Font Sizes */
+    --theme-size-h1:            3.8rem;
+    --theme-size-h2:            2.2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1.05rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  3.5rem;
+    --theme-size-metric-label:  0.85rem;
+
+    /* Font Weights */
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          700;
+    --theme-weight-h3:          700;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+
+    /* Borders */
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #ffc0cb;
+
+    /* Border Radius */
+    --theme-radius-sm:          15px;
+    --theme-radius-md:          20px;
+    --theme-radius-button:      50px;
+    --theme-radius-input:       20px;
+    --theme-radius-card:        25px;
+
+    /* Shadows */
+    --theme-shadow-button:      0 4px 15px rgba(255, 192, 203, 0.3);
+    --theme-shadow-button-hover: 0 6px 20px rgba(255, 192, 203, 0.45);
+    --theme-shadow-card:        0 4px 20px rgba(184, 184, 184, 0.15);
+    --theme-shadow-card-hover:  0 8px 30px rgba(255, 192, 203, 0.25);
+    --theme-shadow-input-focus: 0 0 0 4px rgba(255, 192, 203, 0.2);
+    --theme-shadow-text-h1:     2px 2px 8px rgba(255, 192, 203, 0.3);
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+
+    /* Text Transforms & Letter Spacing */
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        none;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       normal;
+
+    /* Animations */
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+
+    /* Spacing */
+    --theme-padding-button:     16px 40px;
+    --theme-padding-input:      14px 20px;
+    --theme-padding-card:       1.5rem;
+
+    /* Buttons */
+    --theme-button-bg:          #ffc0cb;
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      transparent;
+    --theme-button-border-width: 0;
+
+    /* Inputs */
+    --theme-input-bg:           #fefefe;
+    --theme-input-border:       #e8e8e8;
+    --theme-input-border-focus: #ffc0cb;
+    --theme-input-text:         #6b7280;
+    --theme-input-placeholder:  #b8b8b8;
+
+    /* Tabs */
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(255, 192, 203, 0.15);
+    --theme-tab-bg-active:      #ffc0cb;
+    --theme-tab-text:           #6b7280;
+    --theme-tab-text-hover:     #6b7280;
+    --theme-tab-text-active:    #ffffff;
+    --theme-tab-border:         #e8e8e8;
+
+    /* HR */
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #ffc0cb;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
+}
+
+/* ============================================================================
+   KITTENS-UNIQUE RULES
+   ============================================================================ */
+
+/* Gradient HR */
+hr {
+    background: linear-gradient(90deg,
+        transparent,
+        #e8e8e8,
+        #ffc0cb,
+        #ffb3d9,
+        #ffc0cb,
+        #e8e8e8,
+        transparent) !important;
+    margin: 2rem 0 !important;
+}
+
+/* Sidebar pink border */
+[data-testid="stSidebar"] {
+    border-right: 2px solid #ffc0cb !important;
+}
+
+/* H1 gradient text */
+h1 {
+    background: linear-gradient(135deg, #ffc0cb, #b8b8b8, #6b7280) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Button gradient */
+.stButton > button {
+    background: linear-gradient(135deg, #ffc0cb, #ffb3d9) !important;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #ffaabb, #ff99cc) !important;
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Active tab gradient */
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #ffc0cb, #ffb3d9) !important;
+}
+
+/* Metric value gradient */
+div[data-testid="stMetricValue"] {
+    background: linear-gradient(135deg, #ffc0cb, #ffb3d9) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Metric card playful hover */
+[data-testid="metric-container"]:hover {
+    transform: translateY(-4px) rotate(1deg) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff5f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ffc0cb, #b8b8b8) !important;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffb3d9 !important;
+}
+
+
+
 
 @import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Comfortaa:wght@300;400;700&family=Meow+Script:wght@300;400;600;700&display=swap');

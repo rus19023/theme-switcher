@@ -1,191 +1,147 @@
-/* Hobbit (The Shire) Theme - Cozy hobbit hole vibes */
-
+/* 
+   hobbit.css
+   ============================================================================
+   HOBBIT THEME
+   ============================================================================
+   @theme-name: Hobbit
+   @theme-icon: 🧙
+   @theme-description: Cozy hobbit hole vibes
+*/
 
 @import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Crimson+Text:wght@400;600;700&display=swap');
 
 :root {
-    --shire-earth: #2d2416;
-    --shire-wood: #4a3728;
-    --shire-moss: #5a7247;
-    --shire-grass: #7fa650;
-    --shire-leaf: #a8d06f;
-    --shire-butter: #f4e5b8;
-    --shire-cream: #fef9e7;
-}
-
-.stApp {
-    background: 
+    --theme-app-bg:
         radial-gradient(circle at 20% 80%, rgba(90, 114, 71, 0.2) 0%, transparent 40%),
         radial-gradient(circle at 80% 20%, rgba(74, 55, 40, 0.15) 0%, transparent 40%),
-        linear-gradient(135deg, #3a2c1e 0%, var(--shire-earth) 50%, #342518 100%);
-    font-family: 'Merriweather', serif;
-    color: var(--shire-cream);
-}
-
-[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, rgba(74, 55, 40, 0.6) 0%, rgba(45, 36, 22, 0.8) 100%) !important;
-}
-
-h1 {
-    font-family: 'Crimson Text', serif !important;
-    font-weight: 700 !important;
-    font-size: 3.5rem !important;
-    color: var(--shire-leaf) !important;
-    margin-bottom: 0.5rem !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-h2 {
-    font-family: 'Crimson Text', serif !important;
-    font-weight: 600 !important;
-    font-size: 2rem !important;
-    color: var(--shire-grass) !important;
-}
-
-h3 {
-    font-family: 'Merriweather', serif !important;
-    font-weight: 700 !important;
-    font-size: 1.3rem !important;
-    color: var(--shire-butter) !important;
-}
-
-p, label {
-    color: var(--shire-cream);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    font-weight: 300;
-}
-
-.stButton > button {
-    background: linear-gradient(135deg, var(--shire-grass), var(--shire-moss)) !important;
-    color: var(--shire-cream) !important;
-    border: 2px solid var(--shire-wood) !important;
-    border-radius: 20px !important;
-    padding: 14px 36px !important;
-    font-family: 'Crimson Text', serif !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 12px rgba(90, 114, 71, 0.4) !important;
-}
-
-.stButton > button:hover {
-    background: linear-gradient(135deg, var(--shire-leaf), var(--shire-grass)) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(127, 166, 80, 0.5) !important;
-}
-
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: rgba(74, 55, 40, 0.4) !important;
-    border: 2px solid var(--shire-wood) !important;
-    border-radius: 12px !important;
-    color: var(--shire-cream) !important;
-    padding: 12px 18px !important;
-    font-family: 'Merriweather', serif !important;
-    transition: all 0.3s ease !important;
-}
-
-.stTextInput > div > div > input:focus,
-.stTextArea > div > div > textarea:focus {
-    outline: none !important;
-    border-color: var(--shire-grass) !important;
-    box-shadow: 0 0 15px rgba(127, 166, 80, 0.3) !important;
-}
-
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
-    color: var(--shire-butter) !important;
-    font-weight: 600 !important;
-}
-
-[data-testid="metric-container"] {
-    background: rgba(74, 55, 40, 0.3) !important;
-    border: 2px solid var(--shire-wood) !important;
-    border-radius: 16px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 4px 20px rgba(45, 36, 22, 0.4) !important;
-    transition: all 0.3s ease;
-}
-
-[data-testid="metric-container"]:hover {
-    border-color: var(--shire-grass) !important;
-    box-shadow: 0 6px 25px rgba(90, 114, 71, 0.4) !important;
-    transform: translateY(-3px);
-}
-
-div[data-testid="stMetricValue"] {
-    font-family: 'Crimson Text', serif !important;
-    font-size: 3rem !important;
-    font-weight: 700 !important;
-    color: var(--shire-leaf) !important;
-}
-
-div[data-testid="stMetricLabel"] {
-    color: var(--shire-butter) !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: rgba(74, 55, 40, 0.3);
-    border: 2px solid var(--shire-wood);
-    border-radius: 12px;
-    padding: 6px;
-}
-
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: none;
-    border-radius: 8px;
-    color: rgba(254, 249, 231, 0.6);
-    font-family: 'Merriweather', serif;
-    font-weight: 600;
-    padding: 12px 24px;
-    transition: all 0.3s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: var(--shire-cream);
-    background: rgba(90, 114, 71, 0.2);
-}
-
-.stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, var(--shire-grass), var(--shire-moss)) !important;
-    color: var(--shire-cream) !important;
+        linear-gradient(135deg, #3a2c1e 0%, #2d2416 50%, #342518 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       rgba(74, 55, 40, 0.3);
+    --theme-bg-card:            rgba(74, 55, 40, 0.3);
+    --theme-sidebar-text:       #a8d06f;
+    --theme-color-primary:      #7fa650;
+    --theme-color-secondary:    #5a7247;
+    --theme-text-primary:       #fef9e7;
+    --theme-text-secondary:     #fef9e7;
+    --theme-text-h1:            #a8d06f;
+    --theme-text-h2:            #7fa650;
+    --theme-text-h3:            #f4e5b8;
+    --theme-font-primary:       'Merriweather', serif;
+    --theme-font-h1:            'Crimson Text', serif;
+    --theme-font-h2:            'Crimson Text', serif;
+    --theme-font-h3:            'Merriweather', serif;
+    --theme-size-h1:            3.5rem;
+    --theme-size-h2:            2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1.05rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  3rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          700;
+    --theme-weight-body:        300;
+    --theme-weight-bold:        600;
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #7fa650;
+    --theme-radius-sm:          8px;
+    --theme-radius-md:          12px;
+    --theme-radius-button:      20px;
+    --theme-radius-input:       12px;
+    --theme-radius-card:        16px;
+    --theme-shadow-button:      0 4px 12px rgba(90, 114, 71, 0.4);
+    --theme-shadow-button-hover: 0 6px 16px rgba(127, 166, 80, 0.5);
+    --theme-shadow-card:        0 4px 20px rgba(45, 36, 22, 0.4);
+    --theme-shadow-card-hover:  0 6px 25px rgba(90, 114, 71, 0.4);
+    --theme-shadow-input-focus: 0 0 15px rgba(127, 166, 80, 0.3);
+    --theme-shadow-text-h1:     2px 2px 4px rgba(0, 0, 0, 0.4);
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       normal;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     14px 36px;
+    --theme-padding-input:      12px 18px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          linear-gradient(135deg, #7fa650, #5a7247);
+    --theme-button-text:        #fef9e7;
+    --theme-button-border:      #4a3728;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           rgba(74, 55, 40, 0.4);
+    --theme-input-border:       #4a3728;
+    --theme-input-border-focus: #7fa650;
+    --theme-input-text:         #fef9e7;
+    --theme-input-placeholder:  rgba(254, 249, 231, 0.4);
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(90, 114, 71, 0.2);
+    --theme-tab-bg-active:      linear-gradient(135deg, #7fa650, #5a7247);
+    --theme-tab-text:           rgba(254, 249, 231, 0.6);
+    --theme-tab-text-hover:     #fef9e7;
+    --theme-tab-text-active:    #fef9e7;
+    --theme-tab-border:         #4a3728;
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #5a7247;
 }
 
 hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--shire-wood),
-        var(--shire-moss),
-        var(--shire-wood),
-        transparent
-    );
-    margin: 2rem 0;
+    background: linear-gradient(90deg,
+        transparent, #4a3728, #5a7247, #7fa650, #5a7247, #4a3728, transparent) !important;
+    margin: 2rem 0 !important;
 }
 
-::-webkit-scrollbar {
-    width: 12px;
+.stButton > button:hover {
+    background: linear-gradient(135deg, #a8d06f, #7fa650) !important;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--shire-earth);
+section[data-testid="stSidebar"] > div {
+    border-right: 2px solid #5a7247 !important;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--shire-moss), var(--shire-wood));
-    border-radius: 6px;
+    background: linear-gradient(180deg, #5a7247, #4a3728) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--shire-grass);
+    background: #7fa650 !important;
+}
+
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 10% 90%, rgba(90, 114, 71, 0.06) 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 10%, rgba(74, 55, 40, 0.06) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stApp::after {
+    content: '🌿';
+    position: fixed;
+    bottom: 20px; right: 24px;
+    font-size: 6rem;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }

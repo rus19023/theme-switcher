@@ -1,204 +1,115 @@
-/* Nord Arctic Theme */
-
+/* 
+   nord.css
+   @theme-name: Nord
+   @theme-icon: ❄️
+   @theme-description: Arctic calm with cool blue tones
+*/
 
 @import url('theme_base.css');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Tulpen+One&display=swap');
 
 :root {
-    /* Nord Polar Night */
-    --nord0: #2e3440;
-    --nord1: #3b4252;
-    --nord2: #434c5e;
-    --nord3: #4c566a;
-    /* Nord Snow Storm */
-    --nord4: #d8dee9;
-    --nord5: #e5e9f0;
-    --nord6: #eceff4;
-    /* Nord Frost */
-    --nord7: #8fbcbb;
-    --nord8: #88c0d0;
-    --nord9: #81a1c1;
-    --nord10: #5e81ac;
-    /* Nord Aurora */
-    --nord11: #bf616a;
-    --nord12: #d08770;
-    --nord13: #ebcb8b;
-    --nord14: #a3be8c;
-    --nord15: #b48ead;
+    --theme-app-bg:             linear-gradient(135deg, #3b4252 0%, #2e3440 50%, #434c5e 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #3b4252;
+    --theme-bg-card:            #3b4252;
+    --theme-sidebar-text:       #d8dee9;
+    --theme-color-primary:      #5e81ac;
+    --theme-color-secondary:    #81a1c1;
+    --theme-text-primary:       #d8dee9;
+    --theme-text-secondary:     #d8dee9;
+    --theme-text-h1:            #eceff4;
+    --theme-text-h2:            #88c0d0;
+    --theme-text-h3:            #8fbcbb;
+    --theme-font-primary:       'Tulpen One', sans-serif;
+    --theme-font-h1:            'Iceland', sans-serif;
+    --theme-font-h2:            'Iceland', sans-serif;
+    --theme-font-h3:            'Iceland', sans-serif;
+    --theme-size-h1:            3.5rem;
+    --theme-size-h2:            2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.5rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #88c0d0;
+    --theme-radius-sm:          4px;
+    --theme-radius-md:          6px;
+    --theme-radius-button:      6px;
+    --theme-radius-input:       6px;
+    --theme-radius-card:        8px;
+    --theme-shadow-button:      0 4px 12px rgba(94, 129, 172, 0.3);
+    --theme-shadow-button-hover: 0 6px 16px rgba(94, 129, 172, 0.4);
+    --theme-shadow-card:        0 4px 12px rgba(0, 0, 0, 0.2);
+    --theme-shadow-card-hover:  0 6px 16px rgba(136, 192, 208, 0.3);
+    --theme-shadow-input-focus: 0 0 0 3px rgba(136, 192, 208, 0.2);
+    --theme-shadow-text-h1:     0 2px 10px rgba(136, 192, 208, 0.3);
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        none;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           -1px;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       1px;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.2s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     12px 32px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          #5e81ac;
+    --theme-button-text:        #eceff4;
+    --theme-button-border:      transparent;
+    --theme-button-border-width: 0px;
+    --theme-input-bg:           #3b4252;
+    --theme-input-border:       #4c566a;
+    --theme-input-border-focus: #88c0d0;
+    --theme-input-text:         #d8dee9;
+    --theme-input-placeholder:  #4c566a;
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       #434c5e;
+    --theme-tab-bg-active:      #5e81ac;
+    --theme-tab-text:           #d8dee9;
+    --theme-tab-text-hover:     #eceff4;
+    --theme-tab-text-active:    #eceff4;
+    --theme-tab-border:         #4c566a;
+    --theme-hr-height:          1px;
+    --theme-hr-bg:              #4c566a;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
 
-.stApp {
-    background: linear-gradient(135deg, var(--nord1) 0%, var(--nord0) 50%, var(--nord2) 100%);
-    font-family: 'Inter', sans-serif;
-    color: var(--nord4);
-}
-
-h1 {
-    font-family: 'JetBrains Mono', monospace !important;
-    font-weight: 700 !important;
-    font-size: 3.5rem !important;
-    color: var(--nord6) !important;
-    letter-spacing: -1px !important;
-    margin-bottom: 0.5rem !important;
-    text-shadow: 0 2px 10px rgba(136, 192, 208, 0.3);
-}
-
-h2 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 2rem !important;
-    color: var(--nord8) !important;
-}
-
-h3 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1.3rem !important;
-    color: var(--nord7) !important;
-}
-
-p, label {
-    color: var(--nord4);
-    font-size: 1rem;
-    line-height: 1.7;
-    font-weight: 400;
-}
-
-.stButton > button {
-    background: var(--nord10) !important;
-    color: var(--nord6) !important;
-    border: none !important;
-    border-radius: 6px !important;
-    padding: 12px 32px !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    font-weight: 600 !important;
-    transition: all 0.2s ease !important;
-    box-shadow: 0 4px 12px rgba(94, 129, 172, 0.3) !important;
-}
-
-.stButton > button:hover {
-    background: var(--nord9) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(94, 129, 172, 0.4) !important;
-}
-
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: var(--nord1) !important;
-    border: 2px solid var(--nord3) !important;
-    border-radius: 6px !important;
-    color: var(--nord4) !important;
-    padding: 12px 16px !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    transition: all 0.2s ease !important;
+hr {
+    background: linear-gradient(90deg,
+        transparent, #4c566a, #88c0d0, #4c566a, transparent) !important;
 }
 
 .stTextInput > div > div > input:focus,
 .stTextArea > div > div > textarea:focus {
-    outline: none !important;
-    border-color: var(--nord8) !important;
-    box-shadow: 0 0 0 3px rgba(136, 192, 208, 0.2) !important;
-    background: var(--nord0) !important;
+    background: #2e3440 !important;
 }
 
-.stTextInput > div > div > input::placeholder {
-    color: var(--nord3) !important;
-}
-
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
-    color: var(--nord8) !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-}
-
-[data-testid="metric-container"] {
-    background: var(--nord1) !important;
-    border: 1px solid var(--nord3) !important;
-    border-radius: 8px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-    transition: all 0.3s ease;
-}
-
-[data-testid="metric-container"]:hover {
-    border-color: var(--nord8) !important;
-    box-shadow: 0 6px 16px rgba(136, 192, 208, 0.3) !important;
-    transform: translateY(-2px);
-}
-
-div[data-testid="stMetricValue"] {
-    font-family: 'JetBrains Mono', monospace !important;
-    font-size: 2.5rem !important;
-    font-weight: 700 !important;
-    color: var(--nord8) !important;
-}
-
-div[data-testid="stMetricLabel"] {
-    color: var(--nord4) !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: var(--nord1);
-    border: 1px solid var(--nord3);
-    border-radius: 6px;
-    padding: 4px;
-}
-
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: none;
-    border-radius: 4px;
-    color: var(--nord4);
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    padding: 10px 20px;
-    transition: all 0.2s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: var(--nord6);
-    background: var(--nord2);
-}
-
-.stTabs [aria-selected="true"] {
-    background: var(--nord10) !important;
-    color: var(--nord6) !important;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--nord3),
-        var(--nord8),
-        var(--nord3),
-        transparent
-    );
-    margin: 2rem 0;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--nord0);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--nord3);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--nord10);
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }

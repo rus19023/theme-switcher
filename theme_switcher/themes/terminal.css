@@ -1,45 +1,179 @@
-/* Terminal Theme */
-
+/* 
+   terminal.css
+   ============================================================================
+   TERMINAL THEME
+   ============================================================================
+   @theme-name: Terminal
+   @theme-icon: 📟
+   @theme-description: Classic green-on-black CRT terminal
+*/
 
 @import url('theme_base.css');
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Fira+Code:wght@400;500;700&display=swap');
 
 :root {
-    --terminal-bg: #0c0c0c;
-    --terminal-green: #00ff41;
+    --theme-app-bg:             #0c0c0c;
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #0f0f0f;
+    --theme-bg-card:            #111111;
+    --theme-sidebar-text:       #00ff41;
+    --theme-color-primary:      #00ff41;
+    --theme-color-secondary:    #00c032;
+    --theme-text-primary:       #00ff41;
+    --theme-text-secondary:     #00c032;
+    --theme-text-h1:            #00ff41;
+    --theme-text-h2:            #00ff41;
+    --theme-text-h3:            #00c032;
+    --theme-font-primary:       'Fira Code', monospace;
+    --theme-font-h1:            'VT323', monospace;
+    --theme-font-h2:            'VT323', monospace;
+    --theme-font-h3:            'VT323', monospace;
+    --theme-size-h1:            4rem;
+    --theme-size-h2:            2.5rem;
+    --theme-size-h3:            1.6rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  3.5rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          400;
+    --theme-weight-h2:          400;
+    --theme-weight-h3:          400;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        500;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #00ff41;
+    --theme-radius-sm:          0px;
+    --theme-radius-md:          0px;
+    --theme-radius-button:      0px;
+    --theme-radius-input:       0px;
+    --theme-radius-card:        0px;
+    --theme-shadow-button:      0 0 8px rgba(0, 255, 65, 0.3);
+    --theme-shadow-button-hover: 0 0 16px rgba(0, 255, 65, 0.6);
+    --theme-shadow-card:        0 0 12px rgba(0, 255, 65, 0.1), inset 0 0 30px rgba(0, 255, 65, 0.02);
+    --theme-shadow-card-hover:  0 0 20px rgba(0, 255, 65, 0.25);
+    --theme-shadow-input-focus: 0 0 12px rgba(0, 255, 65, 0.4);
+    --theme-shadow-text-h1:
+        0 0 7px #00ff41,
+        0 0 14px #00ff41,
+        0 0 28px rgba(0, 255, 65, 0.5);
+    --theme-shadow-text-h2:     0 0 6px rgba(0, 255, 65, 0.6);
+    --theme-shadow-text-h3:     0 0 4px rgba(0, 255, 65, 0.4);
+    --theme-text-transform-h1:           uppercase;
+    --theme-text-transform-h2:           uppercase;
+    --theme-text-transform-h3:           uppercase;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           4px;
+    --theme-letter-spacing-h2:           3px;
+    --theme-letter-spacing-h3:           2px;
+    --theme-letter-spacing-button:       2px;
+    --theme-animation-h1:       textFlicker 5s infinite;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.1s;
+    --theme-transition-speed-fast: 0.05s;
+    --theme-padding-button:     12px 32px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          transparent;
+    --theme-button-text:        #00ff41;
+    --theme-button-border:      #00ff41;
+    --theme-button-border-width: 1px;
+    --theme-input-bg:           #0c0c0c;
+    --theme-input-border:       #00c032;
+    --theme-input-border-focus: #00ff41;
+    --theme-input-text:         #00ff41;
+    --theme-input-placeholder:  rgba(0, 192, 50, 0.4);
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(0, 255, 65, 0.08);
+    --theme-tab-bg-active:      rgba(0, 255, 65, 0.15);
+    --theme-tab-text:           #00c032;
+    --theme-tab-text-hover:     #00ff41;
+    --theme-tab-text-active:    #00ff41;
+    --theme-tab-border:         #00c032;
+    --theme-hr-height:          1px;
+    --theme-hr-bg:              #00c032;
 }
 
-.stApp {
-    background: var(--terminal-bg);
-    font-family: 'Fira Code', monospace;
-    color: var(--terminal-green);
-}
-
-h1 {
-    font-family: 'IBM Plex Mono', monospace !important;
-    font-weight: 700 !important;
-    font-size: 2.5rem !important;
-    color: var(--terminal-green) !important;
-}
-
+/* Blinking prompt on h1 */
 h1::before {
     content: '$ ';
-    animation: blink 1s infinite;
+    animation: blink 1s step-end infinite;
+}
+
+/* > prefix on buttons */
+.stButton > button::before {
+    content: '> ';
+}
+
+.stButton > button:hover {
+    background: rgba(0, 255, 65, 0.08) !important;
+    color: #00ff41 !important;
+}
+
+/* CRT scanline overlay */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px,
+        rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* CRT phosphor glow vignette */
+.stApp::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center,
+        transparent 60%,
+        rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+section[data-testid="stSidebar"] > div {
+    border-right: 1px solid #00c032 !important;
+}
+
+hr {
+    background: linear-gradient(90deg,
+        transparent, #00c032, #00ff41, #00c032, transparent) !important;
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.4) !important;
+}
+
+div[data-testid="stMetricValue"] {
+    text-shadow: 0 0 10px #00ff41, 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: 0 0 6px rgba(0, 255, 65, 0.6);
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
 }
 
-.stButton > button {
-    background: transparent !important;
-    color: var(--terminal-green) !important;
-    border: 1px solid var(--terminal-green) !important;
-    border-radius: 0 !important;
-}
-
-.stButton > button::before {
-    content: '> ';
+@keyframes textFlicker {
+    0%, 95%, 100% { opacity: 1; }
+    96%            { opacity: 0.8; }
+    97%            { opacity: 1; }
+    98%            { opacity: 0.6; }
+    99%            { opacity: 1; }
 }

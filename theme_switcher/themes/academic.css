@@ -1,39 +1,156 @@
-/* Academic Theme */
-
+/* 
+   academic.css
+   @theme-name: Academic
+   @theme-icon: 🎓
+   @theme-description: Classic scholarly paper with editorial typography
+*/
 
 @import url('theme_base.css');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Libre+Franklin:wght@300;400;500;600&display=swap');
 
 :root {
-    --paper: #f5f1e8;
-    --ink: #2b2b2b;
-    --accent: #8b4513;
+    --theme-app-bg:             #f5f1e8;
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #ede8dc;
+    --theme-bg-card:            #faf7f2;
+    --theme-sidebar-text:       #2b2b2b;
+    --theme-color-primary:      #8b4513;
+    --theme-color-secondary:    #5c2d0a;
+    --theme-text-primary:       #2b2b2b;
+    --theme-text-secondary:     #555555;
+    --theme-text-h1:            #2b2b2b;
+    --theme-text-h2:            #2b2b2b;
+    --theme-text-h3:            #8b4513;
+    --theme-font-primary:       'Libre Franklin', sans-serif;
+    --theme-font-h1:            'Playfair Display', serif;
+    --theme-font-h2:            'Playfair Display', serif;
+    --theme-font-h3:            'Playfair Display', serif;
+    --theme-size-h1:            3rem;
+    --theme-size-h2:            2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.85rem;
+    --theme-size-metric-value:  2.8rem;
+    --theme-size-metric-label:  0.8rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #8b4513;
+    --theme-radius-sm:          2px;
+    --theme-radius-md:          4px;
+    --theme-radius-button:      4px;
+    --theme-radius-input:       4px;
+    --theme-radius-card:        4px;
+    --theme-shadow-button:      0 2px 8px rgba(139, 69, 19, 0.2);
+    --theme-shadow-button-hover: 0 4px 16px rgba(139, 69, 19, 0.35);
+    --theme-shadow-card:        0 2px 12px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(139, 69, 19, 0.08);
+    --theme-shadow-card-hover:  0 6px 24px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(139, 69, 19, 0.2);
+    --theme-shadow-input-focus: 0 0 0 3px rgba(139, 69, 19, 0.15);
+    --theme-shadow-text-h1:     none;
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           -0.5px;
+    --theme-letter-spacing-h2:           -0.3px;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       2px;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     12px 32px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          #8b4513;
+    --theme-button-text:        #f5f1e8;
+    --theme-button-border:      #8b4513;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           #faf7f2;
+    --theme-input-border:       #c8bfaa;
+    --theme-input-border-focus: #8b4513;
+    --theme-input-text:         #2b2b2b;
+    --theme-input-placeholder:  #9a9080;
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(139, 69, 19, 0.06);
+    --theme-tab-bg-active:      transparent;
+    --theme-tab-text:           #9a9080;
+    --theme-tab-text-hover:     #2b2b2b;
+    --theme-tab-text-active:    #8b4513;
+    --theme-tab-border:         #c8bfaa;
+    --theme-hr-height:          1px;
+    --theme-hr-bg:              #c8bfaa;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
 
-.stApp {
-    background: var(--paper);
-    font-family: 'Source Sans Pro', sans-serif;
-    color: var(--ink);
-}
+/* Section mark on h1 */
+h1::before { content: '§ '; color: #8b4513; }
 
+/* Ruled border on h1 */
 h1 {
-    font-family: 'Merriweather', serif !important;
-    font-weight: 700 !important;
-    font-size: 3rem !important;
-    color: var(--ink) !important;
-    border-bottom: 3px solid var(--accent);
+    border-bottom: 3px solid #8b4513 !important;
     padding-bottom: 1rem !important;
 }
 
-h1::before {
-    content: '§ ';
-    color: var(--accent);
+/* Left rule on h2 */
+h2 {
+    border-left: 4px solid #8b4513 !important;
+    padding-left: 0.8rem !important;
 }
 
-.stButton > button {
-    background: var(--accent) !important;
-    color: var(--paper) !important;
-    border: 2px solid var(--accent) !important;
-    border-radius: 4px !important;
+h3 { font-style: italic !important; }
+
+hr {
+    background: linear-gradient(90deg,
+        transparent, #c8bfaa, #8b4513, #c8bfaa, transparent) !important;
+    margin: 2.5rem 0 !important;
+}
+
+/* Lined paper texture */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: repeating-linear-gradient(
+        0deg, transparent, transparent 27px,
+        rgba(139, 69, 19, 0.04) 27px, rgba(139, 69, 19, 0.04) 28px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stApp::after {
+    content: '§';
+    position: fixed;
+    bottom: 30px; right: 36px;
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: #8b4513;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+}
+
+section[data-testid="stSidebar"] > div {
+    border-right: 3px solid #8b4513 !important;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }

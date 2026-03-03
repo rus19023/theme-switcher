@@ -1,0 +1,157 @@
+/* 
+   midas.css
+   @theme-name: Midas Touch
+   @theme-icon: 👑
+   @theme-description: Everything turns to gold
+*/
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+:root {
+    --theme-app-bg:
+        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
+        url('https://images.unsplash.com/photo-1610015994502-5c1a5e88f1f5?w=1600&q=80');
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       rgba(30, 22, 0, 0.9);
+    --theme-bg-card:            rgba(26, 18, 0, 0.85);
+    --theme-sidebar-text:       #d4a843;
+    --theme-color-primary:      #c9922a;
+    --theme-color-secondary:    #f0d060;
+    --theme-text-primary:       #e8d5a3;
+    --theme-text-secondary:     #c9a84c;
+    --theme-text-h1:            #f5c842;
+    --theme-text-h2:            #d4a843;
+    --theme-text-h3:            #c9922a;
+    --theme-font-primary:       'Cormorant Garamond', serif;
+    --theme-font-h1:            'Cinzel Decorative', serif;
+    --theme-font-h2:            'Cinzel Decorative', serif;
+    --theme-font-h3:            'Cinzel Decorative', serif;
+    --theme-size-h1:            3.2rem;
+    --theme-size-h2:            1.8rem;
+    --theme-size-h3:            1.4rem;
+    --theme-size-body:          1.1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.5rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          900;
+    --theme-weight-h2:          700;
+    --theme-weight-h3:          700;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #f5c842;
+    --theme-radius-sm:          4px;
+    --theme-radius-md:          8px;
+    --theme-radius-button:      4px;
+    --theme-radius-input:       4px;
+    --theme-radius-card:        8px;
+    --theme-shadow-button:      0 0 12px rgba(197, 148, 42, 0.5), 0 4px 16px rgba(0,0,0,0.4);
+    --theme-shadow-button-hover: 0 0 24px rgba(245, 200, 66, 0.7), 0 0 48px rgba(197, 148, 42, 0.4);
+    --theme-shadow-card:        0 0 20px rgba(197, 148, 42, 0.15), 0 4px 20px rgba(0,0,0,0.5);
+    --theme-shadow-card-hover:  0 0 30px rgba(245, 200, 66, 0.3), 0 0 60px rgba(197, 148, 42, 0.15);
+    --theme-shadow-input-focus: 0 0 12px rgba(245, 200, 66, 0.4), 0 0 24px rgba(197, 148, 42, 0.2);
+    --theme-shadow-text-h1:
+        0 0 10px rgba(245, 200, 66, 0.8),
+        0 0 20px rgba(197, 148, 42, 0.6),
+        2px 2px 4px rgba(0,0,0,0.8);
+    --theme-shadow-text-h2:     0 0 8px rgba(212, 168, 67, 0.6), 1px 1px 3px rgba(0,0,0,0.8);
+    --theme-shadow-text-h3:     0 0 6px rgba(201, 146, 42, 0.5);
+    --theme-text-transform-h1:           uppercase;
+    --theme-text-transform-h2:           uppercase;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           4px;
+    --theme-letter-spacing-h2:           2px;
+    --theme-letter-spacing-h3:           1px;
+    --theme-letter-spacing-button:       2px;
+    --theme-animation-h1:       goldShimmer 4s infinite alternate;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     14px 36px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          transparent;
+    --theme-button-text:        #f5c842;
+    --theme-button-border:      #c9922a;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           rgba(13, 11, 0, 0.8);
+    --theme-input-border:       #6b4f1a;
+    --theme-input-border-focus: #f5c842;
+    --theme-input-text:         #e8d5a3;
+    --theme-input-placeholder:  rgba(201, 168, 76, 0.4);
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(197, 148, 42, 0.1);
+    --theme-tab-bg-active:      rgba(197, 148, 42, 0.2);
+    --theme-tab-text:           rgba(201, 168, 76, 0.5);
+    --theme-tab-text-hover:     #e8d5a3;
+    --theme-tab-text-active:    #f5c842;
+    --theme-tab-border:         #6b4f1a;
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #c9922a;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
+}
+
+hr {
+    background: linear-gradient(90deg,
+        transparent, #6b4f1a, #c9922a, #f5c842, #c9922a, #6b4f1a, transparent) !important;
+}
+
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(197, 148, 42, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(245, 200, 66, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stApp::after {
+    content: '♛';
+    position: fixed;
+    bottom: 20px; right: 28px;
+    font-size: 7rem;
+    color: #c9922a;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stButton > button:hover {
+    background: rgba(197, 148, 42, 0.15) !important;
+    border-color: #f5c842 !important;
+}
+
+.stTabs [aria-selected="true"] {
+    border: 1px solid #c9922a !important;
+    box-shadow: 0 0 10px rgba(197, 148, 42, 0.4) !important;
+}
+
+div[data-testid="stMetricValue"] {
+    text-shadow: 0 0 10px rgba(245, 200, 66, 0.7), 0 0 20px rgba(197, 148, 42, 0.4);
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+}
+
+@keyframes goldShimmer {
+    0%   { text-shadow: 0 0 10px rgba(245,200,66,0.8), 0 0 20px rgba(197,148,42,0.6), 2px 2px 4px rgba(0,0,0,0.8); color: #f5c842; }
+    50%  { text-shadow: 0 0 15px rgba(255,220,80,1.0), 0 0 30px rgba(245,200,66,0.8), 2px 2px 4px rgba(0,0,0,0.8); color: #ffe066; }
+    100% { text-shadow: 0 0 10px rgba(245,200,66,0.8), 0 0 20px rgba(197,148,42,0.6), 2px 2px 4px rgba(0,0,0,0.8); color: #f0c030; }
+}

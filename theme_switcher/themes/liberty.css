@@ -1,0 +1,151 @@
+/* 
+   liberty.css
+   @theme-name: Liberty
+   @theme-icon: 🗽
+   @theme-description: Red, white & blue — bold, clean, patriotic
+*/
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+    /* App backgrounds */
+    --theme-app-bg:             linear-gradient(135deg, #0b1d39 0%, #08162c 55%, #0b1d39 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+
+    /* Surfaces used by your theme_base.css */
+    --theme-bg-secondary:       rgba(11, 29, 57, 0.90);
+    --theme-bg-card:            rgba(11, 29, 57, 0.72);
+
+    /* THIS ONE MATTERS A LOT in your base: */
+    --theme-border-color:       rgba(255,255,255,0.18);
+
+    /* Palette */
+    --theme-color-primary:      #d62828;  /* red */
+    --theme-color-secondary:    #1d4ed8;  /* blue */
+
+    /* Text */
+    --theme-text-primary:       #ffffff;
+    --theme-text-secondary:     rgba(255,255,255,0.82);
+    --theme-sidebar-text:       #ffffff;
+
+    /* Headings */
+    --theme-text-h1:            #ffffff;
+    --theme-text-h2:            rgba(255,255,255,0.92);
+    --theme-text-h3:            rgba(255,255,255,0.88);
+
+    /* Fonts */
+    --theme-font-primary:       'Montserrat', sans-serif;
+    --theme-font-h1:            'Playfair Display', serif;
+    --theme-font-h2:            'Montserrat', sans-serif;
+    --theme-font-h3:            'Montserrat', sans-serif;
+
+    /* Sizes */
+    --theme-size-h1:            3.2rem;
+    --theme-size-h2:            1.85rem;
+    --theme-size-h3:            1.25rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.85rem;
+    --theme-size-metric-value:  2.6rem;
+    --theme-size-metric-label:  0.85rem;
+
+    /* Weights */
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          700;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        700;
+
+    /* Borders / radii */
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       rgba(255,255,255,0.35);
+
+    --theme-radius-sm:          10px;
+    --theme-radius-md:          14px;
+    --theme-radius-button:      14px;
+    --theme-radius-input:       12px;
+    --theme-radius-card:        18px;
+
+    /* Shadows */
+    --theme-shadow-card:        0 12px 30px rgba(0,0,0,0.20);
+    --theme-shadow-card-hover:  0 16px 42px rgba(0,0,0,0.30);
+    --theme-shadow-button:      0 10px 28px rgba(0,0,0,0.25);
+    --theme-shadow-button-hover: 0 14px 36px rgba(0,0,0,0.35);
+    --theme-shadow-input-focus: 0 0 0 3px rgba(29,78,216,0.25);
+
+    /* Buttons */
+    --theme-button-bg:          linear-gradient(135deg, #d62828 0%, #b91c1c 55%, #1d4ed8 140%);
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      rgba(255,255,255,0.18);
+    --theme-button-border-width: 1px;
+
+    /* Inputs */
+    --theme-input-bg:           rgba(255,255,255,0.06);
+    --theme-input-border:       rgba(255,255,255,0.18);
+    --theme-input-border-focus: rgba(29,78,216,0.85);
+    --theme-input-text:         #ffffff;
+    --theme-input-placeholder:  rgba(255,255,255,0.50);
+
+    /* Tabs */
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(255,255,255,0.10);
+    --theme-tab-bg-active:      rgba(255,255,255,0.14);
+    --theme-tab-text:           rgba(255,255,255,0.70);
+    --theme-tab-text-hover:     #ffffff;
+    --theme-tab-text-active:    #ffffff;
+    --theme-tab-border:         rgba(255,255,255,0.18);
+
+    /* HR */
+    --theme-hr-height:          3px;
+    --theme-hr-bg:              linear-gradient(90deg, #d62828 0%, #ffffff 50%, #1d4ed8 100%);
+
+    /* Control chip (sidebar toggle etc.) */
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color) 60%, transparent);
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-secondary) 55%, transparent);
+}
+
+/* Sidebar surface */
+section[data-testid="stSidebar"] > div {
+    background: var(--theme-app-bg) !important;
+    background-size: var(--theme-bg-size, cover) !important;
+    background-position: var(--theme-bg-position, center) !important;
+}
+
+/* HR gradient (patriotic stripe) */
+hr {
+    background: var(--theme-hr-bg) !important;
+}
+
+/* Subtle flag overlay */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        linear-gradient(90deg,
+            rgba(214,40,40,0.10) 0%,
+            rgba(214,40,40,0.06) 14%,
+            rgba(255,255,255,0.06) 33%,
+            rgba(255,255,255,0.05) 50%,
+            rgba(29,78,216,0.06) 67%,
+            rgba(29,78,216,0.10) 100%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Watermark */
+.stApp::after {
+    content: '🗽';
+    position: fixed;
+    bottom: 18px; right: 22px;
+    font-size: 6rem;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}

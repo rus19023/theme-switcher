@@ -1,195 +1,133 @@
-/* Monokai Theme - Classic code editor aesthetic */
-
+/* 
+   monokai.css
+   ============================================================================
+   MONOKAI THEME
+   ============================================================================
+   @theme-name: Monokai
+   @theme-icon: 🧐
+   @theme-description: The iconic code editor color scheme
+*/
 
 @import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&family=Ubuntu:wght@300;400;600;700&display=swap');
 
 :root {
-    --monokai-bg: #272822;
-    --monokai-dark: #1e1f1c;
-    --monokai-grey: #49483e;
-    --monokai-green: #a6e22e;
-    --monokai-yellow: #e6db74;
-    --monokai-orange: #fd971f;
-    --monokai-pink: #f92672;
-    --monokai-purple: #ae81ff;
-    --monokai-cyan: #66d9ef;
-    --monokai-white: #f8f8f2;
-}
-
-.stApp {
-    background: 
+    --theme-app-bg:
         repeating-linear-gradient(
             0deg,
-            rgba(73, 72, 62, 0.05) 0px,
-            rgba(73, 72, 62, 0.05) 1px,
-            transparent 1px,
-            transparent 20px
-        ),
-        linear-gradient(135deg, var(--monokai-dark) 0%, var(--monokai-bg) 50%, #23241e 100%);
-    font-family: 'Ubuntu', sans-serif;
-    color: var(--monokai-white);
+            rgba(73, 72, 62, 0.05) 0px, rgba(73, 72, 62, 0.05) 1px,
+            transparent 1px, transparent 20px),
+        linear-gradient(135deg, #1e1f1c 0%, #272822 50%, #23241e 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #1e1f1c;
+    --theme-bg-card:            #1e1f1c;
+    --theme-sidebar-text:       #a6e22e;
+    --theme-color-primary:      #f92672;
+    --theme-color-secondary:    #66d9ef;
+    --theme-text-primary:       #f8f8f2;
+    --theme-text-secondary:     #f8f8f2;
+    --theme-text-h1:            #a6e22e;
+    --theme-text-h2:            #66d9ef;
+    --theme-text-h3:            #e6db74;
+    --theme-font-primary:       'Ubuntu', sans-serif;
+    --theme-font-h1:            'Roboto Mono', monospace;
+    --theme-font-h2:            'Ubuntu', sans-serif;
+    --theme-font-h3:            'Ubuntu', sans-serif;
+    --theme-size-h1:            3.5rem;
+    --theme-size-h2:            2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.85rem;
+    --theme-size-metric-value:  2.8rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          700;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        300;
+    --theme-weight-bold:        600;
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #a6e22e;
+    --theme-radius-sm:          4px;
+    --theme-radius-md:          6px;
+    --theme-radius-button:      6px;
+    --theme-radius-input:       6px;
+    --theme-radius-card:        8px;
+    --theme-shadow-button:      0 4px 12px rgba(249, 38, 114, 0.3);
+    --theme-shadow-button-hover: 0 6px 16px rgba(253, 151, 31, 0.4);
+    --theme-shadow-card:        0 4px 12px rgba(0, 0, 0, 0.4);
+    --theme-shadow-card-hover:  0 6px 16px rgba(166, 226, 46, 0.3);
+    --theme-shadow-input-focus: 0 0 0 3px rgba(102, 217, 239, 0.2);
+    --theme-shadow-text-h1:     0 2px 10px rgba(166, 226, 46, 0.3);
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       normal;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.2s;
+    --theme-transition-speed-fast: 0.1s;
+    --theme-padding-button:     12px 32px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          #f92672;
+    --theme-button-text:        #f8f8f2;
+    --theme-button-border:      #f92672;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           #1e1f1c;
+    --theme-input-border:       #49483e;
+    --theme-input-border-focus: #66d9ef;
+    --theme-input-text:         #f8f8f2;
+    --theme-input-placeholder:  #49483e;
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(73, 72, 62, 0.3);
+    --theme-tab-bg-active:      #f92672;
+    --theme-tab-text:           #49483e;
+    --theme-tab-text-hover:     #f8f8f2;
+    --theme-tab-text-active:    #f8f8f2;
+    --theme-tab-border:         #49483e;
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #49483e;
 }
 
-h1 {
-    font-family: 'Roboto Mono', monospace !important;
-    font-weight: 700 !important;
-    font-size: 3.5rem !important;
-    color: var(--monokai-green) !important;
-    margin-bottom: 0.5rem !important;
-    text-shadow: 0 2px 10px rgba(166, 226, 46, 0.3);
-}
-
-h2 {
-    font-family: 'Ubuntu', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 2rem !important;
-    color: var(--monokai-cyan) !important;
-}
-
-h3 {
-    font-family: 'Ubuntu', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1.3rem !important;
-    color: var(--monokai-yellow) !important;
-}
-
-p, label {
-    color: var(--monokai-white);
-    font-size: 1rem;
-    line-height: 1.7;
-    font-weight: 300;
-}
-
-.stButton > button {
-    background: var(--monokai-pink) !important;
-    color: var(--monokai-white) !important;
-    border: 2px solid var(--monokai-pink) !important;
-    border-radius: 6px !important;
-    padding: 12px 32px !important;
-    font-family: 'Roboto Mono', monospace !important;
-    font-weight: 600 !important;
-    transition: all 0.2s ease !important;
-    box-shadow: 0 4px 12px rgba(249, 38, 114, 0.3) !important;
-}
-
+/* Button hover color change — pink to orange */
 .stButton > button:hover {
-    background: var(--monokai-orange) !important;
-    border-color: var(--monokai-orange) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(253, 151, 31, 0.4) !important;
-}
-
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: var(--monokai-dark) !important;
-    border: 2px solid var(--monokai-grey) !important;
-    border-radius: 6px !important;
-    color: var(--monokai-white) !important;
-    padding: 12px 16px !important;
-    font-family: 'Roboto Mono', monospace !important;
-    transition: all 0.2s ease !important;
-}
-
-.stTextInput > div > div > input:focus,
-.stTextArea > div > div > textarea:focus {
-    outline: none !important;
-    border-color: var(--monokai-cyan) !important;
-    box-shadow: 0 0 0 3px rgba(102, 217, 239, 0.2) !important;
-}
-
-.stTextInput > div > div > input::placeholder {
-    color: var(--monokai-grey) !important;
-}
-
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
-    color: var(--monokai-yellow) !important;
-    font-weight: 600 !important;
-    font-family: 'Roboto Mono', monospace !important;
-}
-
-[data-testid="metric-container"] {
-    background: var(--monokai-dark) !important;
-    border: 2px solid var(--monokai-grey) !important;
-    border-radius: 8px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-    transition: all 0.3s ease;
-}
-
-[data-testid="metric-container"]:hover {
-    border-color: var(--monokai-green) !important;
-    box-shadow: 0 6px 16px rgba(166, 226, 46, 0.3) !important;
-    transform: translateY(-2px);
-}
-
-div[data-testid="stMetricValue"] {
-    font-family: 'Roboto Mono', monospace !important;
-    font-size: 2.8rem !important;
-    font-weight: 700 !important;
-    color: var(--monokai-green) !important;
-}
-
-div[data-testid="stMetricLabel"] {
-    color: var(--monokai-cyan) !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Roboto Mono', monospace !important;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: var(--monokai-dark);
-    border: 2px solid var(--monokai-grey);
-    border-radius: 6px;
-    padding: 4px;
-}
-
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: none;
-    border-radius: 4px;
-    color: var(--monokai-grey);
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 600;
-    padding: 10px 20px;
-    transition: all 0.2s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: var(--monokai-white);
-    background: rgba(73, 72, 62, 0.3);
-}
-
-.stTabs [aria-selected="true"] {
-    background: var(--monokai-pink) !important;
-    color: var(--monokai-white) !important;
-}
-
-hr {
-    border: none;
-    height: 2px;
-    background: var(--monokai-grey);
-    margin: 2rem 0;
-}
-
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--monokai-dark);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--monokai-grey);
-    border-radius: 6px;
+    background: #fd971f !important;
+    border-color: #fd971f !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--monokai-pink);
+    background: #f92672 !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    border-right: 2px solid #49483e !important;
+}
+
+.stApp::after {
+    content: '</>';
+    position: fixed;
+    bottom: 20px; right: 28px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #a6e22e;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }

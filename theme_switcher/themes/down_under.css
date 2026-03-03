@@ -1,0 +1,148 @@
+/* 
+   down_under.css
+   ============================================================================
+   DOWN UNDER THEME
+   ============================================================================
+   @theme-name: Down Under
+   @theme-icon: 🦘
+   @theme-description: Australian outback vibes
+*/
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Karla:wght@300;400;600&display=swap');
+
+:root {
+    --theme-app-bg:
+        radial-gradient(circle at 70% 20%, rgba(210, 100, 30, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(160, 60, 20, 0.12) 0%, transparent 50%),
+        linear-gradient(135deg, #2a1a0e 0%, #3d2410 50%, #2e1c0c 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       rgba(61, 36, 16, 0.85);
+    --theme-bg-card:            rgba(50, 28, 10, 0.7);
+    --theme-sidebar-text:       #f5c842;
+    --theme-color-primary:      #d2641e;
+    --theme-color-secondary:    #f5c842;
+    --theme-text-primary:       #f0dfc0;
+    --theme-text-secondary:     #d4b896;
+    --theme-text-h1:            #f5c842;
+    --theme-text-h2:            #d2641e;
+    --theme-text-h3:            #e8a060;
+    --theme-font-primary:       'Karla', sans-serif;
+    --theme-font-h1:            'Zilla Slab', serif;
+    --theme-font-h2:            'Zilla Slab', serif;
+    --theme-font-h3:            'Zilla Slab', serif;
+    --theme-size-h1:            3.8rem;
+    --theme-size-h2:            2.2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1.05rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  3.2rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #f5c842;
+    --theme-radius-sm:          8px;
+    --theme-radius-md:          10px;
+    --theme-radius-button:      12px;
+    --theme-radius-input:       10px;
+    --theme-radius-card:        14px;
+    --theme-shadow-button:      0 4px 15px rgba(210, 100, 30, 0.4);
+    --theme-shadow-button-hover: 0 6px 20px rgba(245, 200, 66, 0.4);
+    --theme-shadow-card:        0 4px 20px rgba(30, 15, 5, 0.5);
+    --theme-shadow-card-hover:  0 6px 25px rgba(210, 100, 30, 0.4);
+    --theme-shadow-input-focus: 0 0 15px rgba(245, 200, 66, 0.25);
+    --theme-shadow-text-h1:     3px 3px 6px rgba(0, 0, 0, 0.5);
+    --theme-shadow-text-h2:     1px 1px 4px rgba(0, 0, 0, 0.4);
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           1px;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       normal;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     14px 36px;
+    --theme-padding-input:      12px 18px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          #d2641e;
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      #f5c842;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           rgba(61, 36, 16, 0.5);
+    --theme-input-border:       #7a4a20;
+    --theme-input-border-focus: #f5c842;
+    --theme-input-text:         #f0dfc0;
+    --theme-input-placeholder:  rgba(212, 184, 150, 0.4);
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(210, 100, 30, 0.2);
+    --theme-tab-bg-active:      #d2641e;
+    --theme-tab-text:           rgba(240, 223, 192, 0.5);
+    --theme-tab-text-hover:     #f0dfc0;
+    --theme-tab-text-active:    #ffffff;
+    --theme-tab-border:         #7a4a20;
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #d2641e;
+}
+
+hr {
+    background: linear-gradient(90deg,
+        transparent, #7a4a20, #d2641e, #f5c842, #d2641e, #7a4a20, transparent) !important;
+}
+
+/* Gradient button */
+.stButton > button {
+    background: linear-gradient(135deg, #d2641e, #e8803a) !important;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #e8803a, #d2641e) !important;
+}
+
+/* Gradient active tab */
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #d2641e, #e8803a) !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    border-right: 3px solid #d2641e !important;
+}
+
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 80% 10%, rgba(245, 200, 66, 0.05) 0%, transparent 40%),
+        radial-gradient(ellipse at 10% 90%, rgba(210, 100, 30, 0.07) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stApp::after {
+    content: '🦘';
+    position: fixed;
+    bottom: 20px; right: 24px;
+    font-size: 7rem;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+}

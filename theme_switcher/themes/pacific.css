@@ -1,0 +1,125 @@
+/* 
+   pacific.css
+   @theme-name: Pacific
+   @theme-icon: 🪸
+   @theme-description: Underwater coral reef depths
+   @theme-image-credit: Photo by John Doe on Unsplash
+   @theme-image-url: Photo by <a href="https://unsplash.com/@prelevicm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Milos Prelevic</a> on <a href="https://unsplash.com/photos/brown-fish-beside-coral-under-body-of-water-2xuiab6o-qc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+*/
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@300;400;600&display=swap');
+
+:root {
+    --theme-app-bg:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coral_reef_at_palmyra.jpg/1280px-Coral_reef_at_palmyra.jpghttps://images.unsplash.com/photo-1515555585025-54136276b6e3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       rgba(0, 40, 70, 0.85);
+    --theme-bg-card:            rgba(0, 50, 80, 0.65);
+    --theme-sidebar-text:       #7dd3e8;
+    --theme-color-primary:      #0ea5e9;
+    --theme-color-secondary:    #f97316;
+    --theme-text-primary:       #e0f4ff;
+    --theme-text-secondary:     #a8d8ea;
+    --theme-text-h1:            #7dd3e8;
+    --theme-text-h2:            #f97316;
+    --theme-text-h3:            #0ea5e9;
+    --theme-font-primary:       'Nunito', sans-serif;
+    --theme-font-h1:            'Righteous', sans-serif;
+    --theme-font-h2:            'Righteous', sans-serif;
+    --theme-font-h3:            'Righteous', sans-serif;
+    --theme-size-h1:            3.5rem;
+    --theme-size-h2:            2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.8rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          400;
+    --theme-weight-h2:          400;
+    --theme-weight-h3:          400;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #7dd3e8;
+    --theme-radius-sm:          6px;
+    --theme-radius-md:          10px;
+    --theme-radius-button:      50px;
+    --theme-radius-input:       10px;
+    --theme-radius-card:        14px;
+    --theme-shadow-button:      0 4px 16px rgba(14, 165, 233, 0.4);
+    --theme-shadow-button-hover: 0 6px 24px rgba(14, 165, 233, 0.6);
+    --theme-shadow-card:        0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 30px rgba(14, 165, 233, 0.05);
+    --theme-shadow-card-hover:  0 8px 30px rgba(125, 211, 232, 0.3);
+    --theme-shadow-input-focus: 0 0 0 3px rgba(14, 165, 233, 0.3);
+    --theme-shadow-text-h1:     0 0 20px rgba(125, 211, 232, 0.6);
+    --theme-shadow-text-h2:     0 0 15px rgba(249, 115, 22, 0.4);
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           2px;
+    --theme-letter-spacing-h2:           1px;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       2px;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     14px 36px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          #0ea5e9;
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      #0ea5e9;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           rgba(0, 30, 60, 0.7);
+    --theme-input-border:       #0ea5e9;
+    --theme-input-border-focus: #7dd3e8;
+    --theme-input-text:         #e0f4ff;
+    --theme-input-placeholder:  rgba(125, 211, 232, 0.4);
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(14, 165, 233, 0.15);
+    --theme-tab-bg-active:      rgba(14, 165, 233, 0.3);
+    --theme-tab-text:           rgba(168, 216, 234, 0.6);
+    --theme-tab-text-hover:     #e0f4ff;
+    --theme-tab-text-active:    #7dd3e8;
+    --theme-tab-border:         rgba(14, 165, 233, 0.3);
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #0ea5e9;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
+}
+
+hr {
+    background: linear-gradient(90deg,
+        transparent, #0ea5e9, #7dd3e8, #f97316, #7dd3e8, #0ea5e9, transparent) !important;
+}
+
+.stApp::after {
+    content: '🐠';
+    position: fixed;
+    bottom: 20px; right: 24px;
+    font-size: 6rem;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+}

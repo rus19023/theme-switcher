@@ -6,6 +6,11 @@ jesus*
 MANIFEST.in
 *.zip
 tis.css
+.streamlit
+*secrets.toml
+.gitignore
+
+
 
 # C extensions
 *.so

@@ -1,36 +1,141 @@
-/* Cyberpunk Theme */
-
+/* 
+   cyberpunk.css
+   ============================================================================
+   CYBERPUNK THEME
+   ============================================================================
+   @theme-name: Cyberpunk
+   @theme-icon: 🌃
+   @theme-description: Neon-drenched future city
+*/
 
 @import url('theme_base.css');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
 
 :root {
-    --cyber-bg: #0a0e27;
-    --cyber-dark: #0d1117;
-    --neon-pink: #ff006e;
-    --neon-cyan: #00f0ff;
-    --neon-green: #39ff14;
-    --neon-purple: #bf00ff;
+    --theme-app-bg:
+        radial-gradient(circle at 20% 50%, rgba(191, 0, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(0, 240, 255, 0.05) 0%, transparent 50%),
+        #0a0e27;
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       rgba(0, 240, 255, 0.05);
+    --theme-bg-card:            rgba(0, 240, 255, 0.03);
+    --theme-sidebar-text:       #00f0ff;
+    --theme-color-primary:      #ff006e;
+    --theme-color-secondary:    #00f0ff;
+    --theme-text-primary:       rgba(0, 240, 255, 0.8);
+    --theme-text-secondary:     rgba(0, 240, 255, 0.8);
+    --theme-text-h1:            #00f0ff;
+    --theme-text-h2:            #ff006e;
+    --theme-text-h3:            #39ff14;
+    --theme-font-primary:       'Share Tech Mono', monospace;
+    --theme-font-h1:            'Orbitron', sans-serif;
+    --theme-font-h2:            'Orbitron', sans-serif;
+    --theme-font-h3:            'Share Tech Mono', monospace;
+    --theme-size-h1:            4rem;
+    --theme-size-h2:            2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.85rem;
+    --theme-size-metric-value:  3rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          900;
+    --theme-weight-h2:          700;
+    --theme-weight-h3:          400;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        700;
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #ff006e;
+    --theme-radius-sm:          0px;
+    --theme-radius-md:          0px;
+    --theme-radius-button:      0px;
+    --theme-radius-input:       0px;
+    --theme-radius-card:        0px;
+    --theme-shadow-button:
+        0 0 10px #ff006e,
+        inset 0 0 10px rgba(255, 0, 110, 0.1);
+    --theme-shadow-button-hover:
+        0 0 20px #ff006e,
+        0 0 40px #ff006e,
+        inset 0 0 20px #ff006e;
+    --theme-shadow-card:
+        0 0 15px rgba(0, 240, 255, 0.3),
+        inset 0 0 20px rgba(0, 240, 255, 0.05);
+    --theme-shadow-card-hover:
+        0 0 20px rgba(255, 0, 110, 0.5),
+        inset 0 0 30px rgba(255, 0, 110, 0.1);
+    --theme-shadow-input-focus:
+        0 0 15px #ff006e,
+        inset 0 0 10px rgba(255, 0, 110, 0.1);
+    --theme-shadow-text-h1:
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff,
+        0 0 40px #00f0ff,
+        0 0 80px #ff006e;
+    --theme-shadow-text-h2:     0 0 10px #ff006e;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           uppercase;
+    --theme-text-transform-h2:           uppercase;
+    --theme-text-transform-h3:           uppercase;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           4px;
+    --theme-letter-spacing-h2:           3px;
+    --theme-letter-spacing-h3:           2px;
+    --theme-letter-spacing-button:       2px;
+    --theme-animation-h1:       glitch 5s infinite;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     15px 40px;
+    --theme-padding-input:      14px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          transparent;
+    --theme-button-text:        #ff006e;
+    --theme-button-border:      #ff006e;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           rgba(0, 240, 255, 0.05);
+    --theme-input-border:       #00f0ff;
+    --theme-input-border-focus: #ff006e;
+    --theme-input-text:         #00f0ff;
+    --theme-input-placeholder:  rgba(0, 240, 255, 0.4);
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       transparent;
+    --theme-tab-bg-active:      rgba(255, 0, 110, 0.1);
+    --theme-tab-text:           rgba(0, 240, 255, 0.6);
+    --theme-tab-text-hover:     #00f0ff;
+    --theme-tab-text-active:    #ff006e;
+    --theme-tab-border:         #00f0ff;
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #00f0ff;
 }
 
-.stApp {
-    background: radial-gradient(circle at 20% 50%, rgba(191, 0, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(0, 240, 255, 0.05) 0%, transparent 50%),
-                var(--cyber-bg);
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--neon-cyan);
-    position: relative;
-    min-height: 100vh;
+hr {
+    background: linear-gradient(90deg,
+        transparent, #00f0ff, #ff006e, #00f0ff, transparent) !important;
+    box-shadow: 0 0 10px #00f0ff !important;
+    margin: 2rem 0 !important;
 }
 
+/* Glitch animation on h1 */
+@keyframes glitch {
+    0%, 90%, 100% {
+        transform: translate(0);
+        text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+    }
+    91% { transform: translate(-2px, 2px); text-shadow: 2px 0 #ff006e, -2px 0 #00f0ff; }
+    93% { transform: translate(2px, -2px); text-shadow: -2px 0 #ff006e, 2px 0 #00f0ff; }
+    95% { transform: translate(-1px, 1px); }
+}
+
+/* Scanline overlay */
 .stApp::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: repeating-linear-gradient(
         0deg,
         rgba(0, 240, 255, 0.03) 0px,
@@ -44,89 +149,12 @@
 }
 
 @keyframes scanlines {
-    0% { transform: translateY(0); }
+    0%   { transform: translateY(0); }
     100% { transform: translateY(10px); }
 }
 
-h1 {
-    font-family: 'Orbitron', sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 4rem !important;
-    color: var(--neon-cyan) !important;
-    text-transform: uppercase !important;
-    text-shadow: 
-        0 0 10px var(--neon-cyan),
-        0 0 20px var(--neon-cyan),
-        0 0 40px var(--neon-cyan),
-        0 0 80px var(--neon-pink);
-    letter-spacing: 4px !important;
-    animation: glitch 5s infinite;
-}
-
-@keyframes glitch {
-    0%, 90%, 100% { 
-        transform: translate(0);
-        text-shadow: 
-            0 0 10px var(--neon-cyan),
-            0 0 20px var(--neon-cyan),
-            0 0 40px var(--neon-cyan);
-    }
-    91% { 
-        transform: translate(-2px, 2px);
-        text-shadow: 
-            2px 0 var(--neon-pink),
-            -2px 0 var(--neon-cyan);
-    }
-    93% { 
-        transform: translate(2px, -2px);
-        text-shadow: 
-            -2px 0 var(--neon-pink),
-            2px 0 var(--neon-cyan);
-    }
-    95% { 
-        transform: translate(-1px, 1px);
-    }
-}
-
-h2 {
-    font-family: 'Orbitron', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 2rem !important;
-    color: var(--neon-pink) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 3px !important;
-    text-shadow: 0 0 10px var(--neon-pink);
-}
-
-h3 {
-    font-family: 'Share Tech Mono', monospace !important;
-    font-weight: 400 !important;
-    font-size: 1.3rem !important;
-    color: var(--neon-green) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 2px !important;
-}
-
-p, label {
-    color: rgba(0, 240, 255, 0.8);
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
+/* Button fill-slide on hover — needs ::before, can't be done via variables */
 .stButton > button {
-    background: transparent !important;
-    color: var(--neon-pink) !important;
-    border: 2px solid var(--neon-pink) !important;
-    border-radius: 0 !important;
-    padding: 15px 40px !important;
-    font-family: 'Orbitron', sans-serif !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 2px !important;
-    box-shadow: 
-        0 0 10px var(--neon-pink),
-        inset 0 0 10px rgba(255, 0, 110, 0.1) !important;
-    transition: all 0.3s ease !important;
     position: relative;
     overflow: hidden;
 }
@@ -134,175 +162,87 @@ p, label {
 .stButton > button::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--neon-pink);
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: #ff006e;
     transition: left 0.3s ease;
     z-index: -1;
 }
 
 .stButton > button:hover {
-    color: var(--cyber-dark) !important;
-    box-shadow: 
-        0 0 20px var(--neon-pink),
-        0 0 40px var(--neon-pink),
-        inset 0 0 20px var(--neon-pink) !important;
+    color: #0d1117 !important;
 }
 
 .stButton > button:hover::before {
     left: 0;
 }
 
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: rgba(0, 240, 255, 0.05) !important;
-    border: 2px solid var(--neon-cyan) !important;
-    border-radius: 0 !important;
-    color: var(--neon-cyan) !important;
-    padding: 14px !important;
-    font-family: 'Share Tech Mono', monospace !important;
-    font-size: 1rem !important;
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2) !important;
-    transition: all 0.3s ease !important;
-}
-
-.stTextInput > div > div > input:focus,
-.stTextArea > div > div > textarea:focus {
-    outline: none !important;
-    border-color: var(--neon-pink) !important;
-    box-shadow: 
-        0 0 15px var(--neon-pink),
-        inset 0 0 10px rgba(255, 0, 110, 0.1) !important;
-}
-
-.stTextInput > div > div > input::placeholder {
-    color: rgba(0, 240, 255, 0.4) !important;
-}
-
+/* Metric card top glow bar */
 [data-testid="metric-container"] {
-    background: rgba(0, 240, 255, 0.03) !important;
-    border: 2px solid var(--neon-cyan) !important;
-    padding: 1.5rem !important;
-    box-shadow: 
-        0 0 15px rgba(0, 240, 255, 0.3),
-        inset 0 0 20px rgba(0, 240, 255, 0.05) !important;
-    transition: all 0.3s ease;
     position: relative;
-}
-
-[data-testid="metric-container"]:hover {
-    border-color: var(--neon-pink) !important;
-    box-shadow: 
-        0 0 20px rgba(255, 0, 110, 0.5),
-        inset 0 0 30px rgba(255, 0, 110, 0.1) !important;
 }
 
 [data-testid="metric-container"]::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
+    top: -2px; left: -2px; right: -2px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    background: linear-gradient(90deg, transparent, #00f0ff, transparent);
     animation: borderGlow 3s linear infinite;
 }
 
 @keyframes borderGlow {
-    0% { opacity: 0.3; }
-    50% { opacity: 1; }
+    0%   { opacity: 0.3; }
+    50%  { opacity: 1; }
     100% { opacity: 0.3; }
 }
 
-div[data-testid="stMetricValue"] {
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 3rem !important;
-    font-weight: 700 !important;
-    color: var(--neon-pink) !important;
-    text-shadow: 
-        0 0 10px var(--neon-pink),
-        0 0 20px var(--neon-pink);
-}
-
-div[data-testid="stMetricLabel"] {
-    color: var(--neon-cyan) !important;
-    font-size: 0.85rem !important;
-    font-weight: 400 !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: rgba(0, 240, 255, 0.05);
-    border: 1px solid var(--neon-cyan);
-    padding: 8px;
-}
-
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: 1px solid transparent;
-    color: rgba(0, 240, 255, 0.6);
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 12px 24px;
-    transition: all 0.3s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: var(--neon-cyan);
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-}
-
+/* Active tab glow */
 .stTabs [aria-selected="true"] {
-    background: rgba(255, 0, 110, 0.1) !important;
-    color: var(--neon-pink) !important;
-    border-color: var(--neon-pink) !important;
-    box-shadow: 
+    border: 1px solid #ff006e !important;
+    box-shadow:
         0 0 15px rgba(255, 0, 110, 0.5),
         inset 0 0 20px rgba(255, 0, 110, 0.1) !important;
 }
 
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        var(--neon-cyan), 
-        var(--neon-pink), 
-        var(--neon-cyan), 
-        transparent);
-    margin: 2rem 0;
-    box-shadow: 0 0 10px var(--neon-cyan);
+/* Tab hover border */
+.stTabs [data-baseweb="tab"]:hover {
+    border: 1px solid #00f0ff !important;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3) !important;
 }
 
-/* Glowing cursor effect */
+/* Glowing caret */
 .stTextInput > div > div > input,
 .stTextArea > div > div > textarea {
-    caret-color: var(--neon-pink);
+    caret-color: #ff006e;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 12px;
+/* Metric value glow */
+div[data-testid="stMetricValue"] {
+    color: #ff006e !important;
+    text-shadow: 0 0 10px #ff006e, 0 0 20px #ff006e !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    border-right: 1px solid #00f0ff !important;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--cyber-dark);
-    border: 1px solid var(--neon-cyan);
+    border: 1px solid #00f0ff !important;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--neon-cyan);
-    box-shadow: 0 0 10px var(--neon-cyan);
+    background: #00f0ff !important;
+    box-shadow: 0 0 10px #00f0ff !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--neon-pink);
-    box-shadow: 0 0 10px var(--neon-pink);
+    background: #ff006e !important;
+    box-shadow: 0 0 10px #ff006e !important;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }

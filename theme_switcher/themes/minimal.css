@@ -1,120 +1,115 @@
 /* 
-   MINIMAL THEME - Using Base System
-   
-   This theme is MUCH shorter because it imports the base styles
-   and only defines what's unique to it.
+   minimal.css
+   ============================================================================
+   MINIMAL THEME
+   ============================================================================
+   @theme-name: Minimal
+   @theme-icon: ☐
+   @theme-description: Bare minimum styling
 */
 
 @import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --text-primary: #212529;
-    --text-secondary: #6c757d;
-    --accent: #0d6efd;
-    --accent-hover: #0b5ed7;
-    --border: #dee2e6;
+    --theme-app-bg:             #ffffff;
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #f8f9fa;
+    --theme-bg-card:            #f8f9fa;
+    --theme-sidebar-text:       #212529;
+    --theme-color-primary:      #0d6efd;
+    --theme-color-secondary:    #0b5ed7;
+    --theme-text-primary:       #212529;
+    --theme-text-secondary:     #6c757d;
+    --theme-text-h1:            #212529;
+    --theme-text-h2:            #0d6efd;
+    --theme-text-h3:            #212529;
+    --theme-font-primary:       'Inter', sans-serif;
+    --theme-font-h1:            'Inter', sans-serif;
+    --theme-font-h2:            'Inter', sans-serif;
+    --theme-font-h3:            'Inter', sans-serif;
+    --theme-size-h1:            2.5rem;
+    --theme-size-h2:            1.8rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.875rem;
+    --theme-size-metric-value:  2.5rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #0d6efd;
+    --theme-radius-sm:          4px;
+    --theme-radius-md:          6px;
+    --theme-radius-button:      6px;
+    --theme-radius-input:       6px;
+    --theme-radius-card:        8px;
+    --theme-shadow-button:      0 2px 4px rgba(0, 0, 0, 0.1);
+    --theme-shadow-button-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --theme-shadow-card:        0 1px 3px rgba(0, 0, 0, 0.05);
+    --theme-shadow-card-hover:  0 4px 12px rgba(0, 0, 0, 0.1);
+    --theme-shadow-input-focus: 0 0 0 3px rgba(13, 110, 253, 0.1);
+    --theme-shadow-text-h1:     none;
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        none;
+    --theme-text-transform-metric-label: none;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       normal;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.2s;
+    --theme-transition-speed-fast: 0.1s;
+    --theme-padding-button:     10px 20px;
+    --theme-padding-input:      10px 14px;
+    --theme-padding-card:       1.25rem;
+    --theme-button-bg:          #0d6efd;
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      #0d6efd;
+    --theme-button-border-width: 0px;
+    --theme-input-bg:           #ffffff;
+    --theme-input-border:       #dee2e6;
+    --theme-input-border-focus: #0d6efd;
+    --theme-input-text:         #212529;
+    --theme-input-placeholder:  #6c757d;
+    --theme-tab-bg:             #f8f9fa;
+    --theme-tab-bg-hover:       #f8f9fa;
+    --theme-tab-bg-active:      transparent;
+    --theme-tab-text:           #6c757d;
+    --theme-tab-text-hover:     #0d6efd;
+    --theme-tab-text-active:    #0d6efd;
+    --theme-tab-border:         #dee2e6;
+    --theme-hr-height:          1px;
+    --theme-hr-bg:              #dee2e6;
 }
 
-/* Override base with theme-specific values */
-.stApp {
-    background: var(--bg-primary);
-    font-family: 'Inter', sans-serif;
-    color: var(--text-primary);
-}
-
-h1 { color: var(--text-primary) !important; }
-h2 { color: var(--accent) !important; }
-h3 { color: var(--text-primary) !important; }
-
-p, label { color: var(--text-secondary); }
-
-.stButton > button {
-    background: var(--accent) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 6px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-}
-
+/* Button hover — color change only */
 .stButton > button:hover {
-    background: var(--accent-hover) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    background: #0b5ed7 !important;
 }
 
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: var(--bg-primary) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 6px !important;
-    color: var(--text-primary) !important;
-}
-
-.stTextInput > div > div > input:focus,
-.stTextArea > div > div > textarea:focus {
-    border-color: var(--accent) !important;
-    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1) !important;
-}
-
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
-    color: var(--text-primary) !important;
-}
-
-[data-testid="metric-container"] {
-    background: var(--bg-secondary) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 8px !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
-}
-
-[data-testid="metric-container"]:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-}
-
-div[data-testid="stMetricValue"] {
-    color: var(--accent) !important;
-}
-
-div[data-testid="stMetricLabel"] {
-    color: var(--text-secondary) !important;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: var(--bg-secondary);
-    border-bottom: 2px solid var(--border);
-}
-
-.stTabs [data-baseweb="tab"] {
-    color: var(--text-secondary);
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: var(--accent);
-}
-
+/* Active tab underline style — unique, base doesn't do this */
 .stTabs [aria-selected="true"] {
-    color: var(--accent) !important;
-    border-bottom: 2px solid var(--accent) !important;
+    border-bottom: 2px solid #0d6efd !important;
+    background: transparent !important;
 }
 
-hr {
-    height: 1px;
-    background: var(--border);
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--border);
+/* Metric value color */
+div[data-testid="stMetricValue"] {
+    color: #0d6efd !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-secondary);
+    background: #6c757d !important;
 }

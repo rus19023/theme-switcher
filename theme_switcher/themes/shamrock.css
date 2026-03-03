@@ -1,0 +1,253 @@
+/*💚🏕️🌿🌲🌳☘️💚🏕️🌿🌲🌳*/
+
+/* 
+    shamrock.css
+   @theme-name: Shamrock
+   @theme-icon: 🍀
+   @theme-description: Bright & festive shamrock greens
+*/
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+    /* App & Sidebar */
+    --theme-app-bg:
+        radial-gradient(ellipse at top left, #003d1a 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, #005c22 0%, transparent 50%),
+        linear-gradient(160deg, #001a0a 0%, #002d10 40%, #001a0a 70%, #003018 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       rgba(0, 45, 16, 0.9);
+    --theme-bg-card:            rgba(0, 35, 12, 0.85);
+    --theme-sidebar-text:       #5ddd6e;
+
+    /* Colors */
+    --theme-color-primary:      #2ecc52;
+    --theme-color-secondary:    #5ddd6e;
+
+    /* Text Colors */
+    --theme-text-primary:       #d4f5da;
+    --theme-text-secondary:     #8ee89a;
+    --theme-text-h1:            #2ecc52;
+    --theme-text-h2:            #5ddd6e;
+    --theme-text-h3:            #a8f0b0;
+
+    /* Fonts */
+    --theme-font-primary:       'Nunito', sans-serif;
+    --theme-font-h1:            'Kelly Slab', serif;
+    --theme-font-h2:            'Kelly Slab', serif;
+    --theme-font-h3:            'Kelly Slab', serif;
+
+    /* Font Sizes */
+    --theme-size-h1:            3.6rem;
+    --theme-size-h2:            2.0rem;
+    --theme-size-h3:            1.4rem;
+    --theme-size-body:          1.05rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.8rem;
+    --theme-size-metric-label:  0.85rem;
+
+    /* Font Weights */
+    --theme-weight-h1:          400;
+    --theme-weight-h2:          400;
+    --theme-weight-h3:          400;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+
+    /* Borders */
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #2ecc52;
+
+    /* Border Radius */
+    --theme-radius-sm:          4px;
+    --theme-radius-md:          8px;
+    --theme-radius-button:      8px;
+    --theme-radius-input:       8px;
+    --theme-radius-card:        12px;
+
+    /* Shadows */
+    --theme-shadow-button:      0 4px 16px rgba(46, 204, 82, 0.4), 0 2px 8px rgba(0, 0, 0, 0.5);
+    --theme-shadow-button-hover: 0 6px 24px rgba(93, 221, 110, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5);
+    --theme-shadow-card:        0 4px 20px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(46, 204, 82, 0.04);
+    --theme-shadow-card-hover:  0 8px 30px rgba(46, 204, 82, 0.25), 0 0 50px rgba(93, 221, 110, 0.1);
+    --theme-shadow-input-focus: 0 0 0 3px rgba(46, 204, 82, 0.25), 0 0 16px rgba(46, 204, 82, 0.15);
+    --theme-shadow-text-h1:
+        0 0 10px rgba(46, 204, 82, 0.8),
+        0 0 20px rgba(46, 204, 82, 0.5),
+        0 0 40px rgba(46, 204, 82, 0.2),
+        2px 2px 6px rgba(0, 0, 0, 0.8);
+    --theme-shadow-text-h2:     0 0 8px rgba(93, 221, 110, 0.5), 1px 2px 4px rgba(0, 0, 0, 0.7);
+    --theme-shadow-text-h3:     0 0 6px rgba(168, 240, 176, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.7);
+
+    /* Text Transforms & Letter Spacing */
+    --theme-text-transform-h1:           uppercase;
+    --theme-text-transform-h2:           uppercase;
+    --theme-text-transform-h3:           uppercase;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           5px;
+    --theme-letter-spacing-h2:           3px;
+    --theme-letter-spacing-h3:           2px;
+    --theme-letter-spacing-button:       2px;
+
+    /* Animations */
+    --theme-animation-h1:       shamrockGlow 4s infinite alternate;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+
+    /* Spacing */
+    --theme-padding-button:     14px 36px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+
+    /* Buttons */
+    --theme-button-bg:          transparent;
+    --theme-button-text:        #2ecc52;
+    --theme-button-border:      #2ecc52;
+    --theme-button-border-width: 2px;
+
+    /* Inputs */
+    --theme-input-bg:           rgba(0, 20, 8, 0.8);
+    --theme-input-border:       #1a5c28;
+    --theme-input-border-focus: #2ecc52;
+    --theme-input-text:         #d4f5da;
+    --theme-input-placeholder:  rgba(93, 221, 110, 0.35);
+
+    /* Tabs */
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(46, 204, 82, 0.1);
+    --theme-tab-bg-active:      rgba(46, 204, 82, 0.2);
+    --theme-tab-text:           rgba(142, 232, 154, 0.5);
+    --theme-tab-text-hover:     #d4f5da;
+    --theme-tab-text-active:    #2ecc52;
+    --theme-tab-border:         #1a5c28;
+
+    /* HR */
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #2ecc52;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
+}
+
+/* ============================================================================
+   SHAMROCK-UNIQUE RULES
+   ============================================================================ */
+
+/* Gradient HR */
+hr {
+    background: linear-gradient(90deg,
+        transparent,
+        #1a5c28,
+        #2ecc52,
+        #5ddd6e,
+        #2ecc52,
+        #1a5c28,
+        transparent) !important;
+}
+
+/* Deep forest ambient glow */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 25% 15%, rgba(46, 204, 82, 0.07) 0%, transparent 45%),
+        radial-gradient(ellipse at 75% 85%, rgba(93, 221, 110, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Shamrock emoji watermark */
+.stApp::after {
+    content: '☘️';
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    font-size: 5rem;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+    animation: swayShamrock 5s ease-in-out infinite;
+}
+
+/* Button hover */
+.stButton > button:hover {
+    background: rgba(46, 204, 82, 0.15) !important;
+    color: #5ddd6e !important;
+    border-color: #5ddd6e !important;
+    text-shadow: 0 0 8px rgba(46, 204, 82, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Active tab glow */
+.stTabs [aria-selected="true"] {
+    border: 1px solid #2ecc52 !important;
+    box-shadow: 0 0 10px rgba(46, 204, 82, 0.4), inset 0 0 10px rgba(46, 204, 82, 0.1) !important;
+    text-shadow: 0 0 8px rgba(46, 204, 82, 0.5);
+}
+
+/* Metric value glow */
+div[data-testid="stMetricValue"] {
+    text-shadow: 0 0 10px rgba(46, 204, 82, 0.6), 0 0 20px rgba(46, 204, 82, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb {
+    box-shadow: 0 0 6px rgba(46, 204, 82, 0.5);
+}
+
+/* Multiple choice buttons */
+button[key^="mc_option_"] {
+    min-height: 80px !important;
+    height: auto !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes shamrockGlow {
+    0% {
+        text-shadow:
+            0 0 10px rgba(46, 204, 82, 0.8),
+            0 0 20px rgba(46, 204, 82, 0.5),
+            0 0 40px rgba(46, 204, 82, 0.2),
+            2px 2px 6px rgba(0, 0, 0, 0.8);
+        color: #2ecc52;
+    }
+    50% {
+        text-shadow:
+            0 0 15px rgba(93, 221, 110, 1.0),
+            0 0 30px rgba(46, 204, 82, 0.7),
+            0 0 60px rgba(46, 204, 82, 0.3),
+            2px 2px 6px rgba(0, 0, 0, 0.8);
+        color: #5ddd6e;
+    }
+    100% {
+        text-shadow:
+            0 0 8px rgba(46, 204, 82, 0.7),
+            0 0 16px rgba(30, 160, 60, 0.5),
+            0 0 30px rgba(46, 204, 82, 0.2),
+            2px 2px 6px rgba(0, 0, 0, 0.8);
+        color: #1eaa3c;
+    }
+}
+
+@keyframes swayShamrock {
+    0%, 100% { transform: rotate(-8deg); }
+    50%       { transform: rotate(8deg);  }
+}

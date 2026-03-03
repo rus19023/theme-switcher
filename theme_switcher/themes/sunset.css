@@ -1,205 +1,158 @@
-/* Sunset Theme - Warm golden hour vibes */
-
+/* 
+   sunset.css
+   ============================================================================
+   SUNSET THEME
+   ============================================================================
+   @theme-name: Sunset
+   @theme-icon: 🌄
+   @theme-description: Warm golden hour vibes
+*/
 
 @import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Karla:wght@300;400;600&display=swap');
 
 :root {
-    --sunset-deep: #1a0a0f;
-    --sunset-purple: #4a1942;
-    --sunset-magenta: #8b2b6a;
-    --sunset-orange: #ff6b35;
-    --sunset-coral: #ff9671;
-    --sunset-peach: #ffc75f;
-    --sunset-gold: #f9f871;
-}
-
-.stApp {
-    background: 
+    --theme-app-bg:
         radial-gradient(ellipse at top, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
         radial-gradient(ellipse at bottom, rgba(139, 43, 106, 0.3) 0%, transparent 50%),
-        linear-gradient(180deg, #2a1520 0%, var(--sunset-deep) 50%, #1f0a15 100%);
-    font-family: 'Karla', sans-serif;
-    color: var(--sunset-peach);
-}
-
-h1 {
-    font-family: 'Crimson Pro', serif !important;
-    font-weight: 700 !important;
-    font-size: 3.8rem !important;
-    background: linear-gradient(135deg, var(--sunset-gold), var(--sunset-peach), var(--sunset-orange), var(--sunset-magenta));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem !important;
-    text-shadow: 0 0 30px rgba(255, 150, 113, 0.5);
-}
-
-h2 {
-    font-family: 'Crimson Pro', serif !important;
-    font-weight: 600 !important;
-    font-size: 2.2rem !important;
-    color: var(--sunset-coral) !important;
-    text-shadow: 0 0 20px rgba(255, 150, 113, 0.3);
-}
-
-h3 {
-    font-family: 'Karla', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1.3rem !important;
-    color: var(--sunset-peach) !important;
-}
-
-p, label {
-    color: rgba(255, 199, 95, 0.9);
-    font-size: 1rem;
-    line-height: 1.8;
-    font-weight: 300;
-}
-
-.stButton > button {
-    background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-magenta)) !important;
-    color: white !important;
-    border: 2px solid var(--sunset-coral) !important;
-    border-radius: 30px !important;
-    padding: 14px 36px !important;
-    font-family: 'Karla', sans-serif !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4) !important;
-}
-
-.stButton > button:hover {
-    background: linear-gradient(135deg, var(--sunset-coral), var(--sunset-orange)) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(255, 107, 53, 0.6) !important;
-}
-
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: rgba(139, 43, 106, 0.2) !important;
-    backdrop-filter: blur(15px);
-    border: 2px solid var(--sunset-magenta) !important;
-    border-radius: 14px !important;
-    color: var(--sunset-peach) !important;
-    padding: 12px 18px !important;
-    font-family: 'Karla', sans-serif !important;
-    transition: all 0.3s ease !important;
-}
-
-.stTextInput > div > div > input:focus,
-.stTextArea > div > div > textarea:focus {
-    outline: none !important;
-    border-color: var(--sunset-orange) !important;
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4) !important;
-}
-
-.stTextInput > div > div > input::placeholder {
-    color: rgba(255, 199, 95, 0.4) !important;
-}
-
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
-    color: var(--sunset-coral) !important;
-    font-weight: 600 !important;
-}
-
-[data-testid="metric-container"] {
-    background: rgba(139, 43, 106, 0.15) !important;
-    backdrop-filter: blur(15px);
-    border: 2px solid var(--sunset-magenta) !important;
-    border-radius: 18px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 4px 25px rgba(255, 107, 53, 0.3) !important;
-    transition: all 0.3s ease;
-}
-
-[data-testid="metric-container"]:hover {
-    border-color: var(--sunset-orange) !important;
-    box-shadow: 0 8px 35px rgba(255, 107, 53, 0.5) !important;
-    transform: translateY(-4px) scale(1.02);
-}
-
-div[data-testid="stMetricValue"] {
-    font-family: 'Crimson Pro', serif !important;
-    font-size: 3rem !important;
-    font-weight: 700 !important;
-    background: linear-gradient(135deg, var(--sunset-peach), var(--sunset-orange));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-div[data-testid="stMetricLabel"] {
-    color: var(--sunset-coral) !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: rgba(139, 43, 106, 0.15);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--sunset-magenta);
-    border-radius: 16px;
-    padding: 6px;
-}
-
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: none;
-    border-radius: 12px;
-    color: rgba(255, 199, 95, 0.6);
-    font-family: 'Karla', sans-serif;
-    font-weight: 600;
-    padding: 12px 24px;
-    transition: all 0.3s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: var(--sunset-peach);
-    background: rgba(255, 107, 53, 0.15);
-}
-
-.stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-magenta)) !important;
-    color: white !important;
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4) !important;
+        linear-gradient(180deg, #2a1520 0%, #1a0a0f 50%, #1f0a15 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       rgba(139, 43, 106, 0.15);
+    --theme-bg-card:            rgba(139, 43, 106, 0.15);
+    --theme-sidebar-text:       #ff9671;
+    --theme-color-primary:      #ff6b35;
+    --theme-color-secondary:    #ff9671;
+    --theme-text-primary:       rgba(255, 199, 95, 0.9);
+    --theme-text-secondary:     rgba(255, 199, 95, 0.9);
+    --theme-text-h1:            #ffc75f;
+    --theme-text-h2:            #ff9671;
+    --theme-text-h3:            #ffc75f;
+    --theme-font-primary:       'Karla', sans-serif;
+    --theme-font-h1:            'Crimson Pro', serif;
+    --theme-font-h2:            'Crimson Pro', serif;
+    --theme-font-h3:            'Karla', sans-serif;
+    --theme-size-h1:            3.8rem;
+    --theme-size-h2:            2.2rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  3rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        300;
+    --theme-weight-bold:        600;
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #ff6b35;
+    --theme-radius-sm:          10px;
+    --theme-radius-md:          16px;
+    --theme-radius-button:      30px;
+    --theme-radius-input:       14px;
+    --theme-radius-card:        18px;
+    --theme-shadow-button:      0 4px 20px rgba(255, 107, 53, 0.4);
+    --theme-shadow-button-hover: 0 6px 25px rgba(255, 107, 53, 0.6);
+    --theme-shadow-card:        0 4px 25px rgba(255, 107, 53, 0.3);
+    --theme-shadow-card-hover:  0 8px 35px rgba(255, 107, 53, 0.5);
+    --theme-shadow-input-focus: 0 0 20px rgba(255, 107, 53, 0.4);
+    --theme-shadow-text-h1:     0 0 30px rgba(255, 150, 113, 0.5);
+    --theme-shadow-text-h2:     0 0 20px rgba(255, 150, 113, 0.3);
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       none;
+    --theme-text-transform-label:        none;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           normal;
+    --theme-letter-spacing-button:       normal;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     14px 36px;
+    --theme-padding-input:      12px 18px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          linear-gradient(135deg, #ff6b35, #8b2b6a);
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      #ff9671;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           rgba(139, 43, 106, 0.2);
+    --theme-input-border:       #8b2b6a;
+    --theme-input-border-focus: #ff6b35;
+    --theme-input-text:         #ffc75f;
+    --theme-input-placeholder:  rgba(255, 199, 95, 0.4);
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(255, 107, 53, 0.15);
+    --theme-tab-bg-active:      linear-gradient(135deg, #ff6b35, #8b2b6a);
+    --theme-tab-text:           rgba(255, 199, 95, 0.6);
+    --theme-tab-text-hover:     #ffc75f;
+    --theme-tab-text-active:    #ffffff;
+    --theme-tab-border:         #8b2b6a;
+    --theme-hr-height:          3px;
+    --theme-hr-bg:              #ff6b35;
 }
 
 hr {
-    border: none;
-    height: 3px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--sunset-magenta),
-        var(--sunset-orange),
-        var(--sunset-coral),
-        var(--sunset-peach),
-        transparent
-    );
-    margin: 2.5rem 0;
-    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+    background: linear-gradient(90deg,
+        transparent, #8b2b6a, #ff6b35, #ff9671, #ffc75f, transparent) !important;
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3) !important;
+    margin: 2.5rem 0 !important;
 }
 
-::-webkit-scrollbar {
-    width: 12px;
+/* Gradient text on h1 */
+h1 {
+    background: linear-gradient(135deg, #f9f871, #ffc75f, #ff6b35, #8b2b6a) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--sunset-deep);
+/* Gradient metric value */
+div[data-testid="stMetricValue"] {
+    background: linear-gradient(135deg, #ffc75f, #ff6b35) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #ff9671, #ff6b35) !important;
+}
+
+.stTabs [aria-selected="true"] {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4) !important;
+}
+
+[data-testid="metric-container"]:hover {
+    transform: translateY(-4px) scale(1.02) !important;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--sunset-orange), var(--sunset-magenta));
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+    background: linear-gradient(180deg, #ff6b35, #8b2b6a) !important;
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--sunset-coral), var(--sunset-orange));
+    background: linear-gradient(180deg, #ff9671, #ff6b35) !important;
+}
+
+.stApp::after {
+    content: '🌅';
+    position: fixed;
+    bottom: 20px; right: 24px;
+    font-size: 6rem;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }

@@ -1,211 +1,154 @@
-/* Corporate Professional Theme */
-
+/* 
+   corporate.css
+   ============================================================================
+   CORPORATE THEME
+   ============================================================================
+   @theme-name: Corporate
+   @theme-icon: 💼
+   @theme-description: Clean professional blue
+*/
 
 @import url('theme_base.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
-    --corp-blue: #0066cc;
-    --corp-dark-blue: #003d7a;
-    --corp-light-blue: #e6f2ff;
-    --corp-gray: #f5f5f5;
-    --corp-dark-gray: #333333;
-    --corp-border: #dddddd;
+    --theme-app-bg:             linear-gradient(to bottom, #ffffff 0%, #f5f5f5 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #f5f5f5;
+    --theme-bg-card:            #ffffff;
+    --theme-sidebar-text:       #0066cc;
+    --theme-color-primary:      #0066cc;
+    --theme-color-secondary:    #003d7a;
+    --theme-text-primary:       #333333;
+    --theme-text-secondary:     #333333;
+    --theme-text-h1:            #003d7a;
+    --theme-text-h2:            #0066cc;
+    --theme-text-h3:            #333333;
+    --theme-font-primary:       'Inter', sans-serif;
+    --theme-font-h1:            'Inter', sans-serif;
+    --theme-font-h2:            'Inter', sans-serif;
+    --theme-font-h3:            'Inter', sans-serif;
+    --theme-size-h1:            2.8rem;
+    --theme-size-h2:            1.8rem;
+    --theme-size-h3:            1.3rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.5rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          700;
+    --theme-weight-h2:          600;
+    --theme-weight-h3:          600;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       2px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #0066cc;
+    --theme-radius-sm:          2px;
+    --theme-radius-md:          4px;
+    --theme-radius-button:      4px;
+    --theme-radius-input:       4px;
+    --theme-radius-card:        8px;
+    --theme-shadow-button:      0 2px 4px rgba(0, 102, 204, 0.2);
+    --theme-shadow-button-hover: 0 4px 8px rgba(0, 102, 204, 0.3);
+    --theme-shadow-card:        0 2px 8px rgba(0, 0, 0, 0.08);
+    --theme-shadow-card-hover:  0 4px 12px rgba(0, 0, 0, 0.12);
+    --theme-shadow-input-focus: 0 0 0 3px #e6f2ff;
+    --theme-shadow-text-h1:     none;
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           uppercase;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           1px;
+    --theme-letter-spacing-button:       0.5px;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     12px 32px;
+    --theme-padding-input:      10px 14px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          #0066cc;
+    --theme-button-text:        #ffffff;
+    --theme-button-border:      #0066cc;
+    --theme-button-border-width: 0px;
+    --theme-input-bg:           #ffffff;
+    --theme-input-border:       #dddddd;
+    --theme-input-border-focus: #0066cc;
+    --theme-input-text:         #333333;
+    --theme-input-placeholder:  #999999;
+    --theme-tab-bg:             #ffffff;
+    --theme-tab-bg-hover:       #e6f2ff;
+    --theme-tab-bg-active:      transparent;
+    --theme-tab-text:           #333333;
+    --theme-tab-text-hover:     #0066cc;
+    --theme-tab-text-active:    #0066cc;
+    --theme-tab-border:         #dddddd;
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #dddddd;
 }
 
-.stApp {
-    background: linear-gradient(to bottom, #ffffff 0%, var(--corp-gray) 100%);
-    font-family: 'Inter', sans-serif;
-    color: var(--corp-dark-gray);
-}
-
+/* Left border accent on h1 — unique structural treatment */
 h1 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 2.8rem !important;
-    color: var(--corp-dark-blue) !important;
-    border-left: 5px solid var(--corp-blue);
+    border-left: 5px solid #0066cc !important;
     padding-left: 1rem !important;
     margin-bottom: 1rem !important;
 }
 
-h2 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1.8rem !important;
-    color: var(--corp-blue) !important;
-    margin-bottom: 1rem !important;
-}
-
-h3 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1.3rem !important;
-    color: var(--corp-dark-gray) !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-p, label {
-    color: var(--corp-dark-gray);
-    font-size: 1rem;
-    line-height: 1.6;
-    font-weight: 400;
-}
-
-.stButton > button {
-    background: var(--corp-blue) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 4px !important;
-    padding: 12px 32px !important;
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
-}
-
+/* Button hover color */
 .stButton > button:hover {
-    background: var(--corp-dark-blue) !important;
-    box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
-    transform: translateY(-1px);
+    background: #003d7a !important;
 }
 
-.stTextInput > div > div > input,
-.stTextArea > div > div > textarea,
-.stSelectbox > div > div > select {
-    background: white !important;
-    border: 2px solid var(--corp-border) !important;
-    border-radius: 4px !important;
-    color: var(--corp-dark-gray) !important;
-    padding: 10px 14px !important;
-    font-family: 'Inter', sans-serif !important;
-    transition: all 0.3s ease !important;
-}
-
-.stTextInput > div > div > input:focus,
-.stTextArea > div > div > textarea:focus {
-    outline: none !important;
-    border-color: var(--corp-blue) !important;
-    box-shadow: 0 0 0 3px var(--corp-light-blue) !important;
-}
-
-.stTextInput > label,
-.stTextArea > label,
-.stSelectbox > label {
-    color: var(--corp-dark-gray) !important;
+/* Active tab underline */
+.stTabs [aria-selected="true"] {
+    border-bottom: 3px solid #0066cc !important;
+    background: transparent !important;
     font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-[data-testid="metric-container"] {
-    background: white !important;
-    border: 1px solid var(--corp-border) !important;
-    border-radius: 8px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-    transition: all 0.3s ease;
-}
-
-[data-testid="metric-container"]:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
-    transform: translateY(-2px);
-}
-
+/* Metric value font override — Roboto instead of Inter */
 div[data-testid="stMetricValue"] {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 2.5rem !important;
-    font-weight: 700 !important;
-    color: var(--corp-blue) !important;
-}
-
-div[data-testid="stMetricLabel"] {
-    color: var(--corp-dark-gray) !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-div[data-testid="stMetricDelta"] {
-    font-size: 0.9rem !important;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: white;
-    border-bottom: 2px solid var(--corp-border);
-}
-
-.stTabs [data-baseweb="tab"] {
-    background: transparent;
-    border: none;
-    color: var(--corp-dark-gray);
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    padding: 12px 24px;
-    transition: all 0.3s ease;
-}
-
-.stTabs [data-baseweb="tab"]:hover {
-    color: var(--corp-blue);
-    background: var(--corp-light-blue);
-}
-
-.stTabs [aria-selected="true"] {
-    color: var(--corp-blue) !important;
-    border-bottom: 3px solid var(--corp-blue) !important;
-    font-weight: 600 !important;
-}
-
-hr {
-    border: none;
-    height: 2px;
-    background: var(--corp-border);
-    margin: 2rem 0;
+    color: #0066cc !important;
 }
 
 /* Table styling */
 table {
-    border-collapse: collapse;
-    width: 100%;
-    background: white;
+    border-collapse: collapse !important;
+    width: 100% !important;
+    background: white !important;
 }
 
 table th {
-    background: var(--corp-blue) !important;
+    background: #0066cc !important;
     color: white !important;
-    font-weight: 600;
-    padding: 12px;
-    text-align: left;
+    font-weight: 600 !important;
+    padding: 12px !important;
+    text-align: left !important;
 }
 
 table td {
-    border: 1px solid var(--corp-border);
-    padding: 10px;
+    border: 1px solid #dddddd !important;
+    padding: 10px !important;
 }
 
 table tr:hover {
-    background: var(--corp-light-blue);
-}
-
-/* Professional scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--corp-gray);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--corp-blue);
-    border-radius: 5px;
+    background: #e6f2ff !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--corp-dark-blue);
+    background: #003d7a !important;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }

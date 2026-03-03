@@ -1,0 +1,425 @@
+/* 
+    blood_moon.css
+   ============================================================================
+   BLOOD MOON THEME
+   ============================================================================
+   @theme-name: Blood Moon
+   @theme-icon: 🌑
+   @theme-description: Dark crimson night under a blood moon
+*/
+
+@import url('theme_base.css');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=MedievalSharp&display=swap');
+
+:root {
+    --theme-app-bg:
+        radial-gradient(ellipse at top, #3d0000 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 20%, #5c1010 0%, transparent 40%),
+        linear-gradient(160deg, #0d0000 0%, #1a0000 40%, #0d0000 70%, #120000 100%);
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       rgba(26, 0, 0, 0.9);
+    --theme-bg-card:            rgba(20, 0, 0, 0.85);
+    --theme-sidebar-text:       #c94040;
+    --theme-color-primary:      #8b0000;
+    --theme-color-secondary:    #c94040;
+    --theme-text-primary:       #e8c8c8;
+    --theme-text-secondary:     #c07070;
+    --theme-text-h1:            #ff3030;
+    --theme-text-h2:            #c94040;
+    --theme-text-h3:            #8b0000;
+    --theme-font-primary:       'Crimson Pro', serif;
+    --theme-font-h1:            'MedievalSharp', serif;
+    --theme-font-h2:            'MedievalSharp', serif;
+    --theme-font-h3:            'MedievalSharp', serif;
+    --theme-size-h1:            3.4rem;
+    --theme-size-h2:            1.9rem;
+    --theme-size-h3:            1.4rem;
+    --theme-size-body:          1.1rem;
+    --theme-size-label:         0.9rem;
+    --theme-size-metric-value:  2.5rem;
+    --theme-size-metric-label:  0.85rem;
+    --theme-weight-h1:          900;
+    --theme-weight-h2:          700;
+    --theme-weight-h3:          700;
+    --theme-weight-body:        400;
+    --theme-weight-bold:        600;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #ff3030;
+    --theme-radius-sm:          4px;
+    --theme-radius-md:          8px;
+    --theme-radius-button:      4px;
+    --theme-radius-input:       4px;
+    --theme-radius-card:        8px;
+    --theme-shadow-button:      0 0 12px rgba(139, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.6);
+    --theme-shadow-button-hover: 0 0 24px rgba(255, 48, 48, 0.7), 0 0 48px rgba(139, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.6);
+    --theme-shadow-card:        0 0 20px rgba(139, 0, 0, 0.2), 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(139, 0, 0, 0.04);
+    --theme-shadow-card-hover:  0 0 30px rgba(255, 48, 48, 0.3), 0 0 60px rgba(139, 0, 0, 0.2);
+    --theme-shadow-input-focus: 0 0 12px rgba(255, 48, 48, 0.4), 0 0 24px rgba(139, 0, 0, 0.2);
+    --theme-shadow-text-h1:
+        0 0 10px rgba(255, 48, 48, 0.9),
+        0 0 20px rgba(200, 0, 0, 0.7),
+        0 0 40px rgba(139, 0, 0, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.9);
+    --theme-shadow-text-h2:     0 0 8px rgba(201, 64, 64, 0.6), 1px 1px 3px rgba(0, 0, 0, 0.9);
+    --theme-shadow-text-h3:     0 0 6px rgba(139, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.9);
+    --theme-text-transform-h1:           uppercase;
+    --theme-text-transform-h2:           uppercase;
+    --theme-text-transform-h3:           none;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           5px;
+    --theme-letter-spacing-h2:           2px;
+    --theme-letter-spacing-h3:           1px;
+    --theme-letter-spacing-button:       2px;
+    --theme-animation-h1:       bloodPulse 4s infinite alternate;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.3s;
+    --theme-transition-speed-fast: 0.15s;
+    --theme-padding-button:     14px 36px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       1.5rem;
+    --theme-button-bg:          transparent;
+    --theme-button-text:        #ff3030;
+    --theme-button-border:      #8b0000;
+    --theme-button-border-width: 2px;
+    --theme-input-bg:           rgba(13, 0, 0, 0.8);
+    --theme-input-border:       #3d0000;
+    --theme-input-border-focus: #ff3030;
+    --theme-input-text:         #e8c8c8;
+    --theme-input-placeholder:  rgba(201, 64, 64, 0.4);
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(139, 0, 0, 0.15);
+    --theme-tab-bg-active:      rgba(139, 0, 0, 0.25);
+    --theme-tab-text:           rgba(200, 120, 120, 0.5);
+    --theme-tab-text-hover:     #e8c8c8;
+    --theme-tab-text-active:    #ff3030;
+    --theme-tab-border:         #3d0000;
+    --theme-hr-height:          2px;
+    --theme-hr-bg:              #8b0000;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
+}
+
+/* ============================================================================
+   EXPLICIT ELEMENT RULES
+   ============================================================================ */
+
+.stApp {
+    background:
+        radial-gradient(ellipse at top, #3d0000 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 20%, #5c1010 0%, transparent 40%),
+        linear-gradient(160deg, #0d0000 0%, #1a0000 40%, #0d0000 70%, #120000 100%) !important;
+    font-family: 'Crimson Pro', serif !important;
+    color: #e8c8c8 !important;
+}
+
+h1 {
+    font-family: 'MedievalSharp', serif !important;
+    font-weight: 900 !important;
+    font-size: 3.4rem !important;
+    color: #ff3030 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 5px !important;
+    text-shadow:
+        0 0 10px rgba(255, 48, 48, 0.9),
+        0 0 20px rgba(200, 0, 0, 0.7),
+        0 0 40px rgba(139, 0, 0, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+    animation: bloodPulse 4s infinite alternate !important;
+}
+
+h2 {
+    font-family: 'MedievalSharp', serif !important;
+    font-weight: 700 !important;
+    font-size: 1.9rem !important;
+    color: #c94040 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 0 8px rgba(201, 64, 64, 0.6), 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
+}
+
+h3 {
+    font-family: 'MedievalSharp', serif !important;
+    font-weight: 700 !important;
+    font-size: 1.4rem !important;
+    color: #8b0000 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 0 6px rgba(139, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+
+p, label {
+    color: #e8c8c8 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important;
+    font-weight: 400 !important;
+}
+
+.stButton > button {
+    background: transparent !important;
+    color: #ff3030 !important;
+    border: 2px solid #8b0000 !important;
+    border-radius: 4px !important;
+    padding: 14px 36px !important;
+    font-family: 'Crimson Pro', serif !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 12px rgba(139, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+.stButton > button:hover {
+    background: rgba(139, 0, 0, 0.2) !important;
+    color: #ffaaaa !important;
+    border-color: #ff3030 !important;
+    text-shadow: 0 0 8px rgba(255, 48, 48, 0.8) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 0 24px rgba(255, 48, 48, 0.7), 0 0 48px rgba(139, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    background: rgba(13, 0, 0, 0.8) !important;
+    border: 1px solid #3d0000 !important;
+    border-radius: 4px !important;
+    color: #e8c8c8 !important;
+    padding: 12px 16px !important;
+    font-family: 'Crimson Pro', serif !important;
+    transition: all 0.3s ease !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: #ff3030 !important;
+    box-shadow: 0 0 12px rgba(255, 48, 48, 0.4), 0 0 24px rgba(139, 0, 0, 0.2) !important;
+}
+
+.stTextInput > div > div > input::placeholder {
+    color: rgba(201, 64, 64, 0.4) !important;
+}
+
+.stTextInput > label,
+.stTextArea > label {
+    color: #c94040 !important;
+    font-family: 'Crimson Pro', serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 0.9rem !important;
+}
+
+[data-testid="metric-container"] {
+    background: rgba(20, 0, 0, 0.85) !important;
+    border: 1px solid #3d0000 !important;
+    border-radius: 8px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.2), 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-testid="metric-container"]:hover {
+    border-color: #ff3030 !important;
+    box-shadow: 0 0 30px rgba(255, 48, 48, 0.3), 0 0 60px rgba(139, 0, 0, 0.2) !important;
+}
+
+div[data-testid="stMetricValue"] {
+    font-family: 'MedievalSharp', serif !important;
+    font-size: 2.5rem !important;
+    font-weight: 900 !important;
+    color: #ff3030 !important;
+    text-shadow: 0 0 10px rgba(255, 48, 48, 0.7), 0 0 20px rgba(139, 0, 0, 0.5) !important;
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #c07070 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    font-family: 'Crimson Pro', serif !important;
+}
+
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(13, 0, 0, 0.6) !important;
+    border: 1px solid #3d0000 !important;
+    border-radius: 4px !important;
+    padding: 6px !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important;
+    color: rgba(200, 120, 120, 0.5) !important;
+    font-family: 'Crimson Pro', serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    padding: 10px 24px !important;
+    transition: all 0.3s ease !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: #e8c8c8 !important;
+    background: rgba(139, 0, 0, 0.15) !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: rgba(139, 0, 0, 0.25) !important;
+    color: #ff3030 !important;
+    border: 1px solid #8b0000 !important;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.5), inset 0 0 10px rgba(139, 0, 0, 0.1) !important;
+    text-shadow: 0 0 8px rgba(255, 48, 48, 0.6) !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    background: rgba(13, 0, 0, 0.95) !important;
+    border-right: 1px solid #3d0000 !important;
+}
+
+hr {
+    border: none !important;
+    height: 2px !important;
+    background: linear-gradient(90deg,
+        transparent,
+        #3d0000,
+        #8b0000,
+        #ff3030,
+        #8b0000,
+        #3d0000,
+        transparent) !important;
+    margin: 2rem 0 !important;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0d0000; }
+::-webkit-scrollbar-thumb {
+    background: #3d0000;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(139, 0, 0, 0.8);
+}
+::-webkit-scrollbar-thumb:hover { background: #8b0000; }
+
+/* ============================================================================
+   BLOOD MOON UNIQUE RULES
+   ============================================================================ */
+
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 75% 15%, rgba(180, 0, 0, 0.12) 0%, transparent 35%),
+        radial-gradient(ellipse at 25% 85%, rgba(100, 0, 0, 0.08) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stApp::after {
+    content: '';
+    position: fixed;
+    top: 4%;
+    right: 6%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 35% 35%,
+        #ff6060 0%,
+        #cc2020 40%,
+        #8b0000 70%,
+        #3d0000 100%);
+    box-shadow:
+        0 0 30px rgba(200, 0, 0, 0.8),
+        0 0 60px rgba(139, 0, 0, 0.5),
+        0 0 100px rgba(100, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 0;
+    animation: moonPulse 6s infinite alternate;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important;
+    height: auto !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Force dark header/toolbar */
+header[data-testid="stHeader"] {
+    background: #0d0000 !important;
+    border-bottom: 1px solid #3d0000 !important;
+}
+
+/* Fix toolbar buttons */
+header[data-testid="stHeader"] button {
+    color: #c94040 !important;
+}
+
+/* Force main content area background to start from top */
+.stMainBlockContainer,
+.main .block-container,
+[data-testid="stMainBlockContainer"] {
+    background: transparent !important;
+}
+
+/* Kill any white background on the app chrome */
+.stApp > header {
+    background: transparent !important;
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes bloodPulse {
+    0% {
+        text-shadow:
+            0 0 10px rgba(255, 48, 48, 0.9),
+            0 0 20px rgba(200, 0, 0, 0.7),
+            0 0 40px rgba(139, 0, 0, 0.5),
+            2px 2px 4px rgba(0, 0, 0, 0.9);
+        color: #ff3030;
+    }
+    50% {
+        text-shadow:
+            0 0 15px rgba(255, 80, 80, 1.0),
+            0 0 30px rgba(220, 20, 20, 0.9),
+            0 0 60px rgba(160, 0, 0, 0.6),
+            2px 2px 4px rgba(0, 0, 0, 0.9);
+        color: #ff6060;
+    }
+    100% {
+        text-shadow:
+            0 0 8px rgba(200, 20, 20, 0.8),
+            0 0 16px rgba(160, 0, 0, 0.6),
+            0 0 30px rgba(120, 0, 0, 0.4),
+            2px 2px 4px rgba(0, 0, 0, 0.9);
+        color: #cc2020;
+    }
+}
+
+@keyframes moonPulse {
+    0% {
+        box-shadow:
+            0 0 30px rgba(200, 0, 0, 0.8),
+            0 0 60px rgba(139, 0, 0, 0.5),
+            0 0 100px rgba(100, 0, 0, 0.3);
+        opacity: 0.9;
+    }
+    100% {
+        box-shadow:
+            0 0 50px rgba(220, 20, 20, 1.0),
+            0 0 90px rgba(160, 0, 0, 0.7),
+            0 0 140px rgba(120, 0, 0, 0.4);
+        opacity: 1.0;
+    }
+}

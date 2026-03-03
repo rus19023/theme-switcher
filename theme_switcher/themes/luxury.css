@@ -1,39 +1,126 @@
-/* Luxury Minimal Theme */
-
+/* 
+   luxury.css
+   @theme-name: Luxury
+   @theme-icon: 💎
+   @theme-description: Refined elegance and understated opulence
+*/
 
 @import url('theme_base.css');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&family=Cinzel:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;400;500;600&display=swap');
 
 :root {
-    --cream: #FDFCFB;
-    --charcoal: #2C2C2C;
-    --gold: #C9A875;
-    --taupe: #D4CEC5;
+    --theme-app-bg:             #FDFCFB;
+    --theme-bg-size:            cover;
+    --theme-bg-position:        center;
+    --theme-bg-secondary:       #F5F3F0;
+    --theme-bg-card:            #FDFCFB;
+    --theme-sidebar-text:       #2C2C2C;
+    --theme-color-primary:      #C9A875;
+    --theme-color-secondary:    #A8845A;
+    --theme-text-primary:       #2C2C2C;
+    --theme-text-secondary:     #555555;
+    --theme-text-h1:            #2C2C2C;
+    --theme-text-h2:            #2C2C2C;
+    --theme-text-h3:            #C9A875;
+    --theme-font-primary:       'Raleway', sans-serif;
+    --theme-font-h1:            'Great Vibes', cursive;
+    --theme-font-h2:            'Great Vibes', cursive;
+    --theme-font-h3:            'Raleway', sans-serif;
+    --theme-size-h1:            4rem;
+    --theme-size-h2:            2.5rem;
+    --theme-size-h3:            1.2rem;
+    --theme-size-body:          1rem;
+    --theme-size-label:         0.8rem;
+    --theme-size-metric-value:  2.8rem;
+    --theme-size-metric-label:  0.75rem;
+    --theme-weight-h1:          400;
+    --theme-weight-h2:          400;
+    --theme-weight-h3:          500;
+    --theme-weight-body:        300;
+    --theme-weight-bold:        500;
+    --theme-border-width:       1px;
+    --theme-border-style:       solid;
+    --theme-border-hover:       #C9A875;
+    --theme-radius-sm:          0px;
+    --theme-radius-md:          0px;
+    --theme-radius-button:      0px;
+    --theme-radius-input:       0px;
+    --theme-radius-card:        0px;
+    --theme-shadow-button:      none;
+    --theme-shadow-button-hover: 0 4px 16px rgba(201, 168, 117, 0.25);
+    --theme-shadow-card:        0 1px 8px rgba(0, 0, 0, 0.06);
+    --theme-shadow-card-hover:  0 4px 20px rgba(201, 168, 117, 0.15);
+    --theme-shadow-input-focus: 0 0 0 2px rgba(201, 168, 117, 0.2);
+    --theme-shadow-text-h1:     none;
+    --theme-shadow-text-h2:     none;
+    --theme-shadow-text-h3:     none;
+    --theme-text-transform-h1:           none;
+    --theme-text-transform-h2:           none;
+    --theme-text-transform-h3:           uppercase;
+    --theme-text-transform-button:       uppercase;
+    --theme-text-transform-label:        uppercase;
+    --theme-text-transform-metric-label: uppercase;
+    --theme-letter-spacing-h1:           normal;
+    --theme-letter-spacing-h2:           normal;
+    --theme-letter-spacing-h3:           4px;
+    --theme-letter-spacing-button:       3px;
+    --theme-animation-h1:       none;
+    --theme-animation-h2:       none;
+    --theme-transition-speed:   0.4s;
+    --theme-transition-speed-fast: 0.2s;
+    --theme-padding-button:     14px 40px;
+    --theme-padding-input:      12px 16px;
+    --theme-padding-card:       2rem;
+    --theme-button-bg:          #2C2C2C;
+    --theme-button-text:        #FDFCFB;
+    --theme-button-border:      #2C2C2C;
+    --theme-button-border-width: 1px;
+    --theme-input-bg:           #FDFCFB;
+    --theme-input-border:       #D8D0C4;
+    --theme-input-border-focus: #C9A875;
+    --theme-input-text:         #2C2C2C;
+    --theme-input-placeholder:  #B0A898;
+    --theme-tab-bg:             transparent;
+    --theme-tab-bg-hover:       rgba(201, 168, 117, 0.06);
+    --theme-tab-bg-active:      transparent;
+    --theme-tab-text:           #B0A898;
+    --theme-tab-text-hover:     #2C2C2C;
+    --theme-tab-text-active:    #C9A875;
+    --theme-tab-border:         #D8D0C4;
+    --theme-hr-height:          1px;
+    --theme-hr-bg:              #D8D0C4;
+    
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+  
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
 
-.stApp {
-    background: linear-gradient(180deg, var(--cream) 0%, #F9F7F4 100%);
-    font-family: 'Montserrat', sans-serif;
-    color: var(--charcoal);
+hr {
+    background: linear-gradient(90deg,
+        transparent, #D8D0C4, #C9A875, #D8D0C4, transparent) !important;
+    margin: 3rem 0 !important;
 }
 
-h1 {
-    font-family: 'Cinzel', serif !important;
-    font-weight: 400 !important;
-    font-size: 3.5rem !important;
-    color: var(--charcoal) !important;
-    letter-spacing: 8px !important;
-    text-transform: uppercase !important;
+.stApp::after {
+    content: '◇';
+    position: fixed;
+    bottom: 24px; right: 32px;
+    font-size: 7rem;
+    color: #C9A875;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.stButton > button {
-    background: transparent !important;
-    color: var(--charcoal) !important;
-    border: 1px solid var(--charcoal) !important;
-    border-radius: 0 !important;
-    padding: 16px 48px !important;
-    font-family: 'Montserrat', sans-serif !important;
-    letter-spacing: 3px !important;
-    text-transform: uppercase !important;
-    transition: all 0.5s ease !important;
+section[data-testid="stSidebar"] > div {
+    border-right: 1px solid #D8D0C4 !important;
+}
+
+button[key^="mc_option_"] {
+    min-height: 80px !important; height: auto !important;
+    white-space: normal !important; word-wrap: break-word !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
 }
