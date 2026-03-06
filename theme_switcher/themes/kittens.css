@@ -3,7 +3,7 @@
 /* 
    kittens.css
    @theme-name: Kittens
-   @theme-icon: 😽
+   @theme-icon: 🐈
    @theme-description: Soft, dreamy and playful
 */
 
@@ -18,13 +18,13 @@
         linear-gradient(135deg, #fafafa 0%, #fefefe 50%, #f5f5f5 100%);
     --theme-bg-size:            cover;
     --theme-bg-position:        center;
-    --theme-bg-secondary:       #fefefe;
+    --theme-bg-secondary:       #dfdbdb;
     --theme-bg-card:            #fefefe;
     --theme-sidebar-text:       #6b7280;
 
     /* Colors */
     --theme-color-primary:      #ffc0cb;
-    --theme-color-secondary:    #ffb3d9;
+    --theme-color-secondary:    #775712;
 
     /* Text Colors */
     --theme-text-primary:       #6b7280;

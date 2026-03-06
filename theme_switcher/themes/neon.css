@@ -83,7 +83,7 @@
     --theme-radius-input: 4px;
     --theme-radius-card: 8px;
 
-    /* Shadows - the key to the neon glow look */
+    /* Shadows */
     --theme-shadow-sm: 0 0 8px rgba(255, 45, 149, 0.4);
     --theme-shadow-md: 0 0 16px rgba(255, 45, 149, 0.5);
     --theme-shadow-lg: 0 0 30px rgba(255, 45, 149, 0.6);
@@ -164,20 +164,80 @@
         #ff2d95,
         #05d9e8,
         transparent);
-    
-        --theme-control-fg: var(--theme-text-primary);
-        --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
-        --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
-      
-        --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
-        --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
+
+    --theme-control-fg: var(--theme-text-primary);
+    --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
+    --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
+    --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
+    --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
 
 /* ============================================================================
-   CSS RULES
+   HEADINGS — explicit rules beat theme_base's font-family-only overrides
    ============================================================================ */
 
-/* Scanline overlay for CRT feel */
+/* H1 — hot pink with full tube-light neon flicker */
+h1,
+.stMarkdown h1,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stHeadingWithActionElements"] h1 {
+    font-family: 'Tilt Neon', monospace !important;
+    font-size: 3.2rem !important;
+    font-weight: 900 !important;
+    color: #ff2d95 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 4px !important;
+    line-height: 1.3 !important;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #ff2d95,
+        0 0 82px #ff2d95,
+        0 0 92px #ff2d95,
+        0 0 102px #ff2d95,
+        0 0 151px #ff2d95 !important;
+    animation: neonFlicker 3s infinite alternate !important;
+}
+
+/* H2 — cyan with layered glow */
+h2,
+.stMarkdown h2,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stHeadingWithActionElements"] h2 {
+    font-family: 'Tilt Neon', monospace !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #05d9e8 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 3px !important;
+    line-height: 1.4 !important;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #05d9e8,
+        0 0 42px #05d9e8,
+        0 0 82px #05d9e8 !important;
+}
+
+/* H3 — violet purple glow */
+h3,
+.stMarkdown h3,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stHeadingWithActionElements"] h3 {
+    font-family: 'Tilt Neon', cursive !important;
+    font-size: 1.6rem !important;
+    font-weight: 400 !important;
+    color: #bf00ff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 0 10px #bf00ff, 0 0 20px #bf00ff !important;
+}
+
+/* ============================================================================
+   SCANLINE OVERLAY
+   ============================================================================ */
+
 .stApp::before {
     content: '';
     position: fixed;
@@ -193,7 +253,10 @@
     z-index: 9999;
 }
 
-/* Horizon glow line */
+/* ============================================================================
+   HORIZON GLOW LINE
+   ============================================================================ */
+
 .stApp::after {
     content: '';
     position: fixed;
@@ -212,33 +275,49 @@
     opacity: 0.4;
 }
 
-/* Button glow override */
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
 .stButton > button:hover {
     background: var(--theme-button-bg-hover) !important;
     color: #fff !important;
     border-color: #05d9e8 !important;
-    text-shadow: 0 0 8px #05d9e8;
-    transform: translateY(-2px);
+    text-shadow: 0 0 8px #05d9e8 !important;
+    transform: translateY(-2px) !important;
 }
 
-/* Active tab glow */
+/* ============================================================================
+   TABS
+   ============================================================================ */
+
 .stTabs [aria-selected="true"] {
     border: 1px solid #ff2d95 !important;
     box-shadow: 0 0 10px rgba(255, 45, 149, 0.5), inset 0 0 10px rgba(255, 45, 149, 0.1) !important;
-    text-shadow: 0 0 8px #ff2d95;
+    text-shadow: 0 0 8px #ff2d95 !important;
 }
 
-/* Metric value glow */
+/* ============================================================================
+   METRICS
+   ============================================================================ */
+
 div[data-testid="stMetricValue"] {
-    text-shadow: 0 0 10px var(--theme-text-h1), 0 0 20px var(--theme-text-h1);
+    color: #ff2d95 !important;
+    text-shadow: 0 0 10px #ff2d95, 0 0 20px #ff2d95 !important;
 }
 
-/* Scrollbar glow */
+/* ============================================================================
+   SCROLLBAR
+   ============================================================================ */
+
 ::-webkit-scrollbar-thumb {
-    box-shadow: 0 0 6px rgba(255, 45, 149, 0.8);
+    box-shadow: 0 0 6px rgba(255, 45, 149, 0.8) !important;
 }
 
-/* Multiple choice buttons */
+/* ============================================================================
+   MULTIPLE CHOICE BUTTONS
+   ============================================================================ */
+
 button[key^="mc_option_"] {
     min-height: 80px !important;
     height: auto !important;
@@ -250,7 +329,7 @@ button[key^="mc_option_"] {
 }
 
 /* ============================================================================
-   ANIMATIONS
+   KEYFRAMES
    ============================================================================ */
 
 @keyframes neonFlicker {

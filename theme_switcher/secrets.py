@@ -3,7 +3,7 @@ import streamlit as st
 
 def _get_secret(key, default=None):
     try:
-        return st.secrets.get(key, default)
+        return st.secrets[key] if key in st.secrets else default
     except Exception:
         return default
 

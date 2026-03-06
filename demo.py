@@ -19,7 +19,7 @@ st.set_page_config(
 )
 
 # Quick theme setup - this is all you need!
-ts = apply_theme(default_theme="mexico", selector_location="sidebar")
+ts = apply_theme(default_theme="neon", selector_location="sidebar")
 
 # Now build your app normally
 st.title("Demo App for Testing ThemeSwitcher")

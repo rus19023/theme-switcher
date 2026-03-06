@@ -1,7 +1,7 @@
 /* 
    china.css
    @theme-name: China
-   @theme-icon: 🇨🇳
+   @theme-icon: 🧧
    @theme-description: Imperial elegance
 */
 
@@ -94,14 +94,65 @@
     --theme-tab-border:         #dc143c;
     --theme-hr-height:          4px;
     --theme-hr-bg:              #e30b17;
-    
+
     --theme-control-fg: var(--theme-text-primary);
     --theme-control-bg: color-mix(in srgb, var(--theme-bg-card) 70%, transparent);
     --theme-control-border: color-mix(in srgb, var(--theme-border-color, var(--theme-color-primary)) 55%, transparent);
-  
     --theme-control-bg-hover: color-mix(in srgb, var(--theme-bg-card) 85%, transparent);
     --theme-control-border-hover: color-mix(in srgb, var(--theme-color-primary) 55%, transparent);
 }
+
+/* ============================================================================
+   HEADINGS — explicit rules beat theme_base's font-family-only overrides
+   ============================================================================ */
+
+/* H1 — gold-to-red gradient clip + lantern glow animation */
+h1,
+.stMarkdown h1,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stHeadingWithActionElements"] h1 {
+    font-family: 'Ma Shan Zheng', cursive !important;
+    font-size: 4.5rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 4px !important;
+    line-height: 1.3 !important;
+    background: linear-gradient(135deg, #ffd700, #e30b17, #dc143c) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    /* filter glow works with transparent text-fill; text-shadow does not */
+    animation: lanternGlow 4s infinite alternate !important;
+}
+
+/* H2 — crimson with red glow */
+h2,
+.stMarkdown h2,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stHeadingWithActionElements"] h2 {
+    font-family: 'Noto Serif SC', serif !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #e30b17 !important;
+    letter-spacing: 2px !important;
+    line-height: 1.4 !important;
+    text-shadow: 0 0 25px rgba(227, 11, 23, 0.5) !important;
+}
+
+/* H3 — jade green */
+h3,
+.stMarkdown h3,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stHeadingWithActionElements"] h3 {
+    font-family: 'Noto Serif SC', serif !important;
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    color: #00a86b !important;
+    letter-spacing: 1px !important;
+}
+
+/* ============================================================================
+   HR
+   ============================================================================ */
 
 hr {
     background: linear-gradient(90deg,
@@ -109,15 +160,10 @@ hr {
     box-shadow: 0 0 15px rgba(227, 11, 23, 0.4) !important;
 }
 
-/* Gradient text on h1 — can't be done via variables */
-h1 {
-    background: linear-gradient(135deg, #ffd700, #e30b17, #dc143c) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-}
+/* ============================================================================
+   METRICS
+   ============================================================================ */
 
-/* Gradient metric value */
 div[data-testid="stMetricValue"] {
     background: linear-gradient(135deg, #ffd700, #e30b17) !important;
     -webkit-background-clip: text !important;
@@ -126,14 +172,26 @@ div[data-testid="stMetricValue"] {
     filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.5)) !important;
 }
 
+/* ============================================================================
+   TABS
+   ============================================================================ */
+
 .stTabs [aria-selected="true"] {
     box-shadow: 0 0 20px rgba(227, 11, 23, 0.5) !important;
 }
+
+/* ============================================================================
+   SIDEBAR
+   ============================================================================ */
 
 section[data-testid="stSidebar"] > div {
     border-right: 4px solid #e30b17 !important;
     border-left: 1px solid #ffd700 !important;
 }
+
+/* ============================================================================
+   DECORATIVE OVERLAYS
+   ============================================================================ */
 
 .stApp::before {
     content: '';
@@ -159,11 +217,23 @@ section[data-testid="stSidebar"] > div {
     animation: lanternSway 8s ease-in-out infinite;
 }
 
+/* ============================================================================
+   MULTIPLE CHOICE BUTTONS
+   ============================================================================ */
+
 button[key^="mc_option_"] {
-    min-height: 80px !important; height: auto !important;
-    white-space: normal !important; word-wrap: break-word !important;
-    display: flex !important; align-items: center !important; justify-content: center !important;
+    min-height: 80px !important;
+    height: auto !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
+
+/* ============================================================================
+   KEYFRAMES
+   ============================================================================ */
 
 @keyframes lanternGlow {
     0%   { filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)); }
