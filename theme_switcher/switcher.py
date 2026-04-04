@@ -59,23 +59,23 @@ class ThemeSwitcher:
         current_theme = st.session_state.get(theme_state_key, self.default_theme)
         current_icon = self.available_themes.get(current_theme, {}).get("icon", "🎨")
 
-        with st.sidebar:
-            inject_icon_button_css()
-            inject_tooltip_css()
+        
+        inject_icon_button_css()
+        inject_tooltip_css()
 
-            with st.expander(f"{current_icon} {title}", expanded=False):
-                keys = list(self.available_themes.keys())
-                self._render_icon_button_grid(keys, theme_state_key, cols_per_row=5)
+        with st.expander(f"{current_icon} {title}", expanded=False):
+            keys = list(self.available_themes.keys())
+            self._render_icon_button_grid(keys, theme_state_key, cols_per_row=5)
 
-            if show_description and current_theme in self.available_themes:
-                desc = self.available_themes[current_theme].get("description", "")
-                if desc:
-                    st.caption(f"_{desc}_")
+        if show_description and current_theme in self.available_themes:
+            desc = self.available_themes[current_theme].get("description", "")
+            if desc:
+                st.caption(f"_{desc}_")
 
-            # Image credit — only shown when theme has a background image credit
-            credit = st.session_state.get(f"{self.key_prefix}_image_credit")
-            if credit:
-                st.markdown(f"<small>📷 {credit}</small>", unsafe_allow_html=True)
+        # Image credit — only shown when theme has a background image credit
+        credit = st.session_state.get(f"{self.key_prefix}_image_credit")
+        if credit:
+            st.markdown(f"<small>📷 {credit}</small>", unsafe_allow_html=True)
 
     def _render_inline(self, title, position: str):
         theme_state_key = f"{self.key_prefix}_current_theme"
