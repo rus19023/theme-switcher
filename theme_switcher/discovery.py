@@ -31,6 +31,7 @@ def read_css_header_metadata(css_file: Path) -> dict:
         "icon": grab("theme-icon"),
         "description": grab("theme-description"),
     }
+    
 
 def discover_themes(themes_dir: Path, secrets_meta: dict | None = None) -> dict:
     """

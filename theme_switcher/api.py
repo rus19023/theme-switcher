@@ -22,7 +22,7 @@ def apply_theme(
 ):
     """
     One call to apply theme CSS and render selector.
-    Default UI location is sidebar if no secrets exist.
+    Default UI location is footer if no secrets exist.
     """
     ts_key = f"_ts_instance_{key_prefix}"
     ts = ThemeSwitcher(default_theme=default_theme, themes_dir=themes_dir, key_prefix=key_prefix)

@@ -41,7 +41,7 @@ class ThemeSwitcher:
             else:
                 st.session_state[theme_state_key] = next(iter(self.available_themes.keys()), default_theme)
 
-    def render_selector(self, title="Theme", location="sidebar", show_description=True):
+    def render_selector(self, title="Theme", location="footer", show_description=True):
         if not is_switcher_allowed():
             return
 
@@ -76,6 +76,7 @@ class ThemeSwitcher:
         credit = st.session_state.get(f"{self.key_prefix}_image_credit")
         if credit:
             st.markdown(f"<small>📷 {credit}</small>", unsafe_allow_html=True)
+            
 
     def _render_inline(self, title, position: str):
         theme_state_key = f"{self.key_prefix}_current_theme"
@@ -85,10 +86,19 @@ class ThemeSwitcher:
 
         st.markdown(f'<div class="theme-bar"><span class="bar-label">🎨 {title}</span></div>', unsafe_allow_html=True)
 
-        keys = list(self.available_themes.keys())
-        self._render_icon_button_grid(keys, theme_state_key, cols_per_row=max(1, len(keys)))
+        st.markdown("""
+            <style>
+            div[data-testid="stHorizontalBlock"] {
+                max-width: 50% !important;
+            }
+            </style>
+        """, unsafe_allow_html=True)
 
-    def _render_icon_button_grid(self, theme_keys, theme_state_key, cols_per_row=5):
+        keys = list(self.available_themes.keys())
+        self._render_icon_button_grid(keys, theme_state_key, cols_per_row=10)
+            
+
+    def _render_icon_button_grid(self, theme_keys, theme_state_key, cols_per_row=10):
         if not theme_keys:
             st.caption("No themes found.")
             return
@@ -116,6 +126,7 @@ class ThemeSwitcher:
                         if st.session_state.get(theme_state_key) != key:
                             st.session_state[theme_state_key] = key
                             st.rerun()
+                            
 
     def apply_theme(self):
         theme_state_key = f"{self.key_prefix}_current_theme"
@@ -138,11 +149,12 @@ class ThemeSwitcher:
 
         # Store image credit in session state for sidebar to render
         st.session_state[f"{self.key_prefix}_image_credit"] = meta.get("image_credit")
+        
 
     def maybe_add_customization(self, enable: bool, location: str):
         if not enable:
             return
-        container = st.sidebar if location == "sidebar" else st
+        container = st.empty if location == "sidebar" else st
         add_customization_controls(container)
 
         

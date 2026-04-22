@@ -4,7 +4,7 @@ import streamlit as st
 
 def add_customization_controls(location_container):
     """
-    location_container is either st.sidebar or st (main area)
+    location_container is st (main area)
     """
     if "theme_customizations" not in st.session_state:
         st.session_state.theme_customizations = {

@@ -168,7 +168,7 @@ def render_font_gallery():
     load_google_fonts_in_chunks(font_names, chunk_size=8)  # 48 fonts => 6 requests
 
     # ---- Render cards ----
-    cols_per_row = 3  # 48 => 16 rows of 3
+    cols_per_row = 4  # 48 => 12 rows of 4
     rows = [page_fonts[i:i+cols_per_row] for i in range(0, len(page_fonts), cols_per_row)]
 
     for row in rows:
